@@ -4,8 +4,10 @@ import {useMemo, useState} from 'react';
 import {VStack, HStack} from '@pharos-ds/core/Layout';
 import {Text, Heading} from '@pharos-ds/core/Text';
 import {Switch} from '@pharos-ds/core/Switch';
-import {SegmentedControl} from '@pharos-ds/core/SegmentedControl';
-import {SegmentedControlItem} from '@pharos-ds/core/SegmentedControlItem';
+import {
+  SegmentedControl,
+  SegmentedControlItem,
+} from '@pharos-ds/core/SegmentedControl';
 import {CodeBlock} from '@/components/CodeBlock';
 import {
   componentNameFromImport,
