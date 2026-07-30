@@ -312,3 +312,209 @@ body {
     display: none;
   }
 }
+
+/* Components gallery (Astryx-like) */
+.docs-components-shell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 1440px;
+  margin-inline: auto;
+  min-height: calc(100vh - var(--docs-header-height));
+}
+
+.docs-components-sidebar-slot {
+  display: none;
+  width: var(--docs-sidebar-width);
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--docs-header-height);
+  max-height: calc(100vh - var(--docs-header-height));
+  overflow: auto;
+  border-inline-end: 1px solid
+    color-mix(in srgb, var(--color-text-primary) 10%, transparent);
+  background: var(--color-background-body);
+}
+
+.docs-components-sidebar {
+  padding: var(--spacing-5) var(--spacing-4) var(--spacing-8);
+}
+
+.docs-components-overview-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.docs-components-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.docs-components-nav-link {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.3;
+  padding: 7px 10px;
+  border-radius: 8px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.docs-components-nav-link:hover {
+  color: var(--color-text-primary);
+  background: color-mix(in srgb, var(--color-text-primary) 6%, transparent);
+}
+
+.docs-components-nav-link[data-active='true'] {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+
+.docs-components-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.docs-components-content {
+  padding: var(--spacing-8) var(--spacing-6) var(--spacing-12);
+}
+
+.docs-components-hero {
+  text-align: center;
+  padding-block: var(--spacing-6) var(--spacing-4);
+}
+
+.docs-components-section {
+  scroll-margin-top: calc(var(--docs-header-height) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.docs-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.docs-preview-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  color: inherit;
+}
+
+.docs-preview-card-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 16px;
+}
+
+.docs-preview-card:hover .docs-preview-frame {
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+  transform: translateY(-2px);
+}
+
+.docs-preview-card-label {
+  padding-inline: 4px;
+}
+
+.docs-preview-frame {
+  position: relative;
+  height: 180px;
+  border-radius: 16px;
+  border: 1px solid
+    color-mix(in srgb, var(--color-text-primary) 10%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--color-background-secondary, var(--color-background-body)) 55%,
+    transparent
+  );
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Canvas fixo + scale: evita colapso de componentes que precisam de largura mínima */
+.docs-preview-stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 420px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+  box-sizing: border-box;
+  transform: translate(-50%, -50%) scale(0.58);
+  transform-origin: center center;
+}
+
+.docs-preview-stage > * {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.docs-preview-fallback {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.docs-components-mobile-nav {
+  display: block;
+  margin: var(--spacing-4) var(--spacing-4) 0;
+  border: 1px solid
+    color-mix(in srgb, var(--color-text-primary) 12%, transparent);
+  border-radius: 12px;
+  padding: var(--spacing-3) var(--spacing-4);
+}
+
+.docs-components-mobile-nav > summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.docs-components-mobile-nav > summary::-webkit-details-marker {
+  display: none;
+}
+
+.docs-components-mobile-nav-body {
+  margin-top: var(--spacing-3);
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.docs-components-mobile-nav .docs-components-sidebar {
+  padding: 0;
+}
+
+@media (min-width: 900px) {
+  .docs-components-sidebar-slot {
+    display: block;
+  }
+
+  .docs-components-mobile-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .docs-components-content {
+    padding-inline: var(--spacing-4);
+  }
+}

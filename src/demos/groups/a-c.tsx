@@ -53,7 +53,7 @@ import {ContextMenu} from '@pharos-ds/core/ContextMenu';
 import {VStack, HStack} from '@pharos-ds/core/Layout';
 import {Text, Heading} from '@pharos-ds/core/Text';
 import {demo, selectControl, booleanControl} from '../helpers';
-import {DEMO_IMAGE_1, demoImage} from '../images';
+import {DEMO_IMAGE_1, DEMO_IMAGE_2} from '../images';
 import type {ControlValue, InteractiveDemoConfig} from '../types';
 
 const DEMO_SEARCH_ITEMS = [
@@ -177,7 +177,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
         selectControl('fit', ['cover', 'contain', 'center'], 'cover'),
       ],
       render: p => (
-        <div style={{maxWidth: 320}}>
+        <div style={{width: '100%', maxWidth: 320}}>
           <AspectRatio
             ratio={ratioFromPreset(String(p.ratioPreset))}
             shape={p.shape as 'rectangle' | 'ellipse'}
@@ -494,26 +494,62 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
       importLine: "import {Carousel} from '@pharos-ds/core/Carousel';",
       controls: [
         booleanControl('hasButtons', true),
-        booleanControl('hasSnap'),
+        booleanControl('hasSnap', true),
         booleanControl('hasEdgeFade', true),
       ],
-      render: p => (
-        <Carousel
-          gap={2}
-          hasButtons={Boolean(p.hasButtons)}
-          hasSnap={Boolean(p.hasSnap)}
-          hasEdgeFade={Boolean(p.hasEdgeFade)}>
-          {[0, 1, 0, 1].map((imgIndex, i) => (
-            <Card key={i} padding={0} width={200} style={{overflow: 'hidden'}}>
-              <img
-                src={demoImage(imgIndex)}
-                alt={`Usina solar ${i + 1}`}
-                style={{width: '100%', height: 120, objectFit: 'cover', display: 'block'}}
-              />
-            </Card>
-          ))}
-        </Carousel>
-      ),
+      render: p => {
+        const hasButtons = Boolean(p.hasButtons);
+        const hasSnap = Boolean(p.hasSnap);
+        const hasEdgeFade = Boolean(p.hasEdgeFade);
+        const slides = [
+          {src: DEMO_IMAGE_1, title: 'Usina solar'},
+          {src: DEMO_IMAGE_2, title: 'Entardecer'},
+          {src: DEMO_IMAGE_1, title: 'Painéis'},
+          {src: DEMO_IMAGE_2, title: 'Horizonte'},
+          {src: DEMO_IMAGE_1, title: 'Campo'},
+          {src: DEMO_IMAGE_2, title: 'Reflexo'},
+        ];
+
+        return (
+          <div style={{maxWidth: 420, width: '100%'}}>
+            <Carousel
+              key={`${hasButtons}-${hasSnap}-${hasEdgeFade}`}
+              gap={2}
+              hasButtons={hasButtons}
+              hasSnap={hasSnap}
+              hasEdgeFade={hasEdgeFade}
+              aria-label="Galeria de usinas solares"
+              style={{width: '100%'}}>
+              {slides.map((slide, i) => (
+                <Card
+                  key={`${slide.title}-${i}`}
+                  padding={0}
+                  width={200}
+                  style={{overflow: 'hidden', flex: '0 0 auto'}}>
+                  <img
+                    src={slide.src}
+                    alt={slide.title}
+                    style={{
+                      width: '100%',
+                      height: 140,
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                  />
+                  <div style={{padding: 12}}>
+                    <Text type="body" weight="medium">
+                      {slide.title}
+                    </Text>
+                    <Text type="supporting" color="secondary">
+                      Slide {i + 1} de {slides.length}
+                    </Text>
+                  </div>
+                </Card>
+              ))}
+            </Carousel>
+          </div>
+        );
+      },
     }),
   ],
 
@@ -551,7 +587,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
         function ChatComposerDemo() {
           const [value, setValue] = useState('');
           return (
-            <div style={{maxWidth: 480}}>
+            <div style={{width: '100%', maxWidth: 480}}>
               <ChatComposer
                 value={value}
                 onChange={setValue}
@@ -605,15 +641,26 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
         function ChatComposerInputDemo() {
           const [value, setValue] = useState('');
           return (
-            <div style={{maxWidth: 400, border: '1px solid var(--color-border-default, #e5e5e5)', borderRadius: 8, padding: 8}}>
-              <ChatComposerInput
-                value={value}
-                onChange={setValue}
-                placeholder="Entrada de mensagem…"
-                isDisabled={Boolean(p.isDisabled)}
-                hasHistory={Boolean(p.hasHistory)}
-                onSubmit={setValue}
-              />
+            <div
+              style={{
+                width: '100%',
+                maxWidth: 400,
+                border: '1px solid var(--color-border-default, #e5e5e5)',
+                borderRadius: 8,
+                padding: 8,
+                display: 'flex',
+              }}>
+              <div style={{flex: 1, minWidth: 0, width: '100%'}}>
+                <ChatComposerInput
+                  value={value}
+                  onChange={setValue}
+                  placeholder="Entrada de mensagem…"
+                  isDisabled={Boolean(p.isDisabled)}
+                  hasHistory={Boolean(p.hasHistory)}
+                  onSubmit={setValue}
+                  style={{width: '100%'}}
+                />
+              </div>
             </div>
           );
         }

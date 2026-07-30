@@ -36,7 +36,7 @@ export default async function ComponentPage({params}: Props) {
   const importCode = `import {${component.name}} from '${component.importPath}';`;
 
   return (
-    <div className="docs-page" style={{paddingBlock: 48}}>
+    <div className="docs-components-content">
       <VStack gap={8}>
         <VStack gap={3}>
           <Link
