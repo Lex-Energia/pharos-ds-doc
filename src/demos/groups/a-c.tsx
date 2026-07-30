@@ -53,6 +53,7 @@ import {ContextMenu} from '@pharos-ds/core/ContextMenu';
 import {VStack, HStack} from '@pharos-ds/core/Layout';
 import {Text, Heading} from '@pharos-ds/core/Text';
 import {demo, selectControl, booleanControl} from '../helpers';
+import {DEMO_IMAGE_1, demoImage} from '../images';
 import type {ControlValue, InteractiveDemoConfig} from '../types';
 
 const DEMO_SEARCH_ITEMS = [
@@ -181,19 +182,11 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
             ratio={ratioFromPreset(String(p.ratioPreset))}
             shape={p.shape as 'rectangle' | 'ellipse'}
             fit={p.fit as 'cover' | 'contain' | 'center'}>
-            <div
-              style={{
-                width: '100%',
-                height: '100%',
-                background: 'linear-gradient(135deg, #6366f1, #a855f7)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontSize: 14,
-              }}>
-              Mídia
-            </div>
+            <img
+              src={DEMO_IMAGE_1}
+              alt="Usina solar ao entardecer"
+              style={{width: '100%', height: '100%', objectFit: 'cover', display: 'block'}}
+            />
           </AspectRatio>
         </div>
       ),
@@ -510,9 +503,13 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
           hasButtons={Boolean(p.hasButtons)}
           hasSnap={Boolean(p.hasSnap)}
           hasEdgeFade={Boolean(p.hasEdgeFade)}>
-          {['Alfa', 'Beta', 'Gama', 'Delta'].map(label => (
-            <Card key={label} padding={3} width={140}>
-              <Text type="body">{label}</Text>
+          {[0, 1, 0, 1].map((imgIndex, i) => (
+            <Card key={i} padding={0} width={200} style={{overflow: 'hidden'}}>
+              <img
+                src={demoImage(imgIndex)}
+                alt={`Usina solar ${i + 1}`}
+                style={{width: '100%', height: 120, objectFit: 'cover', display: 'block'}}
+              />
             </Card>
           ))}
         </Carousel>

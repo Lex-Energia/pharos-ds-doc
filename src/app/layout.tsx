@@ -1,8 +1,10 @@
 import type {Metadata} from 'next';
+import {cookies} from 'next/headers';
 import './globals.css';
 import {Providers} from '@/lib/pharos/providers';
 import {AppShell} from '@/components/shell/AppShell';
 import {buildSearchIndex} from '@/lib/search-index';
+import {parseThemeMode, THEME_COOKIE} from '@/lib/pharos/theme-cookie';
 
 export const metadata: Metadata = {
   title: {
@@ -21,13 +23,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const searchItems = buildSearchIndex();
+  const cookieStore = await cookies();
+  const initialMode =
+    parseThemeMode(cookieStore.get(THEME_COOKIE)?.value) ?? 'system';
 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body>
-        <Providers>
+        <Providers initialMode={initialMode}>
           <AppShell searchItems={searchItems}>{children}</AppShell>
         </Providers>
       </body>

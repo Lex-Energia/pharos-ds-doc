@@ -45,6 +45,7 @@ import {Plus} from 'lucide-react';
 import frMessages from '@pharos-ds/core/locales/fr-FR.json';
 import {demo, selectControl, booleanControl} from '../helpers';
 import {controlsFromCatalog} from '../controlsFromCatalog';
+import {DEMO_IMAGE_1} from '../images';
 import type {ControlValue, InteractiveDemoConfig} from '../types';
 
 type DemoProps = Record<string, ControlValue>;
@@ -435,7 +436,7 @@ function LightboxPreview(props: DemoProps) {
         onOpenChange={setOpen}
         hasZoom={Boolean(props.hasZoom)}
         media={{
-          src: '/images/exemplo-usina-solar.jpg',
+          src: DEMO_IMAGE_1,
           alt: 'Usina solar ao entardecer',
           caption: 'Usina solar — exemplo Pharos',
         }}

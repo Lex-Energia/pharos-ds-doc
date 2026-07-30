@@ -9,8 +9,15 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import {
+  parseThemeMode,
+  serializeThemeCookie,
+  THEME_COOKIE,
+  type ThemeMode,
+} from './theme-cookie';
 
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type {ThemeMode};
+export {THEME_COOKIE, parseThemeMode};
 
 type ThemeModeContextValue = {
   mode: ThemeMode;
@@ -21,7 +28,7 @@ type ThemeModeContextValue = {
 
 const ThemeModeContext = createContext<ThemeModeContextValue | null>(null);
 
-const STORAGE_KEY = 'pharos-docs-theme';
+const LEGACY_STORAGE_KEY = 'pharos-docs-theme';
 
 function getSystemMode(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'light';
@@ -30,15 +37,51 @@ function getSystemMode(): 'light' | 'dark' {
     : 'light';
 }
 
-export function ThemeModeProvider({children}: {children: ReactNode}) {
-  const [mode, setModeState] = useState<ThemeMode>('system');
-  const [resolved, setResolved] = useState<'light' | 'dark'>('light');
+function writeThemeCookie(mode: ThemeMode) {
+  document.cookie = serializeThemeCookie(mode);
+}
 
+function readThemeCookie(): ThemeMode | null {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie
+    .split('; ')
+    .find(row => row.startsWith(`${THEME_COOKIE}=`));
+  if (!match) return null;
+  return parseThemeMode(match.split('=').slice(1).join('='));
+}
+
+export function ThemeModeProvider({
+  children,
+  initialMode = 'system',
+}: {
+  children: ReactNode;
+  initialMode?: ThemeMode;
+}) {
+  const [mode, setModeState] = useState<ThemeMode>(initialMode);
+  const [resolved, setResolved] = useState<'light' | 'dark'>(() =>
+    initialMode === 'system' ? 'light' : initialMode,
+  );
+
+  // Migra preferência antiga de localStorage → cookie (uma vez).
   useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
-    if (stored === 'light' || stored === 'dark' || stored === 'system') {
-      setModeState(stored);
+    const fromCookie = readThemeCookie();
+    if (fromCookie) {
+      if (fromCookie !== mode) setModeState(fromCookie);
+      return;
     }
+
+    const legacy = parseThemeMode(
+      window.localStorage.getItem(LEGACY_STORAGE_KEY),
+    );
+    if (legacy) {
+      writeThemeCookie(legacy);
+      window.localStorage.removeItem(LEGACY_STORAGE_KEY);
+      setModeState(legacy);
+    } else {
+      writeThemeCookie(mode);
+    }
+    // Só na montagem — sincroniza cookie / migração legada.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -57,7 +100,7 @@ export function ThemeModeProvider({children}: {children: ReactNode}) {
 
   const setMode = useCallback((next: ThemeMode) => {
     setModeState(next);
-    window.localStorage.setItem(STORAGE_KEY, next);
+    writeThemeCookie(next);
   }, []);
 
   const toggle = useCallback(() => {

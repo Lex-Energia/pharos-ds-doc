@@ -48,6 +48,7 @@ import {Button} from '@pharos-ds/core/Button';
 import {pharosTheme} from '@pharos-ds/theme-pharos';
 import {demo, selectControl, booleanControl} from '../helpers';
 import {controlsFromCatalog} from '../controlsFromCatalog';
+import {DEMO_IMAGE_1, DEMO_IMAGE_2} from '../images';
 import type {ControlValue, InteractiveDemoConfig} from '../types';
 
 // ---------------------------------------------------------------------------
@@ -532,11 +533,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
       ]),
       render: props => (
         <Thumbnail
-          src={
-            props.isLoading
-              ? undefined
-              : '/images/exemplo-usina-solar-2.jpg'
-          }
+          src={props.isLoading ? undefined : DEMO_IMAGE_2}
           alt="Usina solar"
           label="usina-solar.jpg"
           isLoading={Boolean(props.isLoading)}
@@ -820,6 +817,8 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
                     <TopNavMegaMenuFeaturedCard
                       title="Primeiros passos"
                       description="Construa sua primeira tela com o Pharos."
+                      image={DEMO_IMAGE_1}
+                      imageAlt="Usina solar ao entardecer"
                       linkLabel="Ler guia"
                       linkHref="#guide"
                     />
@@ -851,6 +850,8 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
                 ? 'Construa sua primeira tela com componentes e tokens Pharos.'
                 : undefined
             }
+            image={DEMO_IMAGE_2}
+            imageAlt="Usina solar"
             linkLabel="Saiba mais"
             linkHref="#"
           />
