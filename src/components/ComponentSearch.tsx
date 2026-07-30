@@ -48,7 +48,7 @@ export function ComponentSearch() {
                   {item.group}
                 </Text>
                 {hasDemo(item.name) ? (
-                  <Badge label="Demo" variant="success" />
+                  <Badge label="Exemplo" variant="success" />
                 ) : null}
               </HStack>
             </Link>

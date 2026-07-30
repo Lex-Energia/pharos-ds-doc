@@ -193,6 +193,13 @@ async function main() {
   const catalog = await generateComponents(api);
   const templates = await generateTemplates(api);
 
+  const {applyCatalogPt, loadCatalogPt} = await import('./apply-catalog-pt.mjs');
+  const pt = loadCatalogPt();
+  if (pt) {
+    applyCatalogPt(catalog, pt);
+    console.log(`  PT-BR: ${Object.keys(pt).length} componentes traduzidos`);
+  }
+
   writeJson(path.join(outDir, 'catalog.json'), catalog);
   writeJson(path.join(outDir, 'templates.json'), templates);
 

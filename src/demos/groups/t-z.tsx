@@ -55,23 +55,23 @@ import type {ControlValue, InteractiveDemoConfig} from '../types';
 // ---------------------------------------------------------------------------
 
 const TABLE_ROWS = [
-  {id: '1', name: 'Alice', role: 'Engineer', status: 'Active'},
-  {id: '2', name: 'Bob', role: 'Designer', status: 'Away'},
-  {id: '3', name: 'Carol', role: 'PM', status: 'Active'},
+  {id: '1', name: 'Alice', role: 'Engenheira', status: 'Ativo'},
+  {id: '2', name: 'Bob', role: 'Designer', status: 'Ausente'},
+  {id: '3', name: 'Carol', role: 'GP', status: 'Ativo'},
 ];
 
 const TABLE_COLUMNS = [
-  {key: 'name', header: 'Name', width: proportional(1)},
-  {key: 'role', header: 'Role', width: proportional(1)},
+  {key: 'name', header: 'Nome', width: proportional(1)},
+  {key: 'role', header: 'Função', width: proportional(1)},
   {key: 'status', header: 'Status', width: pixel(120)},
 ];
 
 const TYPEAHEAD_ITEMS: SearchableItem[] = [
-  {id: '1', label: 'Apple'},
+  {id: '1', label: 'Maçã'},
   {id: '2', label: 'Banana'},
-  {id: '3', label: 'Cherry'},
-  {id: '4', label: 'Date'},
-  {id: '5', label: 'Elderberry'},
+  {id: '3', label: 'Cereja'},
+  {id: '4', label: 'Tamara'},
+  {id: '5', label: 'Sabugueiro'},
 ];
 
 const typeaheadSource = createStaticSource(TYPEAHEAD_ITEMS);
@@ -102,14 +102,14 @@ const TREE_ITEMS: TreeListItemData[] = [
 ];
 
 const TAB_MENU_OPTIONS = [
-  {value: 'archived', label: 'Archived'},
-  {value: 'drafts', label: 'Drafts'},
+  {value: 'archived', label: 'Arquivados'},
+  {value: 'drafts', label: 'Rascunhos'},
   {value: 'spam', label: 'Spam'},
 ];
 
 const TOP_NAV_MENU_ITEMS = [
-  {title: 'Analytics', description: 'Track user behavior', href: '#analytics'},
-  {title: 'Reports', description: 'Generate insights', href: '#reports'},
+  {title: 'Análises', description: 'Acompanhe o comportamento dos usuários', href: '#analytics'},
+  {title: 'Relatórios', description: 'Gere insights', href: '#reports'},
 ];
 
 // ---------------------------------------------------------------------------
@@ -129,9 +129,9 @@ function TabListPreview({
       size={size as 'sm' | 'md' | 'lg'}
       layout={layout as 'hug' | 'fill'}
       hasDivider={Boolean(hasDivider)}>
-      <Tab value="overview" label="Overview" />
-      <Tab value="details" label="Details" />
-      <Tab value="activity" label="Activity" />
+      <Tab value="overview" label="Visão geral" />
+      <Tab value="details" label="Detalhes" />
+      <Tab value="activity" label="Atividade" />
     </TabList>
   );
 }
@@ -140,8 +140,8 @@ function TabPreview({isLabelHidden}: Record<string, ControlValue>) {
   const [value, setValue] = useState('inbox');
   return (
     <TabList value={value} onChange={setValue} size="md">
-      <Tab value="inbox" label="Inbox" isLabelHidden={Boolean(isLabelHidden)} />
-      <Tab value="sent" label="Sent" />
+      <Tab value="inbox" label="Caixa de entrada" isLabelHidden={Boolean(isLabelHidden)} />
+      <Tab value="sent" label="Enviados" />
     </TabList>
   );
 }
@@ -150,8 +150,8 @@ function TabMenuPreview({label}: Record<string, ControlValue>) {
   const [value, setValue] = useState('inbox');
   return (
     <TabList value={value} onChange={setValue} size="md" hasDivider>
-      <Tab value="inbox" label="Inbox" />
-      <Tab value="sent" label="Sent" />
+      <Tab value="inbox" label="Caixa de entrada" />
+      <Tab value="sent" label="Enviados" />
       <TabMenu label={String(label)} options={TAB_MENU_OPTIONS} />
     </TabList>
   );
@@ -164,7 +164,7 @@ function TextInputPreview({
   const [value, setValue] = useState('Pharos Design System');
   return (
     <TextInput
-      label="Project name"
+      label="Nome do projeto"
       value={value}
       onChange={setValue}
       size={size as 'sm' | 'md' | 'lg'}
@@ -178,10 +178,10 @@ function TextAreaPreview({
   size,
   isDisabled,
 }: Record<string, ControlValue>) {
-  const [value, setValue] = useState('Describe your use case…');
+  const [value, setValue] = useState('Descreva seu caso de uso…');
   return (
     <TextArea
-      label="Description"
+      label="Descrição"
       value={value}
       onChange={setValue}
       size={size as 'sm' | 'md' | 'lg'}
@@ -202,7 +202,7 @@ function TimeInputPreview({
   );
   return (
     <TimeInput
-      label="Meeting time"
+      label="Horário da reunião"
       value={value}
       onChange={setValue}
       hourFormat={hourFormat as '12h' | '24h'}
@@ -220,13 +220,13 @@ function ToastPreview({
   const [visible, setVisible] = useState(true);
   if (!visible) {
     return (
-      <Button label="Show toast" variant="secondary" onClick={() => setVisible(true)} />
+      <Button label="Mostrar toast" variant="secondary" onClick={() => setVisible(true)} />
     );
   }
   return (
     <Toast
       type={type as 'info' | 'error'}
-      body={type === 'error' ? 'Something went wrong' : 'Changes saved'}
+      body={type === 'error' ? 'Algo deu errado' : 'Alterações salvas'}
       isAutoHide={Boolean(isAutoHide)}
       autoHideDuration={5000}
       onDismiss={() => setVisible(false)}
@@ -241,7 +241,7 @@ function ToggleButtonPreview({
   const [pressed, setPressed] = useState(false);
   return (
     <ToggleButton
-      label="Bold"
+      label="Negrito"
       isPressed={pressed}
       onPressedChange={setPressed}
       size={size as 'sm' | 'md' | 'lg'}
@@ -259,16 +259,16 @@ function ToggleButtonGroupPreview({
   const [multiple, setMultiple] = useState<string[]>(['bold']);
   const buttons = (
     <>
-      <ToggleButton label="List" value="list" />
-      <ToggleButton label="Grid" value="grid" />
-      <ToggleButton label="Bold" value="bold" />
+      <ToggleButton label="Lista" value="list" />
+      <ToggleButton label="Grade" value="grid" />
+      <ToggleButton label="Negrito" value="bold" />
     </>
   );
 
   if (type === 'multiple') {
     return (
       <ToggleButtonGroup
-        label="View options"
+        label="Opções de visualização"
         type="multiple"
         orientation={orientation as 'horizontal' | 'vertical'}
         size={size as 'sm' | 'md' | 'lg'}
@@ -281,7 +281,7 @@ function ToggleButtonGroupPreview({
 
   return (
     <ToggleButtonGroup
-      label="View options"
+      label="Opções de visualização"
       type="single"
       orientation={orientation as 'horizontal' | 'vertical'}
       size={size as 'sm' | 'md' | 'lg'}
@@ -302,11 +302,11 @@ function TokenizerPreview({
   ]);
   return (
     <Tokenizer
-      label="Team members"
+      label="Membros da equipe"
       searchSource={tokenizerSource}
       value={value}
       onChange={setValue}
-      placeholder="Search people…"
+      placeholder="Buscar pessoas…"
       size={size as 'sm' | 'md' | 'lg'}
       hasCreate={Boolean(hasCreate)}
       isDisabled={Boolean(isDisabled)}
@@ -323,11 +323,11 @@ function TypeaheadPreview({
   const [value, setValue] = useState<SearchableItem | null>(null);
   return (
     <Typeahead
-      label="Fruit"
+      label="Fruta"
       searchSource={typeaheadSource}
       value={value}
       onChange={setValue}
-      placeholder="Search fruits…"
+      placeholder="Buscar frutas…"
       size={size as 'sm' | 'md' | 'lg'}
       isDisabled={Boolean(isDisabled)}
       hasEntriesOnFocus={Boolean(hasEntriesOnFocus)}
@@ -352,14 +352,14 @@ function MinimalTable({
       hasHover={Boolean(hasHover)}>
       <TableHeader>
         <TableRow>
-          <TableHeaderCell>Name</TableHeaderCell>
-          <TableHeaderCell>Role</TableHeaderCell>
+          <TableHeaderCell>Nome</TableHeaderCell>
+          <TableHeaderCell>Função</TableHeaderCell>
         </TableRow>
       </TableHeader>
       <TableBody>
         <TableRow>
           <TableCell>Alice</TableCell>
-          <TableCell>Engineer</TableCell>
+          <TableCell>Engenheira</TableCell>
         </TableRow>
         <TableRow>
           <TableCell>Bob</TableCell>
@@ -377,16 +377,16 @@ function MinimalTable({
 export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
   Tab: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Tab} from '@pharos-ds/core/Tab';",
-      controls: [booleanControl('isLabelHidden', false, 'Hide label')],
+      controls: [booleanControl('isLabelHidden', false, 'Ocultar rótulo')],
       render: props => <TabPreview {...props} />,
     }),
   ],
 
   TabList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TabList} from '@pharos-ds/core/TabList';",
       controls: controlsFromCatalog('TabList', ['size', 'layout', 'hasDivider']),
       render: props => <TabListPreview {...props} />,
@@ -395,9 +395,9 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TabMenu: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TabMenu} from '@pharos-ds/core/TabMenu';",
-      controls: [selectControl('label', ['More', 'Overflow', 'Other'], 'More')],
+      controls: [selectControl('label', ['Mais', 'Excedente', 'Outros'], 'Mais')],
       fixedProps: {options: 'TAB_MENU_OPTIONS'},
       render: props => <TabMenuPreview {...props} />,
     }),
@@ -405,7 +405,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Table: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Table} from '@pharos-ds/core/Table';",
       controls: controlsFromCatalog('Table', [
         'density',
@@ -427,7 +427,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TableCell: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TableCell} from '@pharos-ds/core/TableCell';",
       controls: controlsFromCatalog('Table', ['density', 'isStriped', 'hasHover']),
       render: props => <MinimalTable {...props} />,
@@ -436,7 +436,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TableHeaderCell: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {TableHeaderCell} from '@pharos-ds/core/TableHeaderCell';",
       controls: controlsFromCatalog('Table', ['density']),
@@ -446,7 +446,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TableRow: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TableRow} from '@pharos-ds/core/TableRow';",
       controls: [
         ...controlsFromCatalog('Table', ['isStriped', 'hasHover']),
@@ -457,7 +457,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Text: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Text} from '@pharos-ds/core/Text';",
       controls: controlsFromCatalog('Text', ['type', 'color', 'weight']),
       render: props => (
@@ -472,7 +472,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
               | 'inherit'
           }
           weight={props.weight as 'normal' | 'medium' | 'semibold' | 'bold'}>
-          Pharos helps teams ship consistent interfaces faster.
+          Pharos ajuda equipes a entregar interfaces consistentes com mais rapidez.
         </Text>
       ),
     }),
@@ -480,7 +480,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TextArea: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TextArea} from '@pharos-ds/core/TextArea';",
       controls: controlsFromCatalog('TextArea', ['size', 'isDisabled']),
       render: props => <TextAreaPreview {...props} />,
@@ -489,7 +489,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TextInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TextInput} from '@pharos-ds/core/TextInput';",
       controls: controlsFromCatalog('TextInput', ['size', 'isDisabled']),
       render: props => <TextInputPreview {...props} />,
@@ -498,7 +498,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Theme: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Theme} from '@pharos-ds/core/theme';",
       controls: controlsFromCatalog('Theme', ['mode']),
       render: props => (
@@ -511,9 +511,9 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
               borderRadius: 8,
               border: '1px solid var(--color-border)',
             }}>
-            <Text type="label">Themed surface</Text>
+            <Text type="label">Superfície temática</Text>
             <div style={{marginTop: 8}}>
-              <Button label="Primary action" variant="primary" />
+              <Button label="Ação principal" variant="primary" />
             </div>
           </div>
         </Theme>
@@ -523,7 +523,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Thumbnail: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Thumbnail} from '@pharos-ds/core/Thumbnail';",
       controls: controlsFromCatalog('Thumbnail', [
         'isLoading',
@@ -535,10 +535,10 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
           src={
             props.isLoading
               ? undefined
-              : 'https://picsum.photos/seed/pharos-demo/80/80'
+              : '/images/exemplo-usina-solar-2.jpg'
           }
-          alt="Preview"
-          label="screenshot.png"
+          alt="Usina solar"
+          label="usina-solar.jpg"
           isLoading={Boolean(props.isLoading)}
           isDisabled={Boolean(props.isDisabled)}
           showRemoveOn={props.showRemoveOn as 'always' | 'hover'}
@@ -550,7 +550,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TimeInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TimeInput} from '@pharos-ds/core/TimeInput';",
       controls: controlsFromCatalog('TimeInput', [
         'hourFormat',
@@ -563,7 +563,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Timestamp: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Timestamp} from '@pharos-ds/core/Timestamp';",
       controls: controlsFromCatalog('Timestamp', [
         'format',
@@ -590,11 +590,11 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Toast: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Toast} from '@pharos-ds/core/Toast';",
       controls: [
         selectControl('type', ['info', 'error'], 'info'),
-        booleanControl('isAutoHide', true, 'Auto hide'),
+        booleanControl('isAutoHide', true, 'Ocultar automaticamente'),
       ],
       render: props => <ToastPreview {...props} />,
     }),
@@ -602,7 +602,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   ToggleButton: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ToggleButton} from '@pharos-ds/core/ToggleButton';",
       controls: controlsFromCatalog('ToggleButton', ['size', 'isDisabled']),
       render: props => <ToggleButtonPreview {...props} />,
@@ -611,7 +611,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   ToggleButtonGroup: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {ToggleButtonGroup} from '@pharos-ds/core/ToggleButton';",
       controls: controlsFromCatalog('ToggleButtonGroup', [
@@ -625,12 +625,12 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Token: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Token} from '@pharos-ds/core/Token';",
       controls: controlsFromCatalog('Token', ['size', 'color', 'isDisabled']),
       render: props => (
         <Token
-          label="Design system"
+          label="Sistema de design"
           size={props.size as 'sm' | 'md' | 'lg'}
           color={
             props.color as
@@ -650,7 +650,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Tokenizer: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Tokenizer} from '@pharos-ds/core/Tokenizer';",
       controls: controlsFromCatalog('Tokenizer', [
         'size',
@@ -663,7 +663,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Toolbar: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Toolbar} from '@pharos-ds/core/Toolbar';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -672,12 +672,12 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
       ],
       render: props => (
         <Toolbar
-          label="Document actions"
+          label="Ações do documento"
           size={props.size as 'sm' | 'md' | 'lg'}
           variant={props.variant as 'transparent' | 'section' | 'muted'}
           orientation={props.orientation as 'horizontal' | 'vertical'}
-          startContent={<Button label="Back" variant="ghost" />}
-          endContent={<Button label="Save" variant="primary" />}
+          startContent={<Button label="Voltar" variant="ghost" />}
+          endContent={<Button label="Salvar" variant="primary" />}
         />
       ),
     }),
@@ -685,19 +685,19 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Tooltip: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Tooltip} from '@pharos-ds/core/Tooltip';",
       controls: [
         selectControl('placement', ['above', 'below', 'start', 'end'], 'above'),
-        booleanControl('hasHoverIndication', true, 'Hover indication'),
+        booleanControl('hasHoverIndication', true, 'Indicação ao passar o mouse'),
       ],
-      fixedProps: {content: 'Save changes'},
+      fixedProps: {content: 'Salvar alterações'},
       render: props => (
         <Tooltip
-          content="Save changes"
+          content="Salvar alterações"
           placement={props.placement as 'above' | 'below' | 'start' | 'end'}
           hasHoverIndication={Boolean(props.hasHoverIndication)}>
-          <Button label="Save" variant="secondary" />
+          <Button label="Salvar" variant="secondary" />
         </Tooltip>
       ),
     }),
@@ -705,22 +705,22 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TopNav: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TopNav} from '@pharos-ds/core/TopNav';",
       controls: [],
       render: () => (
         <TopNavShell>
           <TopNav
-            label="Product navigation"
+            label="Navegação do produto"
             heading={<TopNavHeading heading="Pharos" headingHref="#" />}
             startContent={
               <>
-                <TopNavItem label="Home" href="#" isSelected />
-                <TopNavItem label="Docs" href="#" />
-                <TopNavMenu label="Products" items={TOP_NAV_MENU_ITEMS} />
+                <TopNavItem label="Início" href="#" isSelected />
+                <TopNavItem label="Documentação" href="#" />
+                <TopNavMenu label="Produtos" items={TOP_NAV_MENU_ITEMS} />
               </>
             }
-            endContent={<Button label="Sign in" variant="secondary" size="sm" />}
+            endContent={<Button label="Entrar" variant="secondary" size="sm" />}
           />
         </TopNavShell>
       ),
@@ -729,16 +729,16 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TopNavHeading: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TopNavHeading} from '@pharos-ds/core/TopNavHeading';",
       controls: [
-        booleanControl('showSuperheading', true, 'Superheading'),
-        booleanControl('showSubheading', false, 'Subheading'),
+        booleanControl('showSuperheading', true, 'Supertítulo'),
+        booleanControl('showSubheading', false, 'Subtítulo'),
       ],
       render: props => (
         <TopNavShell>
           <TopNav
-            label="Heading demo"
+            label="Demonstração de título"
             heading={
               <TopNavHeading
                 heading="Pharos"
@@ -747,10 +747,10 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
                   props.showSuperheading ? 'Meta Design Systems' : undefined
                 }
                 superheadingHref="#"
-                subheading={props.showSubheading ? 'Production' : undefined}
+                subheading={props.showSubheading ? 'Produção' : undefined}
               />
             }
-            startContent={<TopNavItem label="Overview" href="#" isSelected />}
+            startContent={<TopNavItem label="Visão geral" href="#" isSelected />}
           />
         </TopNavShell>
       ),
@@ -759,7 +759,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TopNavItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TopNavItem} from '@pharos-ds/core/TopNavItem';",
       controls: controlsFromCatalog('TopNavItem', [
         'isSelected',
@@ -768,17 +768,17 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
       render: props => (
         <TopNavShell>
           <TopNav
-            label="Nav item demo"
+            label="Demonstração de item de nav"
             heading={<TopNavHeading heading="Pharos" />}
             startContent={
               <>
                 <TopNavItem
-                  label="Dashboard"
+                  label="Painel"
                   href="#"
                   isSelected={Boolean(props.isSelected)}
                   isDisabled={Boolean(props.isDisabled)}
                 />
-                <TopNavItem label="Settings" href="#" />
+                <TopNavItem label="Configurações" href="#" />
               </>
             }
           />
@@ -789,38 +789,38 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TopNavMegaMenu: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TopNavMegaMenu} from '@pharos-ds/core/TopNavMegaMenu';",
-      controls: [selectControl('label', ['Platform', 'Solutions', 'Resources'], 'Platform')],
+      controls: [selectControl('label', ['Plataforma', 'Soluções', 'Recursos'], 'Plataforma')],
       render: props => (
         <TopNavShell>
           <TopNav
-            label="Mega menu demo"
+            label="Demonstração de mega menu"
             heading={<TopNavHeading heading="Pharos" />}
             startContent={
               <>
-                <TopNavItem label="Home" href="#" isSelected />
+                <TopNavItem label="Início" href="#" isSelected />
                 <TopNavMegaMenu
                   label={String(props.label)}
                   items={
                     <>
                       <TopNavMegaMenuItem
-                        title="Components"
-                        description="UI building blocks"
+                        title="Componentes"
+                        description="Blocos de construção de UI"
                         href="#components"
                       />
                       <TopNavMegaMenuItem
                         title="Tokens"
-                        description="Design tokens"
+                        description="Tokens de design"
                         href="#tokens"
                       />
                     </>
                   }
                   featured={
                     <TopNavMegaMenuFeaturedCard
-                      title="Getting started"
-                      description="Build your first screen with Pharos."
-                      linkLabel="Read guide"
+                      title="Primeiros passos"
+                      description="Construa sua primeira tela com o Pharos."
+                      linkLabel="Ler guia"
                       linkHref="#guide"
                     />
                   }
@@ -835,12 +835,12 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TopNavMegaMenuFeaturedCard: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {TopNavMegaMenuFeaturedCard} from '@pharos-ds/core/TopNavMegaMenuFeaturedCard';",
       controls: [
-        selectControl('title', ['Getting started', 'New release', 'Case study'], 'Getting started'),
-        booleanControl('hasDescription', true, 'Description'),
+        selectControl('title', ['Primeiros passos', 'Novo lançamento', 'Estudo de caso'], 'Primeiros passos'),
+        booleanControl('hasDescription', true, 'Descrição'),
       ],
       render: props => (
         <div style={{maxWidth: 280}}>
@@ -848,10 +848,10 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
             title={String(props.title)}
             description={
               props.hasDescription
-                ? 'Build your first screen with Pharos components and tokens.'
+                ? 'Construa sua primeira tela com componentes e tokens Pharos.'
                 : undefined
             }
-            linkLabel="Learn more"
+            linkLabel="Saiba mais"
             linkHref="#"
           />
         </div>
@@ -861,19 +861,19 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TopNavMegaMenuItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {TopNavMegaMenuItem} from '@pharos-ds/core/TopNavMegaMenuItem';",
       controls: [
-        booleanControl('hasDescription', true, 'Description'),
+        booleanControl('hasDescription', true, 'Descrição'),
         booleanControl('isLink', true, 'Link href'),
       ],
       render: props => (
         <div style={{maxWidth: 320}}>
           <TopNavMegaMenuItem
-            title="Components"
+            title="Componentes"
             description={
-              props.hasDescription ? 'Explore buttons, inputs, and overlays.' : undefined
+              props.hasDescription ? 'Explore botões, entradas e overlays.' : undefined
             }
             href={props.isLink ? '#components' : undefined}
           />
@@ -884,17 +884,17 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TopNavMenu: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TopNavMenu} from '@pharos-ds/core/TopNavMenu';",
-      controls: [selectControl('label', ['Products', 'Tools', 'More'], 'Products')],
+      controls: [selectControl('label', ['Produtos', 'Ferramentas', 'Mais'], 'Produtos')],
       render: props => (
         <TopNavShell>
           <TopNav
-            label="Menu demo"
+            label="Demonstração de menu"
             heading={<TopNavHeading heading="Pharos" />}
             startContent={
               <>
-                <TopNavItem label="Home" href="#" isSelected />
+                <TopNavItem label="Início" href="#" isSelected />
                 <TopNavMenu label={String(props.label)} items={TOP_NAV_MENU_ITEMS} />
               </>
             }
@@ -906,7 +906,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TreeList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TreeList} from '@pharos-ds/core/TreeList';",
       controls: [
         selectControl('density', ['compact', 'balanced', 'spacious'], 'balanced'),
@@ -917,7 +917,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
           items={TREE_ITEMS}
           density={props.density as 'compact' | 'balanced' | 'spacious'}
           variant={props.variant as 'lineGuides' | 'noGuides'}
-          header={<Text type="label">Project files</Text>}
+          header={<Text type="label">Arquivos do projeto</Text>}
         />
       ),
     }),
@@ -925,7 +925,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   Typeahead: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Typeahead} from '@pharos-ds/core/Typeahead';",
       controls: controlsFromCatalog('Typeahead', [
         'size',
@@ -938,11 +938,11 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   TypeaheadItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {TypeaheadItem} from '@pharos-ds/core/TypeaheadItem';",
       controls: [
-        booleanControl('hasDescription', true, 'Description'),
-        booleanControl('isDisabled', false, 'Disabled'),
+        booleanControl('hasDescription', true, 'Descrição'),
+        booleanControl('isDisabled', false, 'Desabilitado'),
       ],
       render: props => (
         <div
@@ -955,7 +955,7 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
           <TypeaheadItem
             item={{id: '1', label: 'Alice Johnson'}}
             description={
-              props.hasDescription ? 'Engineering · San Francisco' : undefined
+              props.hasDescription ? 'Engenharia · São Francisco' : undefined
             }
             isDisabled={Boolean(props.isDisabled)}
           />
@@ -966,19 +966,19 @@ export const demosTZ: Record<string, InteractiveDemoConfig[]> = {
 
   VisuallyHidden: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {VisuallyHidden} from '@pharos-ds/core/VisuallyHidden';",
       controls: [],
       render: () => (
         <div>
           <Text type="body">
-            Visible label:{' '}
-            <span aria-hidden="true">Delete</span>
+            Rótulo visível:{' '}
+            <span aria-hidden="true">Excluir</span>
           </Text>
-          <VisuallyHidden>Delete incident #4821</VisuallyHidden>
+          <VisuallyHidden>Excluir incidente #4821</VisuallyHidden>
           <Text type="supporting" color="secondary">
-            The full action name is available to screen readers via VisuallyHidden,
-            but only &quot;Delete&quot; is shown visually (simulating an icon-only control).
+            O nome completo da ação fica disponível para leitores de tela via VisuallyHidden,
+            mas apenas &quot;Excluir&quot; é exibido visualmente (simulando um controle só com ícone).
           </Text>
         </div>
       ),

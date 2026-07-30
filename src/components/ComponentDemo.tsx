@@ -12,8 +12,8 @@ export function ComponentDemo({name}: {name: string}) {
     return (
       <div className="docs-demo-frame">
         <Text type="body" color="secondary">
-          Demo interativa ainda não curada para este componente. Use a tabela de
-          props abaixo e a CLI:{' '}
+          Exemplo interativo ainda não curado para este componente. Use a tabela
+          de props abaixo e a CLI:{' '}
           <code>npx @pharos-ds/cli component {name}</code>
         </Text>
       </div>

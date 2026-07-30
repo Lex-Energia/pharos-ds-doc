@@ -15,7 +15,7 @@ export function SiteFooter() {
         <VStack gap={4}>
           <HStack gap={4} wrap="wrap">
             <Link href="/docs/instalacao" style={{color: 'inherit'}}>
-              Docs
+              Documentação
             </Link>
             <Link href="/componentes" style={{color: 'inherit'}}>
               Componentes
@@ -42,7 +42,7 @@ export function SiteFooter() {
             </a>
           </HStack>
           <Text type="supporting" color="secondary">
-            Pharos — design system da Alexandria. MIT License.
+            Pharos — design system da Alexandria. Licença MIT.
           </Text>
         </VStack>
       </div>

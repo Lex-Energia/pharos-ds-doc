@@ -255,14 +255,14 @@ function SegmentedControlItemDemo(props: Record<string, ControlValue>) {
   const [value, setValue] = useState('a');
   return (
     <SegmentedControl label="Opções" value={value} onChange={setValue} size="sm">
-      <SegmentedControlItem value="a" label="Alpha" />
+      <SegmentedControlItem value="a" label="Alfa" />
       <SegmentedControlItem
         value="b"
         label="Beta"
         isLabelHidden={Boolean(props.isLabelHidden)}
         icon={<Settings size={14} />}
       />
-      <SegmentedControlItem value="c" label="Gamma" isDisabled={Boolean(props.isDisabled)} />
+      <SegmentedControlItem value="c" label="Gama" isDisabled={Boolean(props.isDisabled)} />
     </SegmentedControl>
   );
 }
@@ -342,7 +342,7 @@ function SideNavDemo(props: Record<string, ControlValue>) {
           <SideNavHeading heading="Pharos" headingHref="#" icon={<NavIcon icon={<Home size={16} />} />} />
         }>
         <SideNavSection title="Principal">
-          <SideNavItem label="Dashboard" href="#" icon={<Home size={16} />} isSelected />
+          <SideNavItem label="Painel" href="#" icon={<Home size={16} />} isSelected />
           <SideNavItem label="Projetos" href="#" icon={<Folder size={16} />} />
         </SideNavSection>
       </SideNav>
@@ -420,7 +420,7 @@ function SideNavSectionDemo(props: Record<string, ControlValue>) {
     <div style={SIDE_NAV_FRAME}>
       <SideNav>
         <SideNavSection
-          title="Workspace"
+          title="Área de trabalho"
           subtitle={Boolean(props.hasSubtitle) ? 'Equipe principal' : undefined}
           isHeaderHidden={Boolean(props.isHeaderHidden)}>
           <SideNavItem label="Visão geral" href="#" icon={<Home size={16} />} isSelected />
@@ -475,7 +475,7 @@ function RadioListItemDemo(props: Record<string, ControlValue>) {
         description={Boolean(props.hasDescription) ? 'Mais recursos' : undefined}
       />
       <RadioListItem
-        label="Enterprise"
+        label="Empresarial"
         value="c"
         isDisabled={Boolean(props.isItemDisabled)}
       />
@@ -486,7 +486,7 @@ function RadioListItemDemo(props: Record<string, ControlValue>) {
 export const demosMS: Record<string, InteractiveDemoConfig[]> = {
   Markdown: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Markdown} from '@pharos-ds/core/Markdown';",
       controls: [
         selectControl('display', ['block', 'inline'], 'block'),
@@ -509,7 +509,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   MediaTheme: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {MediaTheme} from '@pharos-ds/core/theme';",
       controls: [selectControl('mode', ['dark', 'light'], 'dark')],
       render: props => (
@@ -532,7 +532,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   MetadataList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {MetadataList, MetadataListItem} from '@pharos-ds/core/MetadataList';",
       controls: [
         selectControl('columns', ['single', 'multi', '2'], 'single'),
@@ -559,7 +559,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   MetadataListItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {MetadataListItem} from '@pharos-ds/core/MetadataList';",
       controls: [
         booleanControl('hasIcon', true, 'Com ícone'),
@@ -585,7 +585,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   MobileNav: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {MobileNav} from '@pharos-ds/core/MobileNav';",
       controls: [
         selectControl('side', ['start', 'end', 'auto'], 'start'),
@@ -597,7 +597,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   MoreMenu: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {MoreMenu} from '@pharos-ds/core/MoreMenu';",
       controls: [
         selectControl('variant', ['ghost', 'secondary', 'primary'], 'ghost'),
@@ -618,7 +618,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   MultiSelector: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {MultiSelector} from '@pharos-ds/core/MultiSelector';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -632,7 +632,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   NavIcon: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {NavIcon} from '@pharos-ds/core/NavIcon';",
       controls: [],
       render: () => <NavIcon icon={<Home size={16} />} />,
@@ -641,7 +641,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   NumberInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {NumberInput} from '@pharos-ds/core/NumberInput';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -655,7 +655,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Outline: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Outline} from '@pharos-ds/core/Outline';",
       controls: [selectControl('density', ['default', 'compact'], 'default')],
       fixedProps: {items: OUTLINE_ITEMS},
@@ -667,7 +667,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   OverflowList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {OverflowList} from '@pharos-ds/core/OverflowList';",
       controls: [
         selectControl('gap', ['1', '2', '3'], '2'),
@@ -698,7 +698,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Overlay: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Overlay} from '@pharos-ds/core/Overlay';",
       controls: [
         selectControl('showOn', ['hover', 'always', 'focus'], 'hover'),
@@ -732,7 +732,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Pagination: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Pagination} from '@pharos-ds/core/Pagination';",
       controls: [
         selectControl('variant', ['pages', 'count', 'compact', 'dots', 'none'], 'pages'),
@@ -745,7 +745,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Popover: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Popover} from '@pharos-ds/core/Popover';",
       controls: [
         selectControl('placement', ['below', 'above', 'start', 'end'], 'below'),
@@ -757,7 +757,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   PowerSearch: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {PowerSearch} from '@pharos-ds/core/PowerSearch';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -770,7 +770,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   ProgressBar: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ProgressBar} from '@pharos-ds/core/ProgressBar';",
       controls: [
         selectControl('variant', ['accent', 'success', 'warning', 'neutral', 'error'], 'accent'),
@@ -794,7 +794,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   RadioList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {RadioList, RadioListItem} from '@pharos-ds/core/RadioList';",
       controls: [
         selectControl('orientation', ['vertical', 'horizontal'], 'vertical'),
@@ -807,7 +807,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   RadioListItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {RadioListItem} from '@pharos-ds/core/RadioList';",
       controls: [
         booleanControl('hasDescription', true),
@@ -819,7 +819,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Section: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Section} from '@pharos-ds/core/Section';",
       controls: [
         selectControl('variant', ['section', 'transparent', 'muted'], 'section'),
@@ -840,7 +840,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SegmentedControl: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {SegmentedControl, SegmentedControlItem} from '@pharos-ds/core/SegmentedControl';",
       controls: [
@@ -854,7 +854,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SegmentedControlItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {SegmentedControlItem} from '@pharos-ds/core/SegmentedControl';",
       controls: [
@@ -867,7 +867,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SelectableCard: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {SelectableCard} from '@pharos-ds/core/SelectableCard';",
       controls: [
         selectControl('variant', ['default', 'muted'], 'default'),
@@ -880,7 +880,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Selector: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Selector} from '@pharos-ds/core/Selector';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -893,7 +893,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SelectorOption: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Selector, SelectorOption} from '@pharos-ds/core/Selector';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -905,7 +905,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SideNav: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';",
       controls: [booleanControl('collapsible', false)],
       render: props => SideNavDemo(props),
@@ -914,7 +914,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SideNavCollapseButton: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {SideNav, SideNavCollapseButton} from '@pharos-ds/core/SideNav';",
       controls: [booleanControl('hasLabel', true, 'Rótulo no botão')],
@@ -924,7 +924,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SideNavHeading: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {SideNav, SideNavHeading} from '@pharos-ds/core/SideNav';",
       controls: [
         booleanControl('hasSuperheading', false),
@@ -936,7 +936,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SideNavItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {SideNav, SideNavItem} from '@pharos-ds/core/SideNav';",
       controls: [
         booleanControl('isSelected', true),
@@ -949,7 +949,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   SideNavSection: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';",
       controls: [
         booleanControl('hasSubtitle', true),
@@ -961,7 +961,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Skeleton: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Skeleton} from '@pharos-ds/core/Skeleton';",
       controls: [
         selectControl(
@@ -983,7 +983,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Slider: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Slider} from '@pharos-ds/core/Slider';",
       controls: [
         selectControl('orientation', ['horizontal', 'vertical'], 'horizontal'),
@@ -996,7 +996,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Spinner: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Spinner} from '@pharos-ds/core/Spinner';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg', 'xl'], 'md'),
@@ -1013,7 +1013,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Stack: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Stack} from '@pharos-ds/core/Stack';",
       controls: [
         selectControl('direction', ['vertical', 'horizontal'], 'vertical'),
@@ -1027,9 +1027,9 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
           gap={Number(props.gap) as 1 | 2 | 3 | 4}
           wrap={props.wrap as 'nowrap' | 'wrap'}
           align={props.align as 'start' | 'center' | 'stretch'}>
-          <Badge label="Alpha" variant="info" />
+          <Badge label="Alfa" variant="info" />
           <Badge label="Beta" variant="success" />
-          <Badge label="Gamma" variant="warning" />
+          <Badge label="Gama" variant="warning" />
         </Stack>
       ),
     }),
@@ -1037,7 +1037,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   StatusDot: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {StatusDot} from '@pharos-ds/core/StatusDot';",
       controls: [
         selectControl('variant', ['success', 'warning', 'error', 'accent', 'neutral'], 'success'),
@@ -1056,7 +1056,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
 
   Switch: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Switch} from '@pharos-ds/core/Switch';",
       controls: [
         selectControl('size', ['sm', 'md'], 'md'),

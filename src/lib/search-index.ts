@@ -13,7 +13,7 @@ export function buildSearchIndex(): SearchItem[] {
     href: `/docs/${d.slug}`,
     title: d.title,
     description: d.description,
-    group: 'Docs',
+    group: 'Documentação',
   }));
 
   const components = Object.values(catalog.components).map(c => ({
@@ -31,10 +31,10 @@ export function buildSearchIndex(): SearchItem[] {
   }));
 
   return [
-    {href: '/', title: 'Início', description: 'Landing Pharos', group: 'Site'},
+    {href: '/', title: 'Início', description: 'Página inicial do Pharos', group: 'Site'},
     {href: '/componentes', title: 'Componentes', description: 'Galeria', group: 'Site'},
     {href: '/templates', title: 'Templates', description: 'Páginas prontas', group: 'Site'},
-    {href: '/temas', title: 'Temas', description: 'Theme Pharos', group: 'Site'},
+    {href: '/temas', title: 'Temas', description: 'Tema Pharos', group: 'Site'},
     ...docs,
     ...components,
     ...templates,

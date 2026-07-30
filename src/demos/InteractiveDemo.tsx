@@ -120,7 +120,7 @@ export function InteractiveDemo({config}: {config: InteractiveDemoConfig}) {
       ) : null}
 
       <div className="docs-demo-frame">{config.render(values)}</div>
-      <CodeBlock code={code} title="Exemplo" />
+      <CodeBlock code={code} title="Código" />
     </VStack>
   );
 }

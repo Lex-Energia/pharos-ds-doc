@@ -92,23 +92,23 @@ pnpm add -D @pharos-ds/cli`}</code>
               marginTop: 16,
             }}>
             <FeatureCard
-              title="Docs"
+              title="Documentação"
               description="Instalação, Next.js, CLI, tokens e agentes."
               href="/docs"
             />
             <FeatureCard
               title="Componentes"
-              description="Galeria com demos ao vivo e tabela de props."
+              description="Galeria com exemplos ao vivo e tabela de props."
               href="/componentes"
             />
             <FeatureCard
               title="Templates"
-              description="Páginas prontas via CLI para acelerar o ship."
+              description="Páginas prontas via CLI para acelerar o lançamento."
               href="/templates"
             />
             <FeatureCard
               title="Temas"
-              description="Theme Pharos, dark mode e customização."
+              description="Tema Pharos, dark mode e customização."
               href="/temas"
             />
           </div>

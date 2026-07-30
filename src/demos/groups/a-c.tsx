@@ -56,24 +56,24 @@ import {demo, selectControl, booleanControl} from '../helpers';
 import type {ControlValue, InteractiveDemoConfig} from '../types';
 
 const DEMO_SEARCH_ITEMS = [
-  {id: 'home', label: 'Home'},
-  {id: 'settings', label: 'Settings'},
-  {id: 'docs', label: 'Documentation'},
+  {id: 'home', label: 'Início'},
+  {id: 'settings', label: 'Configurações'},
+  {id: 'docs', label: 'Documentação'},
 ];
 
 const demoSearchSource = createStaticSource(DEMO_SEARCH_ITEMS);
 
 const commandSource = createStaticSource([
-  {id: 'new', label: 'New file'},
-  {id: 'open', label: 'Open project'},
-  {id: 'settings', label: 'Settings'},
+  {id: 'new', label: 'Novo arquivo'},
+  {id: 'open', label: 'Abrir projeto'},
+  {id: 'settings', label: 'Configurações'},
 ]);
 
 const CONTEXT_MENU_ITEMS = [
-  {type: 'item' as const, label: 'Copy', onSelect: () => {}},
-  {type: 'item' as const, label: 'Paste', onSelect: () => {}},
+  {type: 'item' as const, label: 'Copiar', onSelect: () => {}},
+  {type: 'item' as const, label: 'Colar', onSelect: () => {}},
   {type: 'divider' as const},
-  {type: 'item' as const, label: 'Delete', onSelect: () => {}, variant: 'destructive' as const},
+  {type: 'item' as const, label: 'Excluir', onSelect: () => {}, variant: 'destructive' as const},
 ];
 
 const MENTION_TOKENS = [{value: '@ami', label: '@Ami', variant: 'blue' as const}];
@@ -103,7 +103,7 @@ function ChatDictationButtonDemo({size}: {size: ControlValue}) {
 export const demosAC: Record<string, InteractiveDemoConfig[]> = {
   AlertDialog: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {AlertDialog} from '@pharos-ds/core/AlertDialog';",
       controls: [
         booleanControl('isInline', true),
@@ -111,9 +111,9 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
         booleanControl('isActionLoading'),
       ],
       fixedProps: {
-        title: 'Delete project?',
-        description: 'This action cannot be undone.',
-        actionLabel: 'Delete',
+        title: 'Excluir projeto?',
+        description: 'Esta ação não pode ser desfeita.',
+        actionLabel: 'Excluir',
       },
       render: p => {
         function AlertDialogDemo() {
@@ -122,15 +122,15 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
           return (
             <VStack gap={3}>
               {!inline ? (
-                <Button label="Open dialog" variant="secondary" onClick={() => setOpen(true)} />
+                <Button label="Abrir diálogo" variant="secondary" onClick={() => setOpen(true)} />
               ) : null}
               <AlertDialog
                 isOpen={inline || open}
                 isInline={inline}
                 onOpenChange={setOpen}
-                title="Delete project?"
-                description="This action cannot be undone."
-                actionLabel="Delete"
+                title="Excluir projeto?"
+                description="Esta ação não pode ser desfeita."
+                actionLabel="Excluir"
                 actionVariant={p.actionVariant as 'destructive' | 'primary' | 'secondary'}
                 isActionLoading={Boolean(p.isActionLoading)}
                 onAction={() => setOpen(false)}
@@ -145,7 +145,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   AppShell: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {AppShell} from '@pharos-ds/core/AppShell';",
       controls: [
         selectControl('variant', ['elevated', 'wash', 'surface', 'section'], 'elevated'),
@@ -158,7 +158,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
             height={p.height as 'fill' | 'auto'}
             mobileNav={false}>
             <Center height="100%" minHeight={180}>
-              <Text type="body">Main content area</Text>
+              <Text type="body">Área de conteúdo principal</Text>
             </Center>
           </AppShell>
         </div>
@@ -168,7 +168,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   AspectRatio: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {AspectRatio} from '@pharos-ds/core/AspectRatio';",
       controls: [
         selectControl('ratioPreset', ['16:9', '4:3', 'square'], '16:9', 'ratio'),
@@ -192,7 +192,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
                 color: 'white',
                 fontSize: 14,
               }}>
-              Media
+              Mídia
             </div>
           </AspectRatio>
         </div>
@@ -202,7 +202,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Avatar: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Avatar} from '@pharos-ds/core/Avatar';",
       controls: [
         selectControl('size', ['xsm', 'sm', 'md', 'lg', 'xl'], 'md'),
@@ -214,7 +214,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   AvatarGroup: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {AvatarGroup, Avatar} from '@pharos-ds/core/AvatarGroup';",
       controls: [selectControl('size', ['xsm', 'sm', 'md', 'lg', 'xl'], 'md')],
       render: p => (
@@ -229,7 +229,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   AvatarGroupOverflow: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {AvatarGroupOverflow, AvatarGroup, Avatar} from '@pharos-ds/core/AvatarGroup';",
       controls: [selectControl('size', ['sm', 'md', 'lg'], 'md')],
       fixedProps: {count: 5},
@@ -245,7 +245,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   AvatarStatusDot: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {AvatarStatusDot, Avatar} from '@pharos-ds/core/Avatar';",
       controls: [
         selectControl('variant', ['success', 'neutral', 'error'], 'success'),
@@ -269,19 +269,40 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Badge: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Badge} from '@pharos-ds/core/Badge';",
       controls: [
-        selectControl('variant', ['neutral', 'info', 'success', 'warning', 'error'], 'info'),
+        selectControl(
+          'variant',
+          [
+            'neutral',
+            'info',
+            'success',
+            'warning',
+            'error',
+            'blue',
+            'cyan',
+            'green',
+            'orange',
+            'pink',
+            'purple',
+            'red',
+            'teal',
+            'yellow',
+          ],
+          'info',
+        ),
       ],
-      fixedProps: {label: 'Badge'},
-      render: p => <Badge label="Badge" variant={p.variant as 'neutral' | 'info' | 'success' | 'warning' | 'error'} />,
+      fixedProps: {label: 'Etiqueta'},
+      render: p => (
+        <Badge label="Etiqueta" variant={p.variant as 'neutral' | 'info' | 'success' | 'warning' | 'error'} />
+      ),
     }),
   ],
 
   Banner: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Banner} from '@pharos-ds/core/Banner';",
       controls: [
         selectControl('status', ['info', 'warning', 'error', 'success'], 'info'),
@@ -289,15 +310,15 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
         booleanControl('isDismissable'),
       ],
       fixedProps: {
-        title: 'System update',
-        description: 'A new version is available.',
+        title: 'Atualização do sistema',
+        description: 'Uma nova versão está disponível.',
       },
       render: p => (
         <Banner
           status={p.status as 'info' | 'warning' | 'error' | 'success'}
           container={p.container as 'card' | 'section'}
-          title="System update"
-          description="A new version is available."
+          title="Atualização do sistema"
+          description="Uma nova versão está disponível."
           isDismissable={Boolean(p.isDismissable)}
         />
       ),
@@ -306,7 +327,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   BaseTypeahead: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {BaseTypeahead, createStaticSource} from '@pharos-ds/core/Typeahead';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -324,7 +345,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
                 value={value}
                 onChange={setValue}
                 anchorRef={anchorRef}
-                placeholder="Search…"
+                placeholder="Buscar…"
                 size={p.size as 'sm' | 'md' | 'lg'}
                 hasEntriesOnFocus={Boolean(p.hasEntriesOnFocus)}
                 isDisabled={Boolean(p.isDisabled)}
@@ -340,12 +361,12 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Blockquote: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Blockquote} from '@pharos-ds/core/Blockquote';",
       controls: [booleanControl('hasCite', true, 'cite')],
       render: p => (
         <Blockquote cite={p.hasCite ? 'Pharos Design System' : undefined}>
-          Design is not just what it looks like — design is how it works.
+          Design não é só aparência — design é como funciona.
         </Blockquote>
       ),
     }),
@@ -353,14 +374,14 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   BreadcrumbItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {BreadcrumbItem, Breadcrumbs} from '@pharos-ds/core/Breadcrumbs';",
       controls: [booleanControl('isCurrent')],
-      fixedProps: {children: 'Components'},
+      fixedProps: {children: 'Componentes'},
       render: p => (
         <Breadcrumbs>
-          <BreadcrumbItem href="/">Home</BreadcrumbItem>
-          <BreadcrumbItem isCurrent={Boolean(p.isCurrent)}>Components</BreadcrumbItem>
+          <BreadcrumbItem href="/">Início</BreadcrumbItem>
+          <BreadcrumbItem isCurrent={Boolean(p.isCurrent)}>Componentes</BreadcrumbItem>
         </Breadcrumbs>
       ),
     }),
@@ -368,13 +389,13 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Breadcrumbs: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Breadcrumbs, BreadcrumbItem} from '@pharos-ds/core/Breadcrumbs';",
       controls: [selectControl('variant', ['default', 'supporting'], 'default')],
       render: p => (
         <Breadcrumbs variant={p.variant as 'default' | 'supporting'}>
-          <BreadcrumbItem href="/">Home</BreadcrumbItem>
-          <BreadcrumbItem href="/docs">Docs</BreadcrumbItem>
+          <BreadcrumbItem href="/">Início</BreadcrumbItem>
+          <BreadcrumbItem href="/docs">Documentação</BreadcrumbItem>
           <BreadcrumbItem>Button</BreadcrumbItem>
         </Breadcrumbs>
       ),
@@ -383,7 +404,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Button: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Button} from '@pharos-ds/core/Button';",
       controls: [
         selectControl('variant', ['primary', 'secondary', 'ghost', 'destructive'], 'secondary'),
@@ -391,10 +412,10 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
         booleanControl('isLoading'),
         booleanControl('isDisabled'),
       ],
-      fixedProps: {label: 'Button'},
+      fixedProps: {label: 'Botão'},
       render: p => (
         <Button
-          label="Button"
+          label="Botão"
           variant={p.variant as 'primary' | 'secondary' | 'ghost' | 'destructive'}
           size={p.size as 'sm' | 'md' | 'lg'}
           isLoading={Boolean(p.isLoading)}
@@ -406,23 +427,23 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ButtonGroup: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ButtonGroup, Button} from '@pharos-ds/core/ButtonGroup';",
       controls: [
         selectControl('orientation', ['horizontal', 'vertical'], 'horizontal'),
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
         booleanControl('isDisabled'),
       ],
-      fixedProps: {label: 'Text actions'},
+      fixedProps: {label: 'Ações de texto'},
       render: p => (
         <ButtonGroup
-          label="Text actions"
+          label="Ações de texto"
           orientation={p.orientation as 'horizontal' | 'vertical'}
           size={p.size as 'sm' | 'md' | 'lg'}
           isDisabled={Boolean(p.isDisabled)}>
-          <Button label="Copy" />
-          <Button label="Cut" />
-          <Button label="Paste" />
+          <Button label="Copiar" />
+          <Button label="Recortar" />
+          <Button label="Colar" />
         </ButtonGroup>
       ),
     }),
@@ -430,7 +451,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Calendar: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Calendar} from '@pharos-ds/core/Calendar';",
       controls: [
         selectControl('numberOfMonths', ['1', '2'], '1'),
@@ -460,7 +481,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Card: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Card} from '@pharos-ds/core/Card';",
       controls: [
         selectControl('variant', ['default', 'muted', 'transparent'], 'default'),
@@ -468,7 +489,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
       ],
       render: p => (
         <Card variant={p.variant as 'default' | 'muted' | 'transparent'} padding={Number(p.padding) as 2 | 4 | 6}>
-          <Text type="body">Card content with Pharos spacing tokens.</Text>
+          <Text type="body">Conteúdo do card com tokens de espaçamento Pharos.</Text>
         </Card>
       ),
     }),
@@ -476,7 +497,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Carousel: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Carousel} from '@pharos-ds/core/Carousel';",
       controls: [
         booleanControl('hasButtons', true),
@@ -489,7 +510,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
           hasButtons={Boolean(p.hasButtons)}
           hasSnap={Boolean(p.hasSnap)}
           hasEdgeFade={Boolean(p.hasEdgeFade)}>
-          {['Alpha', 'Beta', 'Gamma', 'Delta'].map(label => (
+          {['Alfa', 'Beta', 'Gama', 'Delta'].map(label => (
             <Card key={label} padding={3} width={140}>
               <Text type="body">{label}</Text>
             </Card>
@@ -501,7 +522,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Center: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Center} from '@pharos-ds/core/Center';",
       controls: [
         selectControl('axis', ['both', 'horizontal', 'vertical'], 'both'),
@@ -514,7 +535,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
           width={280}
           height={120}
           style={{background: 'var(--color-background-muted, #f5f5f5)', borderRadius: 8}}>
-          <Badge label="Centered" variant="info" />
+          <Badge label="Centralizado" variant="info" />
         </Center>
       ),
     }),
@@ -522,7 +543,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatComposer: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatComposer} from '@pharos-ds/core/Chat';",
       controls: [
         selectControl('density', ['compact', 'balanced', 'spacious'], 'balanced'),
@@ -538,7 +559,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
                 value={value}
                 onChange={setValue}
                 onSubmit={next => setValue('')}
-                placeholder="Type a message…"
+                placeholder="Digite uma mensagem…"
                 density={p.density as 'compact' | 'balanced' | 'spacious'}
                 elevation={p.elevation as 'low' | 'none'}
                 isDisabled={Boolean(p.isDisabled)}
@@ -553,17 +574,17 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatComposerDrawer: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatComposerDrawer} from '@pharos-ds/core/Chat';",
       controls: [
         booleanControl('defaultIsCollapsed'),
       ],
-      fixedProps: {count: 2, label: 'Attachments'},
+      fixedProps: {count: 2, label: 'Anexos'},
       render: p => (
         <div style={{maxWidth: 400}}>
           <ChatComposerDrawer
             count={2}
-            label="Attachments"
+            label="Anexos"
             defaultIsCollapsed={Boolean(p.defaultIsCollapsed)}>
             <HStack gap={2} wrap="wrap">
               <Badge label="spec.pdf" variant="neutral" />
@@ -577,7 +598,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatComposerInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatComposerInput} from '@pharos-ds/core/Chat';",
       controls: [
         booleanControl('isDisabled'),
@@ -591,7 +612,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
               <ChatComposerInput
                 value={value}
                 onChange={setValue}
-                placeholder="Message input…"
+                placeholder="Entrada de mensagem…"
                 isDisabled={Boolean(p.isDisabled)}
                 hasHistory={Boolean(p.hasHistory)}
                 onSubmit={setValue}
@@ -606,7 +627,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatDictationButton: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatDictationButton, useChatDictation} from '@pharos-ds/core/Chat';",
       controls: [selectControl('size', ['sm', 'md'], 'md')],
       render: p => <ChatDictationButtonDemo size={p.size} />,
@@ -615,7 +636,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatLayout: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatLayout, ChatComposer, ChatMessageList, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';",
       controls: [selectControl('density', ['compact', 'balanced', 'spacious'], 'balanced')],
       render: p => {
@@ -630,12 +651,12 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
                     value={value}
                     onChange={setValue}
                     onSubmit={next => setValue('')}
-                    placeholder="Reply…"
+                    placeholder="Responder…"
                   />
                 }>
                 <ChatMessageList>
                   <ChatMessage sender="assistant" name="Navi">
-                    <ChatMessageBubble>Hello! How can I help?</ChatMessageBubble>
+                    <ChatMessageBubble>Olá! Como posso ajudar?</ChatMessageBubble>
                   </ChatMessage>
                 </ChatMessageList>
               </ChatLayout>
@@ -649,7 +670,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatLayoutScrollButton: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatLayoutScrollButton} from '@pharos-ds/core/Chat';",
       controls: [
         booleanControl('isVisible', true),
@@ -658,7 +679,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
       render: p => (
         <ChatLayoutScrollButton
           isVisible={Boolean(p.isVisible)}
-          label={p.hasLabel ? 'New messages' : undefined}
+          label={p.hasLabel ? 'Novas mensagens' : undefined}
           onClick={() => {}}
         />
       ),
@@ -667,7 +688,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatMessage: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatMessage, ChatMessageBubble, Avatar} from '@pharos-ds/core/Chat';",
       controls: [
         selectControl('sender', ['user', 'assistant'], 'assistant'),
@@ -678,9 +699,9 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
           <ChatMessage
             sender={p.sender as 'user' | 'assistant'}
             density={p.density as 'compact' | 'balanced' | 'spacious'}
-            name={p.sender === 'assistant' ? 'Navi' : 'You'}
+            name={p.sender === 'assistant' ? 'Navi' : 'Você'}
             avatar={p.sender === 'assistant' ? <Avatar name="Navi" size="sm" /> : undefined}>
-            <ChatMessageBubble>Minimal chat message demo.</ChatMessageBubble>
+            <ChatMessageBubble>Demonstração mínima de mensagem de chat.</ChatMessageBubble>
           </ChatMessage>
         </div>
       ),
@@ -689,14 +710,14 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatMessageBubble: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatMessageBubble, ChatMessage} from '@pharos-ds/core/Chat';",
       controls: [selectControl('variant', ['filled', 'ghost'], 'filled')],
       render: p => (
         <div style={{maxWidth: 360}}>
           <ChatMessage sender="assistant" name="Navi">
             <ChatMessageBubble variant={p.variant as 'filled' | 'ghost'}>
-              Bubble content with selectable variant.
+              Conteúdo do balão com variante selecionável.
             </ChatMessageBubble>
           </ChatMessage>
         </div>
@@ -706,17 +727,17 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatMessageList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatMessageList, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';",
       controls: [selectControl('density', ['compact', 'balanced', 'spacious'], 'balanced')],
       render: p => (
         <div style={{maxWidth: 420}}>
           <ChatMessageList density={p.density as 'compact' | 'balanced' | 'spacious'}>
             <ChatMessage sender="user">
-              <ChatMessageBubble>First message</ChatMessageBubble>
+              <ChatMessageBubble>Primeira mensagem</ChatMessageBubble>
             </ChatMessage>
             <ChatMessage sender="assistant" name="Navi">
-              <ChatMessageBubble>Second message</ChatMessageBubble>
+              <ChatMessageBubble>Segunda mensagem</ChatMessageBubble>
             </ChatMessage>
           </ChatMessageList>
         </div>
@@ -726,14 +747,14 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatMessageMetadata: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatMessageMetadata, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';",
       controls: [selectControl('status', ['sending', 'sent', 'delivered', 'read', 'error'], 'read')],
       fixedProps: {timestamp: '2:30 PM'},
       render: p => (
         <div style={{maxWidth: 360}}>
           <ChatMessage sender="user">
-            <ChatMessageBubble>Delivered message</ChatMessageBubble>
+            <ChatMessageBubble>Mensagem entregue</ChatMessageBubble>
             <ChatMessageMetadata
               timestamp="2:30 PM"
               status={p.status as 'sending' | 'sent' | 'delivered' | 'read' | 'error'}
@@ -746,7 +767,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatSendButton: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatSendButton} from '@pharos-ds/core/Chat';",
       controls: [
         selectControl('size', ['sm', 'md'], 'md'),
@@ -767,13 +788,13 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatSystemMessage: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatSystemMessage} from '@pharos-ds/core/Chat';",
       controls: [selectControl('variant', ['default', 'divider'], 'default')],
-      fixedProps: {children: 'Conversation started'},
+      fixedProps: {children: 'Conversa iniciada'},
       render: p => (
         <ChatSystemMessage variant={p.variant as 'default' | 'divider'}>
-          Conversation started
+          Conversa iniciada
         </ChatSystemMessage>
       ),
     }),
@@ -781,13 +802,13 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatTokenizedText: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatTokenizedText} from '@pharos-ds/core/Chat';",
       controls: [booleanControl('hasTokens', true, 'tokens')],
-      fixedProps: {children: 'Hello @ami, welcome back!'},
+      fixedProps: {children: 'Olá @ami, bem-vindo de volta!'},
       render: p => (
         <ChatTokenizedText tokens={p.hasTokens ? MENTION_TOKENS : undefined}>
-          Hello @ami, welcome back!
+          Olá @ami, bem-vindo de volta!
         </ChatTokenizedText>
       ),
     }),
@@ -795,7 +816,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ChatToolCalls: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ChatToolCalls} from '@pharos-ds/core/Chat';",
       controls: [
         selectControl('status', ['pending', 'running', 'complete', 'error'], 'complete'),
@@ -821,20 +842,20 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CheckboxInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CheckboxInput} from '@pharos-ds/core/CheckboxInput';",
       controls: [
         selectControl('size', ['sm', 'md'], 'md'),
         booleanControl('isDisabled'),
         booleanControl('isLoading'),
       ],
-      fixedProps: {label: 'Accept terms'},
+      fixedProps: {label: 'Aceito os termos'},
       render: p => {
         function CheckboxDemo() {
           const [checked, setChecked] = useState(false);
           return (
             <CheckboxInput
-              label="Accept terms"
+              label="Aceito os termos"
               value={checked}
               onChange={setChecked}
               size={p.size as 'sm' | 'md'}
@@ -850,27 +871,27 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CheckboxList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CheckboxList, CheckboxListItem} from '@pharos-ds/core/CheckboxList';",
       controls: [
         selectControl('density', ['compact', 'balanced', 'spacious'], 'balanced'),
         booleanControl('hasDividers'),
         booleanControl('isDisabled'),
       ],
-      fixedProps: {label: 'Notifications'},
+      fixedProps: {label: 'Notificações'},
       render: p => {
         function CheckboxListDemo() {
           const [values, setValues] = useState<string[]>(['email']);
           return (
             <div style={{maxWidth: 320}}>
               <CheckboxList
-                label="Notifications"
+                label="Notificações"
                 value={values}
                 onChange={setValues}
                 density={p.density as 'compact' | 'balanced' | 'spacious'}
                 hasDividers={Boolean(p.hasDividers)}
                 isDisabled={Boolean(p.isDisabled)}>
-                <CheckboxListItem label="Email" value="email" />
+                <CheckboxListItem label="E-mail" value="email" />
                 <CheckboxListItem label="Push" value="push" />
                 <CheckboxListItem label="SMS" value="sms" />
               </CheckboxList>
@@ -884,18 +905,18 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CheckboxListItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CheckboxListItem, CheckboxList} from '@pharos-ds/core/CheckboxList';",
       controls: [booleanControl('isDisabled')],
-      fixedProps: {label: 'Email alerts', value: 'email'},
+      fixedProps: {label: 'Alertas por e-mail', value: 'email'},
       render: p => {
         function CheckboxListItemDemo() {
           const [values, setValues] = useState<string[]>(['email']);
           return (
             <div style={{maxWidth: 280}}>
-              <CheckboxList label="Channel" value={values} onChange={setValues}>
+              <CheckboxList label="Canal" value={values} onChange={setValues}>
                 <CheckboxListItem
-                  label="Email alerts"
+                  label="Alertas por e-mail"
                   value="email"
                   isDisabled={Boolean(p.isDisabled)}
                 />
@@ -910,15 +931,15 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Citation: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Citation} from '@pharos-ds/core/Citation';",
       controls: [selectControl('variant', ['label', 'number'], 'label')],
-      fixedProps: {number: 1, source: {title: 'Pharos docs'}},
+      fixedProps: {number: 1, source: {title: 'Documentação Pharos'}},
       render: p => (
         <Citation
           number={1}
           variant={p.variant as 'label' | 'number'}
-          source={{title: 'Pharos docs', url: 'https://example.com'}}
+          source={{title: 'Documentação Pharos', url: 'https://example.com'}}
         />
       ),
     }),
@@ -926,23 +947,23 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ClickableCard: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ClickableCard} from '@pharos-ds/core/ClickableCard';",
       controls: [
         selectControl('variant', ['default', 'muted'], 'default'),
         booleanControl('isDisabled'),
       ],
-      fixedProps: {label: 'Open project settings'},
+      fixedProps: {label: 'Abrir configurações do projeto'},
       render: p => (
         <ClickableCard
-          label="Open project settings"
+          label="Abrir configurações do projeto"
           variant={p.variant as 'default' | 'muted'}
           isDisabled={Boolean(p.isDisabled)}
           onClick={() => {}}
           width={280}>
-          <Heading level={4}>Project settings</Heading>
+          <Heading level={4}>Configurações do projeto</Heading>
           <Text type="supporting" color="secondary">
-            Manage team, billing, and integrations.
+            Gerencie equipe, cobrança e integrações.
           </Text>
         </ClickableCard>
       ),
@@ -951,7 +972,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CodeBlock: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CodeBlock} from '@pharos-ds/core/CodeBlock';",
       controls: [
         selectControl('size', ['sm', 'md'], 'md'),
@@ -960,12 +981,12 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
         booleanControl('hasCopyButton', true),
       ],
       fixedProps: {
-        code: "const greeting = 'Hello, Pharos!';\nconsole.log(greeting);",
+        code: "const greeting = 'Olá, Pharos!';\nconsole.log(greeting);",
         language: 'javascript',
       },
       render: p => (
         <CodeBlock
-          code={"const greeting = 'Hello, Pharos!';\nconsole.log(greeting);"}
+          code={"const greeting = 'Olá, Pharos!';\nconsole.log(greeting);"}
           language="javascript"
           size={p.size as 'sm' | 'md'}
           container={p.container as 'card' | 'section'}
@@ -978,19 +999,19 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   Collapsible: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Collapsible} from '@pharos-ds/core/Collapsible';",
       controls: [
         booleanControl('defaultIsOpen', true),
         booleanControl('isDisabled'),
       ],
-      fixedProps: {trigger: 'Details'},
+      fixedProps: {trigger: 'Detalhes'},
       render: p => (
         <Collapsible
-          trigger="Details"
+          trigger="Detalhes"
           defaultIsOpen={Boolean(p.defaultIsOpen)}
           isDisabled={Boolean(p.isDisabled)}>
-          <Text type="body">Collapsible body content.</Text>
+          <Text type="body">Conteúdo do corpo recolhível.</Text>
         </Collapsible>
       ),
     }),
@@ -998,7 +1019,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CollapsibleGroup: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CollapsibleGroup, Collapsible} from '@pharos-ds/core/Collapsible';",
       controls: [
         selectControl('type', ['single', 'multiple'], 'single'),
@@ -1009,11 +1030,11 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
           type={p.type as 'single' | 'multiple'}
           hasDividers={Boolean(p.hasDividers)}
           defaultValue="faq1">
-          <Collapsible trigger="What is Pharos?" value="faq1">
-            <Text type="body">Pharos is a design system for internal tools.</Text>
+          <Collapsible trigger="O que é o Pharos?" value="faq1">
+            <Text type="body">Pharos é um design system para ferramentas internas.</Text>
           </Collapsible>
-          <Collapsible trigger="How do I start?" value="faq2">
-            <Text type="body">Install the package and import components.</Text>
+          <Collapsible trigger="Como começo?" value="faq2">
+            <Text type="body">Instale o pacote e importe os componentes.</Text>
           </Collapsible>
         </CollapsibleGroup>
       ),
@@ -1022,7 +1043,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CommandPalette: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CommandPalette} from '@pharos-ds/core/CommandPalette';",
       controls: [booleanControl('isInline', true)],
       render: p => {
@@ -1032,7 +1053,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
           return (
             <VStack gap={3}>
               {!inline ? (
-                <Button label="Open palette" variant="secondary" onClick={() => setOpen(true)} />
+                <Button label="Abrir paleta" variant="secondary" onClick={() => setOpen(true)} />
               ) : null}
               <CommandPalette
                 isOpen={inline || open}
@@ -1052,12 +1073,12 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CommandPaletteEmpty: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CommandPaletteEmpty} from '@pharos-ds/core/CommandPalette';",
       controls: [],
       render: () => (
         <div style={{maxWidth: 360, padding: 16, border: '1px solid var(--color-border-default, #e5e5e5)', borderRadius: 8}}>
-          <CommandPaletteEmpty>No results found</CommandPaletteEmpty>
+          <CommandPaletteEmpty>Nenhum resultado encontrado</CommandPaletteEmpty>
         </div>
       ),
     }),
@@ -1065,7 +1086,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CommandPaletteFooter: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CommandPaletteFooter} from '@pharos-ds/core/CommandPalette';",
       controls: [],
       render: () => (
@@ -1078,16 +1099,16 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CommandPaletteGroup: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CommandPaletteGroup, CommandPaletteItem, CommandPaletteList} from '@pharos-ds/core/CommandPalette';",
       controls: [],
-      fixedProps: {heading: 'Navigation'},
+      fixedProps: {heading: 'Navegação'},
       render: () => (
         <div style={{maxWidth: 360, border: '1px solid var(--color-border-default, #e5e5e5)', borderRadius: 8, overflow: 'hidden'}}>
           <CommandPaletteList>
-            <CommandPaletteGroup heading="Navigation">
-              <CommandPaletteItem value="home">Home</CommandPaletteItem>
-              <CommandPaletteItem value="docs">Docs</CommandPaletteItem>
+            <CommandPaletteGroup heading="Navegação">
+              <CommandPaletteItem value="home">Início</CommandPaletteItem>
+              <CommandPaletteItem value="docs">Documentação</CommandPaletteItem>
             </CommandPaletteGroup>
           </CommandPaletteList>
         </div>
@@ -1097,7 +1118,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CommandPaletteInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CommandPaletteInput} from '@pharos-ds/core/CommandPalette';",
       controls: [booleanControl('hasAutoFocus', false)],
       render: p => {
@@ -1108,7 +1129,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
               <CommandPaletteInput
                 value={query}
                 onValueChange={setQuery}
-                placeholder="Search commands…"
+                placeholder="Buscar comandos…"
                 hasAutoFocus={Boolean(p.hasAutoFocus)}
               />
             </div>
@@ -1121,15 +1142,15 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CommandPaletteItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CommandPaletteItem, CommandPaletteList} from '@pharos-ds/core/CommandPalette';",
       controls: [booleanControl('isDisabled')],
-      fixedProps: {value: 'settings', children: 'Settings'},
+      fixedProps: {value: 'settings', children: 'Configurações'},
       render: p => (
         <div style={{maxWidth: 360, border: '1px solid var(--color-border-default, #e5e5e5)', borderRadius: 8, overflow: 'hidden'}}>
           <CommandPaletteList>
             <CommandPaletteItem value="settings" isDisabled={Boolean(p.isDisabled)}>
-              Settings
+              Configurações
             </CommandPaletteItem>
           </CommandPaletteList>
         </div>
@@ -1139,14 +1160,14 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   CommandPaletteList: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {CommandPaletteList, CommandPaletteItem} from '@pharos-ds/core/CommandPalette';",
       controls: [],
       render: () => (
         <div style={{maxWidth: 360, border: '1px solid var(--color-border-default, #e5e5e5)', borderRadius: 8, overflow: 'hidden'}}>
           <CommandPaletteList>
-            <CommandPaletteItem value="home">Home</CommandPaletteItem>
-            <CommandPaletteItem value="settings">Settings</CommandPaletteItem>
+            <CommandPaletteItem value="home">Início</CommandPaletteItem>
+            <CommandPaletteItem value="settings">Configurações</CommandPaletteItem>
           </CommandPaletteList>
         </div>
       ),
@@ -1155,7 +1176,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
 
   ContextMenu: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ContextMenu} from '@pharos-ds/core/ContextMenu';",
       controls: [
         selectControl('size', ['sm', 'md', 'lg'], 'md'),
@@ -1171,7 +1192,7 @@ export const demosAC: Record<string, InteractiveDemoConfig[]> = {
             height={120}
             style={{background: 'var(--color-background-muted, #f5f5f5)', borderRadius: 8}}>
             <Text type="supporting" color="secondary">
-              Right-click here
+              Clique com o botão direito aqui
             </Text>
           </Center>
         </ContextMenu>

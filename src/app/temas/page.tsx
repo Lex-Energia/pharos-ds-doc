@@ -8,7 +8,7 @@ import {CodeBlock} from '@/components/CodeBlock';
 
 export const metadata: Metadata = {
   title: 'Temas',
-  description: 'Theme Pharos oficial e como customizar.',
+  description: 'Tema Pharos oficial e como customizar.',
 };
 
 export default function ThemesPage() {
@@ -39,8 +39,8 @@ export default function ThemesPage() {
               Tema built para consumo direto — sem plugin StyleX no app.
             </Text>
             <HStack gap={3} wrap="wrap">
-              <Button label="Primary" variant="primary" />
-              <Button label="Secondary" variant="secondary" />
+              <Button label="Primário" variant="primary" />
+              <Button label="Secundário" variant="secondary" />
               <Button label="Ghost" variant="ghost" />
             </HStack>
           </VStack>
@@ -66,7 +66,7 @@ import '@pharos-ds/theme-pharos/theme.css';
           <Heading level={2}>Customizar</Heading>
           <Text type="body" color="secondary">
             Defina um tema TypeScript e gere o CSS com a CLI. Guia completo em{' '}
-            <Link href="/docs/temas">Docs → Temas</Link>.
+            <Link href="/docs/temas">Documentação → Temas</Link>.
           </Text>
           <CodeBlock
             code={`npx @pharos-ds/cli theme build src/themes/meuTema.ts --out src/themes/meuTema.css`}

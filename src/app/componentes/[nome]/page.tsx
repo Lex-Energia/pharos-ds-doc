@@ -50,7 +50,7 @@ export default async function ComponentPage({params}: Props) {
               <Badge label={component.group} variant="info" />
             ) : null}
             {hasDemo(component.name) ? (
-              <Badge label="Demo" variant="success" />
+              <Badge label="Exemplo" variant="success" />
             ) : null}
           </HStack>
           {component.description ? (
@@ -58,7 +58,7 @@ export default async function ComponentPage({params}: Props) {
               {component.description}
             </Text>
           ) : null}
-          <CodeBlock code={importCode} title="Import" />
+          <CodeBlock code={importCode} title="Importação" />
         </VStack>
 
         <VStack gap={3}>

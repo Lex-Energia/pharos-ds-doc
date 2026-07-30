@@ -49,7 +49,7 @@ export default function ComponentsPage() {
                     <HStack gap={2} vAlign="center" wrap="wrap">
                       <Text weight="bold">{item.name}</Text>
                       {hasDemo(item.name) ? (
-                        <Badge label="Demo" variant="success" />
+                        <Badge label="Exemplo" variant="success" />
                       ) : null}
                     </HStack>
                     <Text type="supporting" color="secondary">

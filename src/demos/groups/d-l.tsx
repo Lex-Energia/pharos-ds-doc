@@ -435,9 +435,9 @@ function LightboxPreview(props: DemoProps) {
         onOpenChange={setOpen}
         hasZoom={Boolean(props.hasZoom)}
         media={{
-          src: 'https://picsum.photos/800/600',
-          alt: 'Imagem de demonstração',
-          caption: 'Legenda da imagem',
+          src: '/images/exemplo-usina-solar.jpg',
+          alt: 'Usina solar ao entardecer',
+          caption: 'Usina solar — exemplo Pharos',
         }}
       />
     </>
@@ -489,7 +489,7 @@ function LayoutShellPreview(props: DemoProps) {
 export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   DateInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DateInput} from '@pharos-ds/core/DateInput';",
       controls: controlsFromCatalog('DateInput', ['size', 'format', 'hasClear', 'isDisabled']),
       fixedProps: {label: 'Data'},
@@ -498,7 +498,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DateRangeInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DateRangeInput} from '@pharos-ds/core/DateRangeInput';",
       controls: controlsFromCatalog('DateRangeInput', ['size', 'hasClear', 'isDisabled']),
       fixedProps: {label: 'Período'},
@@ -507,7 +507,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DateTimeInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DateTimeInput} from '@pharos-ds/core/DateTimeInput';",
       controls: controlsFromCatalog('DateTimeInput', [
         'size',
@@ -521,7 +521,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Dialog: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Dialog} from '@pharos-ds/core/Dialog';",
       controls: controlsFromCatalog('Dialog', ['variant', 'purpose']),
       fixedProps: {isInline: true},
@@ -530,7 +530,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DialogHeader: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DialogHeader} from '@pharos-ds/core/Dialog';",
       controls: [
         booleanControl('hasDivider', true),
@@ -541,7 +541,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Divider: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Divider} from '@pharos-ds/core/Divider';",
       controls: controlsFromCatalog('Divider', ['orientation', 'variant', 'isFullBleed']),
       render: props => (
@@ -559,7 +559,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DropdownMenu: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DropdownMenu} from '@pharos-ds/core/DropdownMenu';",
       controls: [booleanControl('hasChevron', true)],
       render: props => <DropdownMenuPreview {...props} />,
@@ -567,7 +567,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DropdownMenuCheckboxItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {DropdownMenuCheckboxItem} from '@pharos-ds/core/DropdownMenu';",
       controls: controlsFromCatalog('DropdownMenuCheckboxItem', [
@@ -579,7 +579,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DropdownMenuItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DropdownMenuItem} from '@pharos-ds/core/DropdownMenu';",
       controls: [
         booleanControl('isDisabled', false),
@@ -590,7 +590,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DropdownMenuRadioGroup: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {DropdownMenuRadioGroup} from '@pharos-ds/core/DropdownMenu';",
       controls: controlsFromCatalog('DropdownMenuRadioGroup', ['hasCloseOnSelect']),
@@ -599,7 +599,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DropdownMenuRadioItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DropdownMenuRadioItem} from '@pharos-ds/core/DropdownMenu';",
       controls: controlsFromCatalog('DropdownMenuRadioItem', ['isDisabled']),
       render: props => <DropdownMenuRadioItemPreview {...props} />,
@@ -607,7 +607,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   DropdownMenuSubMenu: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {DropdownMenuSubMenu} from '@pharos-ds/core/DropdownMenu';",
       controls: controlsFromCatalog('DropdownMenuSubMenu', ['isDisabled', 'hasSpinner']),
       render: props => <DropdownMenuSubMenuPreview {...props} />,
@@ -615,7 +615,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   EmptyState: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {EmptyState} from '@pharos-ds/core/EmptyState';",
       controls: controlsFromCatalog('EmptyState', ['isCompact']),
       fixedProps: {
@@ -634,7 +634,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Field: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Field} from '@pharos-ds/core/Field';",
       controls: [
         booleanControl('isRequired', false),
@@ -646,7 +646,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   FieldLabel: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {FieldLabel} from '@pharos-ds/core/Field';",
       controls: controlsFromCatalog('FieldLabel', [
         'isLabelHidden',
@@ -659,7 +659,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   FieldStatus: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {FieldStatus} from '@pharos-ds/core/Field';",
       controls: controlsFromCatalog('FieldStatus', ['type', 'variant']),
       fixedProps: {message: 'Este campo é obrigatório.'},
@@ -668,7 +668,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   FileInput: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {FileInput} from '@pharos-ds/core/FileInput';",
       controls: controlsFromCatalog('FileInput', ['mode', 'isMultiple', 'isDisabled']),
       fixedProps: {label: 'Anexo'},
@@ -677,7 +677,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   FormLayout: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {FormLayout} from '@pharos-ds/core/FormLayout';",
       controls: controlsFromCatalog('FormLayout', ['direction']),
       render: props => (
@@ -690,7 +690,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Grid: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Grid} from '@pharos-ds/core/Grid';",
       controls: [
         selectControl('columns', ['2', '3', '4'], '3'),
@@ -711,7 +711,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   GridSpan: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {GridSpan} from '@pharos-ds/core/Grid';",
       controls: [selectControl('columns', ['1', '2', 'full'], '2')],
       render: props => (
@@ -728,7 +728,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   HoverCard: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {HoverCard} from '@pharos-ds/core/HoverCard';",
       controls: [
         selectControl('placement', ['above', 'below', 'start', 'end'], 'above'),
@@ -739,7 +739,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Icon: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Icon} from '@pharos-ds/core/Icon';",
       controls: [
         selectControl('icon', ['search', 'calendar', 'success', 'error', 'info'], 'search'),
@@ -764,7 +764,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   IconButton: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {IconButton} from '@pharos-ds/core/IconButton';",
       controls: controlsFromCatalog('IconButton', ['variant', 'size', 'isDisabled']),
       fixedProps: {label: 'Adicionar'},
@@ -781,7 +781,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   InputGroup: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {InputGroup} from '@pharos-ds/core/InputGroup';",
       controls: controlsFromCatalog('InputGroup', ['size', 'isDisabled']),
       fixedProps: {label: 'Site'},
@@ -790,7 +790,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   InputGroupText: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {InputGroupText} from '@pharos-ds/core/InputGroup';",
       controls: [
         selectControl('position', ['prefix', 'suffix'], 'prefix'),
@@ -801,7 +801,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   InternationalizationProvider: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine:
         "import {InternationalizationProvider} from '@pharos-ds/core/i18n';",
       controls: [selectControl('locale', ['en', 'fr-FR'], 'en')],
@@ -810,7 +810,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Item: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Item} from '@pharos-ds/core/Item';",
       controls: [
         selectControl('density', ['compact', 'balanced', 'spacious']),
@@ -820,7 +820,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
       render: props => (
         <Item
           label="Alexandria Pharos"
-          description="Design system"
+          description="Sistema de design"
           density={props.density as 'compact' | 'balanced' | 'spacious'}
           align={props.align as 'center' | 'start'}
           isSelected={Boolean(props.isSelected)}
@@ -831,7 +831,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Kbd: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Kbd} from '@pharos-ds/core/Kbd';",
       controls: [
         selectControl('keys', ['mod+k', 'mod+shift+p', 'escape', 'mod+enter'], 'mod+k'),
@@ -841,7 +841,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Layout: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Layout} from '@pharos-ds/core/Layout';",
       controls: controlsFromCatalog('Layout', ['height']),
       render: props => <LayoutShellPreview {...props} />,
@@ -849,7 +849,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   LayoutContent: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {LayoutContent} from '@pharos-ds/core/Layout';",
       controls: controlsFromCatalog('LayoutContent', ['padding', 'isScrollable']),
       render: props => (
@@ -867,7 +867,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   LayoutFooter: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {LayoutFooter} from '@pharos-ds/core/Layout';",
       controls: controlsFromCatalog('LayoutFooter', ['hasDivider']),
       render: props => (
@@ -881,7 +881,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   LayoutHeader: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {LayoutHeader} from '@pharos-ds/core/Layout';",
       controls: controlsFromCatalog('LayoutHeader', ['hasDivider']),
       render: props => (
@@ -893,7 +893,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   LayoutPanel: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {LayoutPanel} from '@pharos-ds/core/Layout';",
       controls: controlsFromCatalog('LayoutPanel', ['hasDivider', 'padding']),
       render: props => (
@@ -912,7 +912,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Lightbox: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Lightbox} from '@pharos-ds/core/Lightbox';",
       controls: controlsFromCatalog('Lightbox', ['hasZoom']),
       render: props => <LightboxPreview {...props} />,
@@ -920,7 +920,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   Link: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {Link} from '@pharos-ds/core/Link';",
       controls: [
         booleanControl('hasUnderline', false),
@@ -943,7 +943,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   LinkProvider: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {LinkProvider} from '@pharos-ds/core/Link';",
       controls: [],
       render: () => <LinkProviderPreview />,
@@ -951,7 +951,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   List: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {List} from '@pharos-ds/core/List';",
       controls: controlsFromCatalog('List', ['density', 'hasDividers', 'listStyle']),
       render: props => (
@@ -969,7 +969,7 @@ export const demosDL: Record<string, InteractiveDemoConfig[]> = {
   ],
   ListItem: [
     demo({
-      title: 'Playground',
+      title: 'Área interativa',
       importLine: "import {ListItem} from '@pharos-ds/core/List';",
       controls: controlsFromCatalog('ListItem', ['isSelected', 'isDisabled']),
       fixedProps: {label: 'Item da lista', description: 'Descrição do item'},
