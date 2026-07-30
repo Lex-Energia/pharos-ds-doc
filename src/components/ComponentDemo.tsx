@@ -1,9 +1,9 @@
 'use client';
 
 import {VStack} from '@pharos-ds/core/Layout';
-import {Heading, Text} from '@pharos-ds/core/Text';
+import {Text} from '@pharos-ds/core/Text';
 import {getDemos} from '@/demos/registry';
-import {CodeBlock} from './CodeBlock';
+import {InteractiveDemo} from '@/demos/InteractiveDemo';
 
 export function ComponentDemo({name}: {name: string}) {
   const demos = getDemos(name);
@@ -23,11 +23,7 @@ export function ComponentDemo({name}: {name: string}) {
   return (
     <VStack gap={6}>
       {demos.map(demo => (
-        <VStack key={demo.title} gap={3}>
-          <Heading level={3}>{demo.title}</Heading>
-          <div className="docs-demo-frame">{demo.render()}</div>
-          <CodeBlock code={demo.code} title="Exemplo" />
-        </VStack>
+        <InteractiveDemo key={demo.title} config={demo} />
       ))}
     </VStack>
   );

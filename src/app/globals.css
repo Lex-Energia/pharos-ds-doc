@@ -220,6 +220,63 @@ body {
   );
 }
 
+.docs-demo-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border: 1px solid
+    color-mix(in srgb, var(--color-text-primary) 10%, transparent);
+  border-radius: 12px;
+  background: color-mix(
+    in srgb,
+    var(--color-background-secondary, var(--color-background-body)) 40%,
+    transparent
+  );
+}
+
+.docs-demo-control {
+  display: grid;
+  grid-template-columns: minmax(96px, 140px) 1fr;
+  gap: var(--spacing-3);
+  align-items: center;
+}
+
+.docs-demo-control-label {
+  font-variant-numeric: tabular-nums;
+}
+
+.docs-demo-control-field {
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.docs-demo-select {
+  appearance: none;
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 28px 6px 10px;
+  border-radius: 8px;
+  border: 1px solid
+    color-mix(in srgb, var(--color-text-primary) 18%, transparent);
+  background:
+    linear-gradient(45deg, transparent 50%, currentColor 50%) calc(100% - 14px)
+      calc(50% - 2px) / 5px 5px no-repeat,
+    linear-gradient(135deg, currentColor 50%, transparent 50%) calc(100% - 9px)
+      calc(50% - 2px) / 5px 5px no-repeat,
+    var(--color-background-body, #fff);
+  color: inherit;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .docs-demo-control {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2);
+  }
+}
+
 .docs-card {
   display: block;
   text-decoration: none;
