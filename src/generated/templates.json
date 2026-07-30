@@ -1,0 +1,306 @@
+{
+  "generatedAt": "2026-07-30T22:55:37.910Z",
+  "templates": [
+    {
+      "id": "ai-chat",
+      "name": "ai-chat",
+      "type": "page",
+      "description": "Template de página `ai-chat`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "ai-chat-landing",
+      "name": "ai-chat-landing",
+      "type": "page",
+      "description": "Template de página `ai-chat-landing`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "blank",
+      "name": "blank",
+      "type": "page",
+      "description": "Template de página `blank`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "centered-hero",
+      "name": "centered-hero",
+      "type": "page",
+      "description": "Template de página `centered-hero`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "classic-gallery",
+      "name": "classic-gallery",
+      "type": "page",
+      "description": "Template de página `classic-gallery`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "contact-form",
+      "name": "contact-form",
+      "type": "page",
+      "description": "Template de página `contact-form`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "dashboard",
+      "name": "dashboard",
+      "type": "page",
+      "description": "Template de página `dashboard`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "dashboard-portfolio",
+      "name": "dashboard-portfolio",
+      "type": "page",
+      "description": "Template de página `dashboard-portfolio`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "detail-page",
+      "name": "detail-page",
+      "type": "page",
+      "description": "Template de página `detail-page`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "documentation",
+      "name": "documentation",
+      "type": "page",
+      "description": "Template de página `documentation`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "documentation-design",
+      "name": "documentation-design",
+      "type": "page",
+      "description": "Template de página `documentation-design`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "documentation-technical",
+      "name": "documentation-technical",
+      "type": "page",
+      "description": "Template de página `documentation-technical`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "editor",
+      "name": "editor",
+      "type": "page",
+      "description": "Template de página `editor`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "file-explorer",
+      "name": "file-explorer",
+      "type": "page",
+      "description": "Template de página `file-explorer`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "form-two-column",
+      "name": "form-two-column",
+      "type": "page",
+      "description": "Template de página `form-two-column`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "gallery-hero",
+      "name": "gallery-hero",
+      "type": "page",
+      "description": "Template de página `gallery-hero`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "ide",
+      "name": "ide",
+      "type": "page",
+      "description": "Template de página `ide`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "incident-console",
+      "name": "incident-console",
+      "type": "page",
+      "description": "Template de página `incident-console`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "kanban-board",
+      "name": "kanban-board",
+      "type": "page",
+      "description": "Template de página `kanban-board`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "library",
+      "name": "library",
+      "type": "page",
+      "description": "Template de página `library`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "login",
+      "name": "login",
+      "type": "page",
+      "description": "Template de página `login`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "login-card",
+      "name": "login-card",
+      "type": "page",
+      "description": "Template de página `login-card`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "login-split",
+      "name": "login-split",
+      "type": "page",
+      "description": "Template de página `login-split`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "login-sso",
+      "name": "login-sso",
+      "type": "page",
+      "description": "Template de página `login-sso`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "messaging-shell",
+      "name": "messaging-shell",
+      "type": "page",
+      "description": "Template de página `messaging-shell`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "mixed-gallery",
+      "name": "mixed-gallery",
+      "type": "page",
+      "description": "Template de página `mixed-gallery`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "payment-form",
+      "name": "payment-form",
+      "type": "page",
+      "description": "Template de página `payment-form`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "product-detail",
+      "name": "product-detail",
+      "type": "page",
+      "description": "Template de página `product-detail`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "product-gallery",
+      "name": "product-gallery",
+      "type": "page",
+      "description": "Template de página `product-gallery`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "settings",
+      "name": "settings",
+      "type": "page",
+      "description": "Template de página `settings`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "settings-dialog",
+      "name": "settings-dialog",
+      "type": "page",
+      "description": "Template de página `settings-dialog`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "settings-sidebar",
+      "name": "settings-sidebar",
+      "type": "page",
+      "description": "Template de página `settings-sidebar`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "shell-nav",
+      "name": "shell-nav",
+      "type": "page",
+      "description": "Template de página `shell-nav`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "shell-side-nav",
+      "name": "shell-side-nav",
+      "type": "page",
+      "description": "Template de página `shell-side-nav`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "shell-top-nav",
+      "name": "shell-top-nav",
+      "type": "page",
+      "description": "Template de página `shell-top-nav`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "side-gallery",
+      "name": "side-gallery",
+      "type": "page",
+      "description": "Template de página `side-gallery`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "table",
+      "name": "table",
+      "type": "page",
+      "description": "Template de página `table`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "table-grouped",
+      "name": "table-grouped",
+      "type": "page",
+      "description": "Template de página `table-grouped`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "table-page",
+      "name": "table-page",
+      "type": "page",
+      "description": "Template de página `table-page`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "table-page-chart",
+      "name": "table-page-chart",
+      "type": "page",
+      "description": "Template de página `table-page-chart`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "table-page-heatmap-status",
+      "name": "table-page-heatmap-status",
+      "type": "page",
+      "description": "Template de página `table-page-heatmap-status`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "table-page-shoe-store-heatmap",
+      "name": "table-page-shoe-store-heatmap",
+      "type": "page",
+      "description": "Template de página `table-page-shoe-store-heatmap`",
+      "package": "@pharos-ds/cli"
+    },
+    {
+      "id": "theme-showcase",
+      "name": "theme-showcase",
+      "type": "page",
+      "description": "Template de página `theme-showcase`",
+      "package": "@pharos-ds/cli"
+    }
+  ]
+}

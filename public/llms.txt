@@ -1,0 +1,31 @@
+# Pharos Design System
+
+> Design system da Alexandria — componentes React acessíveis, temas e templates.
+> Pacotes npm: @pharos-ds/core, @pharos-ds/theme-pharos, @pharos-ds/cli
+
+## Docs
+- /docs/instalacao — Instalação e setup
+- /docs/nextjs — Integração Next.js App Router
+- /docs/cli — CLI e API programática
+- /docs/temas — Temas e dark mode
+- /docs/estilizacao — className, CSS, Tailwind
+- /docs/tokens — Design tokens
+- /docs/agentes — Guia para AI agents
+
+## Surfaces
+- /componentes — Galeria de componentes
+- /componentes/{Name} — Props, demos e boas práticas
+- /templates — Templates de página
+- /temas — Theme Pharos
+
+## Agent instructions
+1. Use `npx @pharos-ds/cli init` once per project
+2. Never guess component APIs — run `npx @pharos-ds/cli component <Name>`
+3. Prefer composed Pharos components over hand-rolled CSS
+4. Install: `@pharos-ds/core` + `@pharos-ds/theme-pharos`
+5. CSS order: reset.css → pharos.css → theme.css
+6. Wrap app with `<Theme theme={pharosTheme}>` from `@pharos-ds/theme-pharos/built`
+
+## Links
+- npm: https://www.npmjs.com/package/@pharos-ds/core
+- Source: https://github.com/Caio-Silvestre/alexandria-ds

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <image id="Gradiente" width="4287" height="2642" transform="translate(-480.24 -88.75) scale(.48)" xlink:href="../../../../AppData/Roaming/Adobe/Creative Cloud Libraries/LIBS/F4912219693828920A495EAD_AdobeID/creative_cloud/dcx/e92fd9a6-1616-473c-99f8-f6eb417f202c/components/3d52ec75-77c7-4f06-8262-2139b39caaef.png"/>
+  <path class="cls-1" d="M551.23,231.35c27.84,0,55.72,2.67,78.18,8.96,98.85,24.25,143.77,113.23,143.77,202.2,0,105.14-58.42,210.24-248.91,210.24-44.05,0-81.76-5.38-89.85-8.08v203.99h-127.6V301.4c0-46.72,24.25-70.06,72.76-70.06h171.65ZM580.86,344.53c-15.26-6.29-39.51-8.96-61.97-8.96h-84.47v205.78c9.88,2.67,38.63,8.08,73.68,8.08,106.93,0,132.98-58.42,132.98-109.64,0-36.84-17.96-80.89-60.22-95.26Z"/>
+</svg>
