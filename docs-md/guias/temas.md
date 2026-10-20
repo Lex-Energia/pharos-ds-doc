@@ -10,7 +10,7 @@ Um tema Pharos é um conjunto de overrides de CSS custom properties + (opcionalm
 
 ## Tema padrão
 
-O tema padrão de qualquer projeto Pharos é o **Pharos (marca Alexandria)**, pacote `@pharos-ds/theme-pharos`. É o único tema oficial. Os demais `@pharos-ds/theme-*` (neutral, butter, chocolate, gothic, matcha, stone, y2k) são temas de exemplo da CLI e não devem ser usados em produtos Alexandria, mesmo que a CLI 1.0.0 os sugira em `pharos init`.
+O tema padrão de qualquer projeto Pharos é o **Pharos (marca Alexandria)**, pacote `@pharos-ds/theme-pharos`. É o único tema oficial. Os demais `@pharos-ds/theme-*` (neutral, butter, chocolate, gothic, matcha, stone, y2k) são temas de exemplo da CLI e não devem ser usados em produtos Alexandria, mesmo que uma CLI anterior à 1.0.3 os sugira em `pharos init`.
 
 ## Tema oficial
 

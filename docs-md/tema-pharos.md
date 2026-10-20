@@ -1,14 +1,14 @@
 ---
 title: "Tema Pharos (marca Alexandria)"
 description: "Referência completa do tema oficial: paleta da marca, tokens claro/escuro, tipografia, motion, overrides de componentes e ícones."
-package: "@pharos-ds/theme-pharos@1.0.1"
+package: "@pharos-ds/theme-pharos@1.0.3"
 ---
 
 # Tema Pharos (marca Alexandria)
 
-Tema oficial do design system, pacote `@pharos-ds/theme-pharos` v1.0.1. Este arquivo é gerado a partir do `theme.css` compilado do pacote e lista todos os valores que o tema aplica sobre o `@pharos-ds/core`. Para instalação e uso, veja [Temas](./temas.md) e [Guias → Temas](./guias/temas.md).
+Tema oficial do design system, pacote `@pharos-ds/theme-pharos` v1.0.3. Este arquivo é gerado a partir do `theme.css` compilado do pacote e lista todos os valores que o tema aplica sobre o `@pharos-ds/core`. Para instalação e uso, veja [Temas](./temas.md) e [Guias → Temas](./guias/temas.md).
 
-> **Tema padrão.** Todo projeto Pharos usa este tema por padrão. Não use `@pharos-ds/theme-neutral` nem outro `@pharos-ds/theme-*` (são temas de exemplo da CLI), mesmo que a CLI 1.0.0 os sugira em `pharos init`.
+> **Tema padrão.** Todo projeto Pharos usa este tema por padrão. Não use `@pharos-ds/theme-neutral` nem outro `@pharos-ds/theme-*` (são temas de exemplo da CLI), mesmo que uma CLI anterior à 1.0.3 os sugira em `pharos init`.
 
 ## Identidade da marca
 

@@ -193,7 +193,7 @@ export function buildThemeMd(root) {
   L.push('');
   L.push(`Tema oficial do design system, pacote \`@pharos-ds/theme-pharos\` v${themePkg.version}. Este arquivo é gerado a partir do \`theme.css\` compilado do pacote e lista todos os valores que o tema aplica sobre o \`@pharos-ds/core\`. Para instalação e uso, veja [Temas](./temas.md) e [Guias → Temas](./guias/temas.md).`);
   L.push('');
-  L.push('> **Tema padrão.** Todo projeto Pharos usa este tema por padrão. Não use `@pharos-ds/theme-neutral` nem outro `@pharos-ds/theme-*` (são temas de exemplo da CLI), mesmo que a CLI 1.0.0 os sugira em `pharos init`.');
+  L.push('> **Tema padrão.** Todo projeto Pharos usa este tema por padrão. Não use `@pharos-ds/theme-neutral` nem outro `@pharos-ds/theme-*` (são temas de exemplo da CLI), mesmo que uma CLI anterior à 1.0.3 os sugira em `pharos init`.');
   L.push('');
   L.push('## Identidade da marca');
   L.push('');

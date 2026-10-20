@@ -8,13 +8,13 @@ Você vai configurar e usar o **Pharos**, o design system da Alexandria, neste p
 - **`@pharos-ds/theme-pharos`**: o **tema oficial e padrão**, com a identidade Alexandria (Figtree, laranja `#F26641`, azul `#034694`, roxo `#7C51A1`, chumbo `#383838`, dark mode, ícones Lucide).
 - **`@pharos-ds/cli`**: fonte de verdade para props, exemplos, templates e docs. Use-a em vez de adivinhar APIs.
 
-Regra número um: **o tema é sempre `@pharos-ds/theme-pharos`**. Nunca instale nem use `@pharos-ds/theme-neutral`, `theme-butter`, `theme-chocolate`, `theme-gothic`, `theme-matcha`, `theme-stone` ou `theme-y2k`. São temas de exemplo da CLI. Se qualquer saída da CLI 1.0.0 sugerir `theme-neutral`, ignore.
+Regra número um: **o tema é sempre `@pharos-ds/theme-pharos`**. Nunca instale nem use `@pharos-ds/theme-neutral`, `theme-butter`, `theme-chocolate`, `theme-gothic`, `theme-matcha`, `theme-stone` ou `theme-y2k`. São temas de exemplo da CLI. Versões da CLI anteriores à 1.0.3 sugeriam `theme-neutral` no `init`; se vir isso, ignore e atualize a CLI.
 
 ## 2. Instalação
 
 ```bash
-pnpm add @pharos-ds/core@^1.0.2 @pharos-ds/theme-pharos@^1.0.2
-pnpm add -D @pharos-ds/cli@latest
+pnpm add @pharos-ds/core@^1.0.3 @pharos-ds/theme-pharos@^1.0.3
+pnpm add -D @pharos-ds/cli@^1.0.3
 ```
 
 Use sempre o pacote com escopo `@pharos-ds/cli`. O pacote bare `pharos` no npm é outro projeto.
@@ -103,7 +103,7 @@ Dark mode: o prop `mode` de `<Theme>` aceita `"light" | "dark" | "system"`. Para
 pnpm pharos -- init
 ```
 
-Isso escreve um bloco em `AGENTS.md` e `CLAUDE.md` com regras, workflow e comandos. Leia esse bloco antes de escrever UI. Se o bloco gerado não mencionar `@pharos-ds/theme-pharos` no SETUP, é a CLI 1.0.0: mantenha a seção 3 e 4 deste documento como fonte de verdade.
+Isso escreve um bloco em `AGENTS.md` e `CLAUDE.md` com regras, workflow e comandos. Leia esse bloco antes de escrever UI. A partir da CLI 1.0.3 o bloco SETUP já inclui o `@pharos-ds/theme-pharos`. Se não incluir, a CLI está desatualizada: atualize-a e mantenha as seções 3 e 4 deste documento como fonte de verdade.
 
 Confira a instalação:
 
@@ -198,7 +198,7 @@ Antes de usar `AppShell`, `TextInput` ou qualquer outro, rode `pnpm pharos -- co
 
 ## 9. Checklist de entrega
 
-- [ ] `@pharos-ds/core`, `@pharos-ds/theme-pharos` (>= 1.0.2) e `@pharos-ds/cli` instalados.
+- [ ] `@pharos-ds/core`, `@pharos-ds/theme-pharos` (>= 1.0.3) e `@pharos-ds/cli` instalados.
 - [ ] CSS global com reset → pharos → theme-pharos, nessa ordem.
 - [ ] `<Theme theme={pharosTheme}>` (import `/built`) envolvendo o app.
 - [ ] `pnpm pharos -- init` rodado e `AGENTS.md`/`CLAUDE.md` lidos.

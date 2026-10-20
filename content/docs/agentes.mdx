@@ -18,7 +18,7 @@ Isso escreve guias em `AGENTS.md` / `CLAUDE.md` com componentes, templates, toke
 
 ## Tema padrão: Alexandria
 
-O tema padrão do Pharos é **sempre** `@pharos-ds/theme-pharos` (marca Alexandria). A CLI 1.0.0 ainda sugere `@pharos-ds/theme-neutral` na saída de `pharos init` (as versões seguintes instalam o tema Alexandria por padrão) — ignore. Não instale `theme-neutral` nem outro `@pharos-ds/theme-*`.
+O tema padrão do Pharos é **sempre** `@pharos-ds/theme-pharos` (marca Alexandria). A partir da CLI 1.0.3, `pharos init` instala e configura o tema Alexandria por padrão. Versões anteriores sugeriam `@pharos-ds/theme-neutral` — ignore e atualize a CLI. Não instale `theme-neutral` nem outro `@pharos-ds/theme-*`.
 
 ```tsx
 import {Theme} from '@pharos-ds/core/theme';

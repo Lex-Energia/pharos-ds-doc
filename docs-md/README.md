@@ -3,7 +3,7 @@
 > Design system da Alexandria — componentes React acessíveis, temas e templates.
 > Pacotes npm: `@pharos-ds/core`, `@pharos-ds/theme-pharos`, `@pharos-ds/cli`.
 
-Esta pasta é a versão Markdown completa do site de documentação, gerada por `pnpm export:md` para uso por agentes de IA. Catálogo gerado em 2026-07-31T00:43:22.467Z.
+Esta pasta é a versão Markdown completa do site de documentação, gerada por `pnpm export:md` para uso por agentes de IA. Catálogo gerado em 2026-10-20T17:38:55.403Z.
 
 ## Instruções para agentes
 
@@ -14,7 +14,7 @@ Esta pasta é a versão Markdown completa do site de documentação, gerada por 
 5. Ordem do CSS: `reset.css` → `pharos.css` → `theme.css`.
 6. Envolva o app com `<Theme theme={pharosTheme}>` de `@pharos-ds/theme-pharos/built`.
 7. Use sempre o pacote com escopo `@pharos-ds/cli`; o pacote bare `pharos` no npm é outro projeto.
-8. **O tema padrão é sempre `@pharos-ds/theme-pharos` (marca Alexandria).** A CLI 1.0.0 ainda sugere `@pharos-ds/theme-neutral` em `pharos init` (versões seguintes instalam o tema Alexandria por padrão): ignore. Não instale `theme-neutral` nem outro `@pharos-ds/theme-*`. Valores do tema em [tema-pharos.md](./tema-pharos.md).
+8. **O tema padrão é sempre `@pharos-ds/theme-pharos` (marca Alexandria).** A partir da CLI 1.0.3, `pharos init` instala e configura o tema Alexandria por padrão; versões anteriores sugeriam `@pharos-ds/theme-neutral`: ignore e atualize a CLI. Não instale `theme-neutral` nem outro `@pharos-ds/theme-*`. Valores do tema em [tema-pharos.md](./tema-pharos.md).
 
 ## Guias
 
