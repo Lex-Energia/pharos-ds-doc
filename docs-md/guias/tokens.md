@@ -1,0 +1,36 @@
+---
+title: "Tokens"
+description: "Cor, tipografia, spacing e shape."
+source: /docs/tokens
+---
+
+# Tokens
+
+Tokens são a linguagem visual compartilhada entre produto, design e engenharia.
+
+## Spacing
+
+Escala típica: `--spacing-1` … `--spacing-12` (e além, conforme o tema).
+
+Use `gap` nos layouts (`VStack`, `HStack`, `Grid`) com valores da escala em vez de pixels soltos.
+
+## Cor
+
+- `--color-text-primary` / `--color-text-secondary`
+- `--color-background-body`
+- `--color-accent`
+- estados semânticos (success, warning, error, info) via componentes como `Badge`
+
+## Tipografia
+
+Componentes `Text` e `Heading` já mapeiam tipos (`body`, `meta`, níveis de heading) para tokens de fonte e peso.
+
+## Shape e elevação
+
+- `--radius-element`
+- sombras via prop `elevation` em botões/superfícies (quando suportado)
+
+## Onde ver na prática
+
+- [Temas](./temas.md)
+- Componentes de layout em [/componentes](../componentes/README.md)

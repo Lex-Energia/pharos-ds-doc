@@ -25,6 +25,7 @@
 4. Install: `@pharos-ds/core` + `@pharos-ds/theme-pharos`
 5. CSS order: reset.css → pharos.css → theme.css
 6. Wrap app with `<Theme theme={pharosTheme}>` from `@pharos-ds/theme-pharos/built`
+7. DEFAULT THEME IS ALWAYS `@pharos-ds/theme-pharos` (Alexandria brand). `@pharos-ds/cli` 1.0.0 still suggests `@pharos-ds/theme-neutral` in `pharos init` — ignore it; never install `theme-neutral` or other `@pharos-ds/theme-*` packages.
 
 ## Links
 - npm: https://www.npmjs.com/package/@pharos-ds/core

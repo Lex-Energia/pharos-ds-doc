@@ -1,0 +1,94 @@
+---
+title: "Next.js"
+description: "Integração passo a passo com App Router."
+source: /docs/nextjs
+---
+
+# Next.js
+
+Este site é um exemplo canônico: Next.js App Router consumindo `@pharos-ds/core` e `@pharos-ds/theme-pharos` do npm.
+
+## 1. Crie o app
+
+```bash
+pnpm create next-app@latest meu-app --typescript --app --eslint
+cd meu-app
+pnpm add @pharos-ds/core @pharos-ds/theme-pharos
+pnpm add -D @pharos-ds/cli
+```
+
+## 2. CSS global
+
+Em `src/app/globals.css` (ou `app/globals.css`):
+
+```css
+@import "@pharos-ds/core/reset.css";
+@import "@pharos-ds/core/pharos.css";
+@import "@pharos-ds/theme-pharos/theme.css";
+```
+
+## 3. Providers
+
+```tsx
+// src/app/providers.tsx
+'use client';
+
+import Link from 'next/link';
+import {Theme} from '@pharos-ds/core/theme';
+import {LinkProvider} from '@pharos-ds/core/Link';
+import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+
+export function Providers({children}: {children: React.ReactNode}) {
+  return (
+    <Theme theme={pharosTheme} mode="system">
+      <LinkProvider component={Link}>{children}</LinkProvider>
+    </Theme>
+  );
+}
+```
+
+## 4. Layout
+
+```tsx
+// src/app/layout.tsx
+import './globals.css';
+import {Providers} from './providers';
+
+export default function RootLayout({children}: {children: React.ReactNode}) {
+  return (
+    <html lang="pt-BR">
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+```
+
+## 5. Transpile packages (opcional)
+
+Se o bundler reclamar de módulos ESM do tema, adicione em `next.config.ts`:
+
+```ts
+import type {NextConfig} from 'next';
+
+const nextConfig: NextConfig = {
+  transpilePackages: ['@pharos-ds/core', '@pharos-ds/theme-pharos'],
+};
+
+export default nextConfig;
+```
+
+## Dark mode
+
+O prop `mode` de `<Theme>` aceita `"light" | "dark" | "system"`. Persista a escolha do usuário e passe o modo resolvido — como neste site.
+
+## Tailwind (opcional)
+
+Pharos não exige Tailwind. Se quiser tokens no Tailwind:
+
+```css
+@import "@pharos-ds/core/tailwind-theme.css";
+```
+
+Veja também [Estilização](./estilizacao.md).

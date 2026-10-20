@@ -1,0 +1,53 @@
+---
+title: "Temas"
+description: "Tema Pharos, dark mode e customização."
+source: /docs/temas
+---
+
+# Temas
+
+Um tema Pharos é um conjunto de overrides de CSS custom properties + (opcionalmente) ícones e variantes de componente.
+
+## Tema padrão
+
+O tema padrão de qualquer projeto Pharos é o **Pharos (marca Alexandria)**, pacote `@pharos-ds/theme-pharos`. É o único tema oficial. Os demais `@pharos-ds/theme-*` (neutral, butter, chocolate, gothic, matcha, stone, y2k) são temas de exemplo da CLI e não devem ser usados em produtos Alexandria, mesmo que a CLI 1.0.0 os sugira em `pharos init`.
+
+## Tema oficial
+
+```bash
+pnpm add @pharos-ds/theme-pharos
+```
+
+```tsx
+import {Theme} from '@pharos-ds/core/theme';
+import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+import '@pharos-ds/theme-pharos/theme.css';
+
+<Theme theme={pharosTheme} mode="dark">
+  {children}
+</Theme>
+```
+
+## Camadas CSS
+
+1. `reset.css` — normalização
+2. `pharos.css` — estilos dos componentes
+3. `theme.css` — tokens da marca
+
+## Dark mode
+
+- `mode="light"` / `mode="dark"` / `mode="system"`
+- O tema define tokens `onDark` para superfícies escuras
+- Sincronize `data-theme` no `<html>` via o próprio `<Theme>` (modo root)
+
+## Customizar
+
+Use a CLI para gerar CSS a partir de um tema TypeScript:
+
+```bash
+pnpm pharos -- theme build src/themes/meuTema.ts --out src/themes/meuTema.css
+```
+
+Overrides pontuais também funcionam com `className` e CSS variables nos componentes.
+
+Veja a página [/temas](../temas.md) para um overview visual.

@@ -5,6 +5,8 @@
   "description": "Documentação oficial do Pharos Design System (Alexandria)",
   "scripts": {
     "generate": "node scripts/generate-catalog.mjs",
+    "extract:demos": "pnpm dlx tsx scripts/extract-demos.ts",
+    "export:md": "node scripts/export-md.mjs",
     "predev": "pnpm generate",
     "dev": "next dev",
     "prebuild": "pnpm generate",

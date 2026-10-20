@@ -28,15 +28,30 @@ O script `predev` / `prebuild` gera o catálogo de componentes e templates via `
 | `pnpm build` | Build de produção |
 | `pnpm start` | Serve o build |
 | `pnpm typecheck` | TypeScript |
+| `pnpm extract:demos` | Gera `src/generated/demos.json` (snippets das demos, via `tsx`) |
+| `pnpm export:md` | Exporta toda a doc para Markdown em `docs-md/` (para agentes de IA) |
 
 ## Estrutura
 
 ```
 content/docs/     # Guias MDX em português
-scripts/          # generate-catalog
+docs-md/          # Doc completa em Markdown puro (gerada por `pnpm export:md`)
+scripts/          # generate-catalog, extract-demos, export-md
 src/app/          # Rotas Next.js
 src/demos/        # Demos React curados
 src/generated/    # Catálogo gerado
+```
+
+## Doc em Markdown para agentes
+
+`docs-md/` contém a mesma documentação do site em `.md` puro: guias, um arquivo por
+componente (descrição, import, exemplos, boas práticas, props), templates e temas.
+Para regenerar após atualizar o catálogo:
+
+```bash
+pnpm generate        # catálogo via @pharos-ds/cli
+pnpm extract:demos   # snippets das demos
+pnpm export:md       # escreve docs-md/
 ```
 
 ## Deploy

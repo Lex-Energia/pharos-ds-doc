@@ -1,0 +1,3785 @@
+{
+  "generatedAt": "2026-10-20T14:29:42.537Z",
+  "demos": {
+    "AlertDialog": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {AlertDialog} from '@pharos-ds/core/AlertDialog';",
+        "controls": [
+          {
+            "name": "isInline",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "actionVariant",
+            "kind": "select",
+            "options": [
+              "destructive",
+              "primary",
+              "secondary"
+            ],
+            "defaultValue": "destructive"
+          },
+          {
+            "name": "isActionLoading",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {AlertDialog} from '@pharos-ds/core/AlertDialog';\n\n<AlertDialog\n  title=\"Excluir projeto?\"\n  description=\"Esta ação não pode ser desfeita.\"\n  actionLabel=\"Excluir\"\n  isInline\n  actionVariant=\"destructive\"\n  isActionLoading={false}\n />"
+      }
+    ],
+    "AppShell": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {AppShell} from '@pharos-ds/core/AppShell';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "elevated",
+              "wash",
+              "surface",
+              "section"
+            ],
+            "defaultValue": "elevated"
+          },
+          {
+            "name": "height",
+            "kind": "select",
+            "options": [
+              "fill",
+              "auto"
+            ],
+            "defaultValue": "auto"
+          }
+        ],
+        "code": "import {AppShell} from '@pharos-ds/core/AppShell';\n\n<AppShell\n  variant=\"elevated\"\n  height=\"auto\"\n />"
+      }
+    ],
+    "AspectRatio": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {AspectRatio} from '@pharos-ds/core/AspectRatio';",
+        "controls": [
+          {
+            "name": "ratioPreset",
+            "kind": "select",
+            "options": [
+              "16:9",
+              "4:3",
+              "square"
+            ],
+            "defaultValue": "16:9"
+          },
+          {
+            "name": "shape",
+            "kind": "select",
+            "options": [
+              "rectangle",
+              "ellipse"
+            ],
+            "defaultValue": "rectangle"
+          },
+          {
+            "name": "fit",
+            "kind": "select",
+            "options": [
+              "cover",
+              "contain",
+              "center"
+            ],
+            "defaultValue": "cover"
+          }
+        ],
+        "code": "import {AspectRatio} from '@pharos-ds/core/AspectRatio';\n\n<AspectRatio\n  ratioPreset=\"16:9\"\n  shape=\"rectangle\"\n  fit=\"cover\"\n />"
+      }
+    ],
+    "Avatar": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Avatar} from '@pharos-ds/core/Avatar';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "xsm",
+              "sm",
+              "md",
+              "lg",
+              "xl"
+            ],
+            "defaultValue": "md"
+          }
+        ],
+        "code": "import {Avatar} from '@pharos-ds/core/Avatar';\n\n<Avatar\n  name=\"Ami Pena\"\n  size=\"md\"\n />"
+      }
+    ],
+    "AvatarGroup": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {AvatarGroup, Avatar} from '@pharos-ds/core/AvatarGroup';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "xsm",
+              "sm",
+              "md",
+              "lg",
+              "xl"
+            ],
+            "defaultValue": "md"
+          }
+        ],
+        "code": "import {AvatarGroup, Avatar} from '@pharos-ds/core/AvatarGroup';\n\n<AvatarGroup\n  size=\"md\"\n />"
+      }
+    ],
+    "AvatarGroupOverflow": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {AvatarGroupOverflow, AvatarGroup, Avatar} from '@pharos-ds/core/AvatarGroup';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        ],
+        "code": "import {AvatarGroupOverflow, AvatarGroup, Avatar} from '@pharos-ds/core/AvatarGroup';\n\n<AvatarGroupOverflow\n  count={5}\n  size=\"md\"\n />"
+      }
+    ],
+    "AvatarStatusDot": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {AvatarStatusDot, Avatar} from '@pharos-ds/core/Avatar';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "success",
+              "neutral",
+              "error"
+            ],
+            "defaultValue": "success"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        ],
+        "code": "import {AvatarStatusDot, Avatar} from '@pharos-ds/core/Avatar';\n\n<AvatarStatusDot\n  label=\"Online\"\n  variant=\"success\"\n  size=\"md\"\n />"
+      }
+    ],
+    "Badge": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Badge} from '@pharos-ds/core/Badge';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "neutral",
+              "info",
+              "success",
+              "warning",
+              "error",
+              "blue",
+              "cyan",
+              "green",
+              "orange",
+              "pink",
+              "purple",
+              "red",
+              "teal",
+              "yellow"
+            ],
+            "defaultValue": "info"
+          }
+        ],
+        "code": "import {Badge} from '@pharos-ds/core/Badge';\n\n<Badge\n  label=\"Etiqueta\"\n  variant=\"info\"\n />"
+      }
+    ],
+    "Banner": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Banner} from '@pharos-ds/core/Banner';",
+        "controls": [
+          {
+            "name": "status",
+            "kind": "select",
+            "options": [
+              "info",
+              "warning",
+              "error",
+              "success"
+            ],
+            "defaultValue": "info"
+          },
+          {
+            "name": "container",
+            "kind": "select",
+            "options": [
+              "card",
+              "section"
+            ],
+            "defaultValue": "card"
+          },
+          {
+            "name": "isDismissable",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Banner} from '@pharos-ds/core/Banner';\n\n<Banner\n  title=\"Atualização do sistema\"\n  description=\"Uma nova versão está disponível.\"\n  status=\"info\"\n  container=\"card\"\n  isDismissable={false}\n />"
+      }
+    ],
+    "BaseTypeahead": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {BaseTypeahead, createStaticSource} from '@pharos-ds/core/Typeahead';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "hasEntriesOnFocus",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {BaseTypeahead, createStaticSource} from '@pharos-ds/core/Typeahead';\n\n<BaseTypeahead\n  size=\"md\"\n  hasEntriesOnFocus={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "Blockquote": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Blockquote} from '@pharos-ds/core/Blockquote';",
+        "controls": [
+          {
+            "name": "hasCite",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {Blockquote} from '@pharos-ds/core/Blockquote';\n\n<Blockquote\n  hasCite\n />"
+      }
+    ],
+    "BreadcrumbItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {BreadcrumbItem, Breadcrumbs} from '@pharos-ds/core/Breadcrumbs';",
+        "controls": [
+          {
+            "name": "isCurrent",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {BreadcrumbItem, Breadcrumbs} from '@pharos-ds/core/Breadcrumbs';\n\n<BreadcrumbItem\n  children=\"Componentes\"\n  isCurrent={false}\n />"
+      }
+    ],
+    "Breadcrumbs": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Breadcrumbs, BreadcrumbItem} from '@pharos-ds/core/Breadcrumbs';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "default",
+              "supporting"
+            ],
+            "defaultValue": "default"
+          }
+        ],
+        "code": "import {Breadcrumbs, BreadcrumbItem} from '@pharos-ds/core/Breadcrumbs';\n\n<Breadcrumbs\n  variant=\"default\"\n />"
+      }
+    ],
+    "Button": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Button} from '@pharos-ds/core/Button';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "primary",
+              "secondary",
+              "ghost",
+              "destructive"
+            ],
+            "defaultValue": "secondary"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isLoading",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Button} from '@pharos-ds/core/Button';\n\n<Button\n  label=\"Botão\"\n  variant=\"secondary\"\n  size=\"md\"\n  isLoading={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "ButtonGroup": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ButtonGroup, Button} from '@pharos-ds/core/ButtonGroup';",
+        "controls": [
+          {
+            "name": "orientation",
+            "kind": "select",
+            "options": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ButtonGroup, Button} from '@pharos-ds/core/ButtonGroup';\n\n<ButtonGroup\n  label=\"Ações de texto\"\n  orientation=\"horizontal\"\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Calendar": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Calendar} from '@pharos-ds/core/Calendar';",
+        "controls": [
+          {
+            "name": "numberOfMonths",
+            "kind": "select",
+            "options": [
+              "1",
+              "2"
+            ],
+            "defaultValue": "1"
+          },
+          {
+            "name": "hasWeekNumbers",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasOutsideDays",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {Calendar} from '@pharos-ds/core/Calendar';\n\n<Calendar\n  numberOfMonths=\"1\"\n  hasWeekNumbers={false}\n  hasOutsideDays\n />"
+      }
+    ],
+    "Card": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Card} from '@pharos-ds/core/Card';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "default",
+              "muted",
+              "transparent"
+            ],
+            "defaultValue": "default"
+          },
+          {
+            "name": "padding",
+            "kind": "select",
+            "options": [
+              "2",
+              "4",
+              "6"
+            ],
+            "defaultValue": "4"
+          }
+        ],
+        "code": "import {Card} from '@pharos-ds/core/Card';\n\n<Card\n  variant=\"default\"\n  padding=\"4\"\n />"
+      }
+    ],
+    "Carousel": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Carousel} from '@pharos-ds/core/Carousel';",
+        "controls": [
+          {
+            "name": "hasButtons",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "hasSnap",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "hasEdgeFade",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {Carousel} from '@pharos-ds/core/Carousel';\n\n<Carousel\n  hasButtons\n  hasSnap\n  hasEdgeFade\n />"
+      }
+    ],
+    "Center": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Center} from '@pharos-ds/core/Center';",
+        "controls": [
+          {
+            "name": "axis",
+            "kind": "select",
+            "options": [
+              "both",
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "both"
+          },
+          {
+            "name": "isInline",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Center} from '@pharos-ds/core/Center';\n\n<Center\n  axis=\"both\"\n  isInline={false}\n />"
+      }
+    ],
+    "ChatComposer": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatComposer} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          },
+          {
+            "name": "elevation",
+            "kind": "select",
+            "options": [
+              "low",
+              "none"
+            ],
+            "defaultValue": "low"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ChatComposer} from '@pharos-ds/core/Chat';\n\n<ChatComposer\n  density=\"balanced\"\n  elevation=\"low\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "ChatComposerDrawer": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatComposerDrawer} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "defaultIsCollapsed",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ChatComposerDrawer} from '@pharos-ds/core/Chat';\n\n<ChatComposerDrawer\n  count={2}\n  label=\"Anexos\"\n  defaultIsCollapsed={false}\n />"
+      }
+    ],
+    "ChatComposerInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatComposerInput} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasHistory",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {ChatComposerInput} from '@pharos-ds/core/Chat';\n\n<ChatComposerInput\n  isDisabled={false}\n  hasHistory\n />"
+      }
+    ],
+    "ChatDictationButton": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatDictationButton, useChatDictation} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          }
+        ],
+        "code": "import {ChatDictationButton, useChatDictation} from '@pharos-ds/core/Chat';\n\n<ChatDictationButton\n  size=\"md\"\n />"
+      }
+    ],
+    "ChatLayout": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatLayout, ChatComposer, ChatMessageList, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          }
+        ],
+        "code": "import {ChatLayout, ChatComposer, ChatMessageList, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';\n\n<ChatLayout\n  density=\"balanced\"\n />"
+      }
+    ],
+    "ChatLayoutScrollButton": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatLayoutScrollButton} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "isVisible",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "hasLabel",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {ChatLayoutScrollButton} from '@pharos-ds/core/Chat';\n\n<ChatLayoutScrollButton\n  isVisible\n  hasLabel\n />"
+      }
+    ],
+    "ChatMessage": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatMessage, ChatMessageBubble, Avatar} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "sender",
+            "kind": "select",
+            "options": [
+              "user",
+              "assistant"
+            ],
+            "defaultValue": "assistant"
+          },
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          }
+        ],
+        "code": "import {ChatMessage, ChatMessageBubble, Avatar} from '@pharos-ds/core/Chat';\n\n<ChatMessage\n  sender=\"assistant\"\n  density=\"balanced\"\n />"
+      }
+    ],
+    "ChatMessageBubble": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatMessageBubble, ChatMessage} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "filled",
+              "ghost"
+            ],
+            "defaultValue": "filled"
+          }
+        ],
+        "code": "import {ChatMessageBubble, ChatMessage} from '@pharos-ds/core/Chat';\n\n<ChatMessageBubble\n  variant=\"filled\"\n />"
+      }
+    ],
+    "ChatMessageList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatMessageList, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          }
+        ],
+        "code": "import {ChatMessageList, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';\n\n<ChatMessageList\n  density=\"balanced\"\n />"
+      }
+    ],
+    "ChatMessageMetadata": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatMessageMetadata, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "status",
+            "kind": "select",
+            "options": [
+              "sending",
+              "sent",
+              "delivered",
+              "read",
+              "error"
+            ],
+            "defaultValue": "read"
+          }
+        ],
+        "code": "import {ChatMessageMetadata, ChatMessage, ChatMessageBubble} from '@pharos-ds/core/Chat';\n\n<ChatMessageMetadata\n  timestamp=\"2:30 PM\"\n  status=\"read\"\n />"
+      }
+    ],
+    "ChatSendButton": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatSendButton} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isStopShown",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ChatSendButton} from '@pharos-ds/core/Chat';\n\n<ChatSendButton\n  size=\"md\"\n  isStopShown={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "ChatSystemMessage": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatSystemMessage} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "default",
+              "divider"
+            ],
+            "defaultValue": "default"
+          }
+        ],
+        "code": "import {ChatSystemMessage} from '@pharos-ds/core/Chat';\n\n<ChatSystemMessage\n  children=\"Conversa iniciada\"\n  variant=\"default\"\n />"
+      }
+    ],
+    "ChatTokenizedText": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatTokenizedText} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "hasTokens",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {ChatTokenizedText} from '@pharos-ds/core/Chat';\n\n<ChatTokenizedText\n  children=\"Olá @ami, bem-vindo de volta!\"\n  hasTokens\n />"
+      }
+    ],
+    "ChatToolCalls": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ChatToolCalls} from '@pharos-ds/core/Chat';",
+        "controls": [
+          {
+            "name": "status",
+            "kind": "select",
+            "options": [
+              "pending",
+              "running",
+              "complete",
+              "error"
+            ],
+            "defaultValue": "complete"
+          },
+          {
+            "name": "defaultIsExpanded",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {ChatToolCalls} from '@pharos-ds/core/Chat';\n\n<ChatToolCalls\n  status=\"complete\"\n  defaultIsExpanded\n />"
+      }
+    ],
+    "CheckboxInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CheckboxInput} from '@pharos-ds/core/CheckboxInput';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isLoading",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {CheckboxInput} from '@pharos-ds/core/CheckboxInput';\n\n<CheckboxInput\n  label=\"Aceito os termos\"\n  size=\"md\"\n  isDisabled={false}\n  isLoading={false}\n />"
+      }
+    ],
+    "CheckboxList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CheckboxList, CheckboxListItem} from '@pharos-ds/core/CheckboxList';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          },
+          {
+            "name": "hasDividers",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {CheckboxList, CheckboxListItem} from '@pharos-ds/core/CheckboxList';\n\n<CheckboxList\n  label=\"Notificações\"\n  density=\"balanced\"\n  hasDividers={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "CheckboxListItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CheckboxListItem, CheckboxList} from '@pharos-ds/core/CheckboxList';",
+        "controls": [
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {CheckboxListItem, CheckboxList} from '@pharos-ds/core/CheckboxList';\n\n<CheckboxListItem\n  label=\"Alertas por e-mail\"\n  value=\"email\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Citation": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Citation} from '@pharos-ds/core/Citation';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "label",
+              "number"
+            ],
+            "defaultValue": "label"
+          }
+        ],
+        "code": "import {Citation} from '@pharos-ds/core/Citation';\n\n<Citation\n  number={1}\n  variant=\"label\"\n />"
+      }
+    ],
+    "ClickableCard": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ClickableCard} from '@pharos-ds/core/ClickableCard';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "default",
+              "muted"
+            ],
+            "defaultValue": "default"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ClickableCard} from '@pharos-ds/core/ClickableCard';\n\n<ClickableCard\n  label=\"Abrir configurações do projeto\"\n  variant=\"default\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "CodeBlock": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CodeBlock} from '@pharos-ds/core/CodeBlock';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "container",
+            "kind": "select",
+            "options": [
+              "card",
+              "section"
+            ],
+            "defaultValue": "card"
+          },
+          {
+            "name": "hasLineNumbers",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasCopyButton",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {CodeBlock} from '@pharos-ds/core/CodeBlock';\n\n<CodeBlock\n  code=\"const greeting = 'Olá, Pharos!';\nconsole.log(greeting);\"\n  language=\"javascript\"\n  size=\"md\"\n  container=\"card\"\n  hasLineNumbers={false}\n  hasCopyButton\n />"
+      }
+    ],
+    "Collapsible": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Collapsible} from '@pharos-ds/core/Collapsible';",
+        "controls": [
+          {
+            "name": "defaultIsOpen",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Collapsible} from '@pharos-ds/core/Collapsible';\n\n<Collapsible\n  trigger=\"Detalhes\"\n  defaultIsOpen\n  isDisabled={false}\n />"
+      }
+    ],
+    "CollapsibleGroup": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CollapsibleGroup, Collapsible} from '@pharos-ds/core/Collapsible';",
+        "controls": [
+          {
+            "name": "type",
+            "kind": "select",
+            "options": [
+              "single",
+              "multiple"
+            ],
+            "defaultValue": "single"
+          },
+          {
+            "name": "hasDividers",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {CollapsibleGroup, Collapsible} from '@pharos-ds/core/Collapsible';\n\n<CollapsibleGroup\n  type=\"single\"\n  hasDividers\n />"
+      }
+    ],
+    "CommandPalette": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CommandPalette} from '@pharos-ds/core/CommandPalette';",
+        "controls": [
+          {
+            "name": "isInline",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {CommandPalette} from '@pharos-ds/core/CommandPalette';\n\n<CommandPalette\n  isInline\n />"
+      }
+    ],
+    "CommandPaletteEmpty": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CommandPaletteEmpty} from '@pharos-ds/core/CommandPalette';",
+        "controls": [],
+        "code": "import {CommandPaletteEmpty} from '@pharos-ds/core/CommandPalette';\n\n<CommandPaletteEmpty />"
+      }
+    ],
+    "CommandPaletteFooter": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CommandPaletteFooter} from '@pharos-ds/core/CommandPalette';",
+        "controls": [],
+        "code": "import {CommandPaletteFooter} from '@pharos-ds/core/CommandPalette';\n\n<CommandPaletteFooter />"
+      }
+    ],
+    "CommandPaletteGroup": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CommandPaletteGroup, CommandPaletteItem, CommandPaletteList} from '@pharos-ds/core/CommandPalette';",
+        "controls": [],
+        "code": "import {CommandPaletteGroup, CommandPaletteItem, CommandPaletteList} from '@pharos-ds/core/CommandPalette';\n\n<CommandPaletteGroup\n  heading=\"Navegação\"\n />"
+      }
+    ],
+    "CommandPaletteInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CommandPaletteInput} from '@pharos-ds/core/CommandPalette';",
+        "controls": [
+          {
+            "name": "hasAutoFocus",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {CommandPaletteInput} from '@pharos-ds/core/CommandPalette';\n\n<CommandPaletteInput\n  hasAutoFocus={false}\n />"
+      }
+    ],
+    "CommandPaletteItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CommandPaletteItem, CommandPaletteList} from '@pharos-ds/core/CommandPalette';",
+        "controls": [
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {CommandPaletteItem, CommandPaletteList} from '@pharos-ds/core/CommandPalette';\n\n<CommandPaletteItem\n  value=\"settings\"\n  children=\"Configurações\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "CommandPaletteList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {CommandPaletteList, CommandPaletteItem} from '@pharos-ds/core/CommandPalette';",
+        "controls": [],
+        "code": "import {CommandPaletteList, CommandPaletteItem} from '@pharos-ds/core/CommandPalette';\n\n<CommandPaletteList />"
+      }
+    ],
+    "ContextMenu": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ContextMenu} from '@pharos-ds/core/ContextMenu';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ContextMenu} from '@pharos-ds/core/ContextMenu';\n\n<ContextMenu\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "DateInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DateInput} from '@pharos-ds/core/DateInput';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "format",
+            "kind": "select",
+            "options": [
+              "date",
+              "date_long",
+              "date_weekday",
+              "system_date"
+            ],
+            "defaultValue": "date_long"
+          },
+          {
+            "name": "hasClear",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {DateInput} from '@pharos-ds/core/DateInput';\n\n<DateInput\n  label=\"Data\"\n  size=\"md\"\n  format=\"date_long\"\n  hasClear={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "DateRangeInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DateRangeInput} from '@pharos-ds/core/DateRangeInput';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "hasClear",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {DateRangeInput} from '@pharos-ds/core/DateRangeInput';\n\n<DateRangeInput\n  label=\"Período\"\n  size=\"md\"\n  hasClear\n  isDisabled={false}\n />"
+      }
+    ],
+    "DateTimeInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DateTimeInput} from '@pharos-ds/core/DateTimeInput';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "hourFormat",
+            "kind": "select",
+            "options": [
+              "12h",
+              "24h"
+            ],
+            "defaultValue": "12h"
+          },
+          {
+            "name": "hasSeconds",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {DateTimeInput} from '@pharos-ds/core/DateTimeInput';\n\n<DateTimeInput\n  label=\"Data e hora\"\n  size=\"md\"\n  hourFormat=\"12h\"\n  hasSeconds={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "Dialog": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Dialog} from '@pharos-ds/core/Dialog';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "standard",
+              "fullscreen"
+            ],
+            "defaultValue": "standard"
+          },
+          {
+            "name": "purpose",
+            "kind": "select",
+            "options": [
+              "required",
+              "form",
+              "info"
+            ],
+            "defaultValue": "info"
+          }
+        ],
+        "code": "import {Dialog} from '@pharos-ds/core/Dialog';\n\n<Dialog\n  isInline\n  variant=\"standard\"\n  purpose=\"info\"\n />"
+      }
+    ],
+    "DialogHeader": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DialogHeader} from '@pharos-ds/core/Dialog';",
+        "controls": [
+          {
+            "name": "hasDivider",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "hasSubtitle",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {DialogHeader} from '@pharos-ds/core/Dialog';\n\n<DialogHeader\n  hasDivider\n  hasSubtitle\n />"
+      }
+    ],
+    "Divider": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Divider} from '@pharos-ds/core/Divider';",
+        "controls": [
+          {
+            "name": "orientation",
+            "kind": "select",
+            "options": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          },
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "subtle",
+              "strong"
+            ],
+            "defaultValue": "subtle"
+          },
+          {
+            "name": "isFullBleed",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Divider} from '@pharos-ds/core/Divider';\n\n<Divider\n  orientation=\"horizontal\"\n  variant=\"subtle\"\n  isFullBleed={false}\n />"
+      }
+    ],
+    "DropdownMenu": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DropdownMenu} from '@pharos-ds/core/DropdownMenu';",
+        "controls": [
+          {
+            "name": "hasChevron",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {DropdownMenu} from '@pharos-ds/core/DropdownMenu';\n\n<DropdownMenu\n  hasChevron\n />"
+      }
+    ],
+    "DropdownMenuCheckboxItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DropdownMenuCheckboxItem} from '@pharos-ds/core/DropdownMenu';",
+        "controls": [
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasCloseOnSelect",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {DropdownMenuCheckboxItem} from '@pharos-ds/core/DropdownMenu';\n\n<DropdownMenuCheckboxItem\n  isDisabled={false}\n  hasCloseOnSelect={false}\n />"
+      }
+    ],
+    "DropdownMenuItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DropdownMenuItem} from '@pharos-ds/core/DropdownMenu';",
+        "controls": [
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasDescription",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {DropdownMenuItem} from '@pharos-ds/core/DropdownMenu';\n\n<DropdownMenuItem\n  isDisabled={false}\n  hasDescription\n />"
+      }
+    ],
+    "DropdownMenuRadioGroup": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DropdownMenuRadioGroup} from '@pharos-ds/core/DropdownMenu';",
+        "controls": [
+          {
+            "name": "hasCloseOnSelect",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {DropdownMenuRadioGroup} from '@pharos-ds/core/DropdownMenu';\n\n<DropdownMenuRadioGroup\n  hasCloseOnSelect\n />"
+      }
+    ],
+    "DropdownMenuRadioItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DropdownMenuRadioItem} from '@pharos-ds/core/DropdownMenu';",
+        "controls": [
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {DropdownMenuRadioItem} from '@pharos-ds/core/DropdownMenu';\n\n<DropdownMenuRadioItem\n  isDisabled={false}\n />"
+      }
+    ],
+    "DropdownMenuSubMenu": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {DropdownMenuSubMenu} from '@pharos-ds/core/DropdownMenu';",
+        "controls": [
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasSpinner",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {DropdownMenuSubMenu} from '@pharos-ds/core/DropdownMenu';\n\n<DropdownMenuSubMenu\n  isDisabled={false}\n  hasSpinner={false}\n />"
+      }
+    ],
+    "EmptyState": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {EmptyState} from '@pharos-ds/core/EmptyState';",
+        "controls": [
+          {
+            "name": "isCompact",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {EmptyState} from '@pharos-ds/core/EmptyState';\n\n<EmptyState\n  title=\"Nenhum item encontrado\"\n  description=\"Crie um novo item para começar.\"\n  isCompact={false}\n />"
+      }
+    ],
+    "Field": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Field} from '@pharos-ds/core/Field';",
+        "controls": [
+          {
+            "name": "isRequired",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "statusType",
+            "kind": "select",
+            "options": [
+              "none",
+              "error",
+              "warning",
+              "success"
+            ],
+            "defaultValue": "none"
+          },
+          {
+            "name": "statusVariant",
+            "kind": "select",
+            "options": [
+              "attached",
+              "detached"
+            ],
+            "defaultValue": "attached"
+          }
+        ],
+        "code": "import {Field} from '@pharos-ds/core/Field';\n\n<Field\n  isRequired={false}\n  statusType=\"none\"\n  statusVariant=\"attached\"\n />"
+      }
+    ],
+    "FieldLabel": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {FieldLabel} from '@pharos-ds/core/Field';",
+        "controls": [
+          {
+            "name": "isLabelHidden",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isRequired",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isOptional",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {FieldLabel} from '@pharos-ds/core/Field';\n\n<FieldLabel\n  label=\"Nome completo\"\n  inputID=\"demo-field-label\"\n  isLabelHidden={false}\n  isRequired={false}\n  isOptional={false}\n />"
+      }
+    ],
+    "FieldStatus": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {FieldStatus} from '@pharos-ds/core/Field';",
+        "controls": [
+          {
+            "name": "type",
+            "kind": "select",
+            "options": [
+              "error",
+              "warning",
+              "success"
+            ],
+            "defaultValue": "error"
+          },
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "attached",
+              "detached"
+            ],
+            "defaultValue": "attached"
+          }
+        ],
+        "code": "import {FieldStatus} from '@pharos-ds/core/Field';\n\n<FieldStatus\n  message=\"Este campo é obrigatório.\"\n  type=\"error\"\n  variant=\"attached\"\n />"
+      }
+    ],
+    "FileInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {FileInput} from '@pharos-ds/core/FileInput';",
+        "controls": [
+          {
+            "name": "mode",
+            "kind": "select",
+            "options": [
+              "input",
+              "dropzone"
+            ],
+            "defaultValue": "input"
+          },
+          {
+            "name": "isMultiple",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {FileInput} from '@pharos-ds/core/FileInput';\n\n<FileInput\n  label=\"Anexo\"\n  mode=\"input\"\n  isMultiple={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "FormLayout": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {FormLayout} from '@pharos-ds/core/FormLayout';",
+        "controls": [
+          {
+            "name": "direction",
+            "kind": "select",
+            "options": [
+              "vertical",
+              "horizontal",
+              "horizontal-labels"
+            ],
+            "defaultValue": "vertical"
+          }
+        ],
+        "code": "import {FormLayout} from '@pharos-ds/core/FormLayout';\n\n<FormLayout\n  direction=\"vertical\"\n />"
+      }
+    ],
+    "Grid": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Grid} from '@pharos-ds/core/Grid';",
+        "controls": [
+          {
+            "name": "columns",
+            "kind": "select",
+            "options": [
+              "2",
+              "3",
+              "4"
+            ],
+            "defaultValue": "3"
+          },
+          {
+            "name": "gap",
+            "kind": "select",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "defaultValue": "2"
+          },
+          {
+            "name": "align",
+            "kind": "select",
+            "options": [
+              "start",
+              "center",
+              "end",
+              "stretch"
+            ],
+            "defaultValue": "start"
+          }
+        ],
+        "code": "import {Grid} from '@pharos-ds/core/Grid';\n\n<Grid\n  columns=\"3\"\n  gap=\"2\"\n  align=\"start\"\n />"
+      }
+    ],
+    "GridSpan": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {GridSpan} from '@pharos-ds/core/Grid';",
+        "controls": [
+          {
+            "name": "columns",
+            "kind": "select",
+            "options": [
+              "1",
+              "2",
+              "full"
+            ],
+            "defaultValue": "2"
+          }
+        ],
+        "code": "import {GridSpan} from '@pharos-ds/core/Grid';\n\n<GridSpan\n  columns=\"2\"\n />"
+      }
+    ],
+    "HoverCard": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {HoverCard} from '@pharos-ds/core/HoverCard';",
+        "controls": [
+          {
+            "name": "placement",
+            "kind": "select",
+            "options": [
+              "above",
+              "below",
+              "start",
+              "end"
+            ],
+            "defaultValue": "above"
+          },
+          {
+            "name": "hasHoverIndication",
+            "kind": "select",
+            "options": [
+              "true",
+              "false"
+            ],
+            "defaultValue": "true"
+          }
+        ],
+        "code": "import {HoverCard} from '@pharos-ds/core/HoverCard';\n\n<HoverCard\n  placement=\"above\"\n  hasHoverIndication=\"true\"\n />"
+      }
+    ],
+    "Icon": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Icon} from '@pharos-ds/core/Icon';",
+        "controls": [
+          {
+            "name": "icon",
+            "kind": "select",
+            "options": [
+              "search",
+              "calendar",
+              "success",
+              "error",
+              "info"
+            ],
+            "defaultValue": "search"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "xsm",
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "xsm"
+          },
+          {
+            "name": "color",
+            "kind": "select",
+            "options": [
+              "primary",
+              "secondary",
+              "accent",
+              "success",
+              "error"
+            ],
+            "defaultValue": "primary"
+          }
+        ],
+        "code": "import {Icon} from '@pharos-ds/core/Icon';\n\n<Icon\n  icon=\"search\"\n  size=\"xsm\"\n  color=\"primary\"\n />"
+      }
+    ],
+    "IconButton": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {IconButton} from '@pharos-ds/core/IconButton';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "primary",
+              "secondary",
+              "ghost",
+              "destructive"
+            ],
+            "defaultValue": "secondary"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {IconButton} from '@pharos-ds/core/IconButton';\n\n<IconButton\n  label=\"Adicionar\"\n  variant=\"secondary\"\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "InputGroup": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {InputGroup} from '@pharos-ds/core/InputGroup';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {InputGroup} from '@pharos-ds/core/InputGroup';\n\n<InputGroup\n  label=\"Site\"\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "InputGroupText": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {InputGroupText} from '@pharos-ds/core/InputGroup';",
+        "controls": [
+          {
+            "name": "position",
+            "kind": "select",
+            "options": [
+              "prefix",
+              "suffix"
+            ],
+            "defaultValue": "prefix"
+          },
+          {
+            "name": "text",
+            "kind": "select",
+            "options": [
+              "https://",
+              ".com",
+              "R$"
+            ],
+            "defaultValue": "https://"
+          }
+        ],
+        "code": "import {InputGroupText} from '@pharos-ds/core/InputGroup';\n\n<InputGroupText\n  position=\"prefix\"\n  text=\"https://\"\n />"
+      }
+    ],
+    "InternationalizationProvider": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {InternationalizationProvider} from '@pharos-ds/core/i18n';",
+        "controls": [
+          {
+            "name": "locale",
+            "kind": "select",
+            "options": [
+              "en",
+              "fr-FR"
+            ],
+            "defaultValue": "en"
+          }
+        ],
+        "code": "import {InternationalizationProvider} from '@pharos-ds/core/i18n';\n\n<InternationalizationProvider\n  locale=\"en\"\n />"
+      }
+    ],
+    "Item": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Item} from '@pharos-ds/core/Item';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "compact"
+          },
+          {
+            "name": "align",
+            "kind": "select",
+            "options": [
+              "center",
+              "start"
+            ],
+            "defaultValue": "center"
+          },
+          {
+            "name": "isSelected",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Item} from '@pharos-ds/core/Item';\n\n<Item\n  density=\"compact\"\n  align=\"center\"\n  isSelected={false}\n />"
+      }
+    ],
+    "Kbd": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Kbd} from '@pharos-ds/core/Kbd';",
+        "controls": [
+          {
+            "name": "keys",
+            "kind": "select",
+            "options": [
+              "mod+k",
+              "mod+shift+p",
+              "escape",
+              "mod+enter"
+            ],
+            "defaultValue": "mod+k"
+          }
+        ],
+        "code": "import {Kbd} from '@pharos-ds/core/Kbd';\n\n<Kbd\n  keys=\"mod+k\"\n />"
+      }
+    ],
+    "Layout": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Layout} from '@pharos-ds/core/Layout';",
+        "controls": [
+          {
+            "name": "height",
+            "kind": "select",
+            "options": [
+              "fill",
+              "auto"
+            ],
+            "defaultValue": "fill"
+          }
+        ],
+        "code": "import {Layout} from '@pharos-ds/core/Layout';\n\n<Layout\n  height=\"fill\"\n />"
+      }
+    ],
+    "LayoutContent": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {LayoutContent} from '@pharos-ds/core/Layout';",
+        "controls": [
+          {
+            "name": "isScrollable",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {LayoutContent} from '@pharos-ds/core/Layout';\n\n<LayoutContent\n  isScrollable\n />"
+      }
+    ],
+    "LayoutFooter": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {LayoutFooter} from '@pharos-ds/core/Layout';",
+        "controls": [
+          {
+            "name": "hasDivider",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {LayoutFooter} from '@pharos-ds/core/Layout';\n\n<LayoutFooter\n  hasDivider={false}\n />"
+      }
+    ],
+    "LayoutHeader": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {LayoutHeader} from '@pharos-ds/core/Layout';",
+        "controls": [
+          {
+            "name": "hasDivider",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {LayoutHeader} from '@pharos-ds/core/Layout';\n\n<LayoutHeader\n  hasDivider={false}\n />"
+      }
+    ],
+    "LayoutPanel": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {LayoutPanel} from '@pharos-ds/core/Layout';",
+        "controls": [
+          {
+            "name": "hasDivider",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {LayoutPanel} from '@pharos-ds/core/Layout';\n\n<LayoutPanel\n  hasDivider={false}\n />"
+      }
+    ],
+    "Lightbox": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Lightbox} from '@pharos-ds/core/Lightbox';",
+        "controls": [
+          {
+            "name": "hasZoom",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Lightbox} from '@pharos-ds/core/Lightbox';\n\n<Lightbox\n  hasZoom={false}\n />"
+      }
+    ],
+    "Link": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Link} from '@pharos-ds/core/Link';",
+        "controls": [
+          {
+            "name": "hasUnderline",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isExternalLink",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isStandalone",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "color",
+            "kind": "select",
+            "options": [
+              "accent",
+              "primary",
+              "secondary"
+            ],
+            "defaultValue": "accent"
+          }
+        ],
+        "code": "import {Link} from '@pharos-ds/core/Link';\n\n<Link\n  href=\"/docs/componentes\"\n  children=\"Ver componentes\"\n  hasUnderline={false}\n  isExternalLink={false}\n  isStandalone\n  color=\"accent\"\n />"
+      }
+    ],
+    "LinkProvider": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {LinkProvider} from '@pharos-ds/core/Link';",
+        "controls": [],
+        "code": "import {LinkProvider} from '@pharos-ds/core/Link';\n\n<LinkProvider />"
+      }
+    ],
+    "List": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {List} from '@pharos-ds/core/List';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          },
+          {
+            "name": "hasDividers",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "listStyle",
+            "kind": "select",
+            "options": [
+              "none",
+              "disc",
+              "decimal",
+              "circle"
+            ],
+            "defaultValue": "none"
+          }
+        ],
+        "code": "import {List} from '@pharos-ds/core/List';\n\n<List\n  density=\"balanced\"\n  hasDividers={false}\n  listStyle=\"none\"\n />"
+      }
+    ],
+    "ListItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ListItem} from '@pharos-ds/core/List';",
+        "controls": [
+          {
+            "name": "isSelected",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ListItem} from '@pharos-ds/core/List';\n\n<ListItem\n  label=\"Item da lista\"\n  description=\"Descrição do item\"\n  isSelected={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "Markdown": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Markdown} from '@pharos-ds/core/Markdown';",
+        "controls": [
+          {
+            "name": "display",
+            "kind": "select",
+            "options": [
+              "block",
+              "inline"
+            ],
+            "defaultValue": "block"
+          },
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "default",
+              "compact"
+            ],
+            "defaultValue": "default"
+          },
+          {
+            "name": "citationStyle",
+            "kind": "select",
+            "options": [
+              "label",
+              "number"
+            ],
+            "defaultValue": "label"
+          },
+          {
+            "name": "isStreaming",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Markdown} from '@pharos-ds/core/Markdown';\n\n<Markdown\n  children=\"# Título\n\nTexto **negrito** e _itálico_.\n\n- Item um\n- Item dois\"\n  display=\"block\"\n  density=\"default\"\n  citationStyle=\"label\"\n  isStreaming={false}\n />"
+      }
+    ],
+    "MediaTheme": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {MediaTheme} from '@pharos-ds/core/theme';",
+        "controls": [
+          {
+            "name": "mode",
+            "kind": "select",
+            "options": [
+              "dark",
+              "light"
+            ],
+            "defaultValue": "dark"
+          }
+        ],
+        "code": "import {MediaTheme} from '@pharos-ds/core/theme';\n\n<MediaTheme\n  mode=\"dark\"\n />"
+      }
+    ],
+    "MetadataList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {MetadataList, MetadataListItem} from '@pharos-ds/core/MetadataList';",
+        "controls": [
+          {
+            "name": "columns",
+            "kind": "select",
+            "options": [
+              "single",
+              "multi",
+              "2"
+            ],
+            "defaultValue": "single"
+          },
+          {
+            "name": "orientation",
+            "kind": "select",
+            "options": [
+              "vertical",
+              "horizontal"
+            ],
+            "defaultValue": "vertical"
+          },
+          {
+            "name": "maxNumOfItems",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {MetadataList, MetadataListItem} from '@pharos-ds/core/MetadataList';\n\n<MetadataList\n  columns=\"single\"\n  orientation=\"vertical\"\n  maxNumOfItems={false}\n />"
+      }
+    ],
+    "MetadataListItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {MetadataListItem} from '@pharos-ds/core/MetadataList';",
+        "controls": [
+          {
+            "name": "hasIcon",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "labelPosition",
+            "kind": "select",
+            "options": [
+              "start",
+              "top"
+            ],
+            "defaultValue": "top"
+          }
+        ],
+        "code": "import {MetadataListItem} from '@pharos-ds/core/MetadataList';\n\n<MetadataListItem\n  hasIcon\n  labelPosition=\"top\"\n />"
+      }
+    ],
+    "MobileNav": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {MobileNav} from '@pharos-ds/core/MobileNav';",
+        "controls": [
+          {
+            "name": "side",
+            "kind": "select",
+            "options": [
+              "start",
+              "end",
+              "auto"
+            ],
+            "defaultValue": "start"
+          },
+          {
+            "name": "width",
+            "kind": "select",
+            "options": [
+              "280",
+              "320",
+              "360"
+            ],
+            "defaultValue": "320"
+          }
+        ],
+        "code": "import {MobileNav} from '@pharos-ds/core/MobileNav';\n\n<MobileNav\n  side=\"start\"\n  width=\"320\"\n />"
+      }
+    ],
+    "MoreMenu": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {MoreMenu} from '@pharos-ds/core/MoreMenu';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "ghost",
+              "secondary",
+              "primary"
+            ],
+            "defaultValue": "ghost"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {MoreMenu} from '@pharos-ds/core/MoreMenu';\n\n<MoreMenu\n  variant=\"ghost\"\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "MultiSelector": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {MultiSelector} from '@pharos-ds/core/MultiSelector';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "triggerDisplay",
+            "kind": "select",
+            "options": [
+              "count",
+              "labels",
+              "badges"
+            ],
+            "defaultValue": "count"
+          },
+          {
+            "name": "hasSelectAll",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasSearch",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {MultiSelector} from '@pharos-ds/core/MultiSelector';\n\n<MultiSelector\n  size=\"md\"\n  triggerDisplay=\"count\"\n  hasSelectAll={false}\n  hasSearch={false}\n />"
+      }
+    ],
+    "NavIcon": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {NavIcon} from '@pharos-ds/core/NavIcon';",
+        "controls": [],
+        "code": "import {NavIcon} from '@pharos-ds/core/NavIcon';\n\n<NavIcon />"
+      }
+    ],
+    "NumberInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {NumberInput} from '@pharos-ds/core/NumberInput';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isIntegerOnly",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "units",
+            "kind": "select",
+            "options": [
+              "none",
+              "%"
+            ],
+            "defaultValue": "none"
+          }
+        ],
+        "code": "import {NumberInput} from '@pharos-ds/core/NumberInput';\n\n<NumberInput\n  size=\"md\"\n  isDisabled={false}\n  isIntegerOnly={false}\n  units=\"none\"\n />"
+      }
+    ],
+    "Outline": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Outline} from '@pharos-ds/core/Outline';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "default",
+              "compact"
+            ],
+            "defaultValue": "default"
+          }
+        ],
+        "code": "import {Outline} from '@pharos-ds/core/Outline';\n\n<Outline\n  density=\"default\"\n />"
+      }
+    ],
+    "OverflowList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {OverflowList} from '@pharos-ds/core/OverflowList';",
+        "controls": [
+          {
+            "name": "gap",
+            "kind": "select",
+            "options": [
+              "1",
+              "2",
+              "3"
+            ],
+            "defaultValue": "2"
+          },
+          {
+            "name": "collapseFrom",
+            "kind": "select",
+            "options": [
+              "start",
+              "end"
+            ],
+            "defaultValue": "end"
+          },
+          {
+            "name": "maxVisibleItems",
+            "kind": "select",
+            "options": [
+              "none",
+              "2",
+              "3"
+            ],
+            "defaultValue": "none"
+          }
+        ],
+        "code": "import {OverflowList} from '@pharos-ds/core/OverflowList';\n\n<OverflowList\n  gap=\"2\"\n  collapseFrom=\"end\"\n  maxVisibleItems=\"none\"\n />"
+      }
+    ],
+    "Overlay": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Overlay} from '@pharos-ds/core/Overlay';",
+        "controls": [
+          {
+            "name": "showOn",
+            "kind": "select",
+            "options": [
+              "hover",
+              "always",
+              "focus"
+            ],
+            "defaultValue": "hover"
+          },
+          {
+            "name": "scrim",
+            "kind": "select",
+            "options": [
+              "dark",
+              "light"
+            ],
+            "defaultValue": "dark"
+          },
+          {
+            "name": "position",
+            "kind": "select",
+            "options": [
+              "fill",
+              "bottom",
+              "top"
+            ],
+            "defaultValue": "fill"
+          }
+        ],
+        "code": "import {Overlay} from '@pharos-ds/core/Overlay';\n\n<Overlay\n  showOn=\"hover\"\n  scrim=\"dark\"\n  position=\"fill\"\n />"
+      }
+    ],
+    "Pagination": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Pagination} from '@pharos-ds/core/Pagination';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "pages",
+              "count",
+              "compact",
+              "dots",
+              "none"
+            ],
+            "defaultValue": "pages"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Pagination} from '@pharos-ds/core/Pagination';\n\n<Pagination\n  variant=\"pages\"\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Popover": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Popover} from '@pharos-ds/core/Popover';",
+        "controls": [
+          {
+            "name": "placement",
+            "kind": "select",
+            "options": [
+              "below",
+              "above",
+              "start",
+              "end"
+            ],
+            "defaultValue": "below"
+          },
+          {
+            "name": "alignment",
+            "kind": "select",
+            "options": [
+              "start",
+              "center",
+              "end"
+            ],
+            "defaultValue": "start"
+          }
+        ],
+        "code": "import {Popover} from '@pharos-ds/core/Popover';\n\n<Popover\n  placement=\"below\"\n  alignment=\"start\"\n />"
+      }
+    ],
+    "PowerSearch": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {PowerSearch} from '@pharos-ds/core/PowerSearch';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasClear",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {PowerSearch} from '@pharos-ds/core/PowerSearch';\n\n<PowerSearch\n  size=\"md\"\n  isDisabled={false}\n  hasClear\n />"
+      }
+    ],
+    "ProgressBar": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ProgressBar} from '@pharos-ds/core/ProgressBar';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "accent",
+              "success",
+              "warning",
+              "neutral",
+              "error"
+            ],
+            "defaultValue": "accent"
+          },
+          {
+            "name": "isIndeterminate",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasValueLabel",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {ProgressBar} from '@pharos-ds/core/ProgressBar';\n\n<ProgressBar\n  label=\"Progresso\"\n  value={68}\n  variant=\"accent\"\n  isIndeterminate={false}\n  hasValueLabel\n />"
+      }
+    ],
+    "RadioList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {RadioList, RadioListItem} from '@pharos-ds/core/RadioList';",
+        "controls": [
+          {
+            "name": "orientation",
+            "kind": "select",
+            "options": [
+              "vertical",
+              "horizontal"
+            ],
+            "defaultValue": "vertical"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {RadioList, RadioListItem} from '@pharos-ds/core/RadioList';\n\n<RadioList\n  orientation=\"vertical\"\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "RadioListItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {RadioListItem} from '@pharos-ds/core/RadioList';",
+        "controls": [
+          {
+            "name": "hasDescription",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "isItemDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {RadioListItem} from '@pharos-ds/core/RadioList';\n\n<RadioListItem\n  hasDescription\n  isItemDisabled={false}\n />"
+      }
+    ],
+    "Section": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Section} from '@pharos-ds/core/Section';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "section",
+              "transparent",
+              "muted"
+            ],
+            "defaultValue": "section"
+          },
+          {
+            "name": "padding",
+            "kind": "select",
+            "options": [
+              "2",
+              "4",
+              "6"
+            ],
+            "defaultValue": "4"
+          },
+          {
+            "name": "hasDividers",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Section} from '@pharos-ds/core/Section';\n\n<Section\n  variant=\"section\"\n  padding=\"4\"\n  hasDividers={false}\n />"
+      }
+    ],
+    "SegmentedControl": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SegmentedControl, SegmentedControlItem} from '@pharos-ds/core/SegmentedControl';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "layout",
+            "kind": "select",
+            "options": [
+              "hug",
+              "fill"
+            ],
+            "defaultValue": "hug"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {SegmentedControl, SegmentedControlItem} from '@pharos-ds/core/SegmentedControl';\n\n<SegmentedControl\n  size=\"md\"\n  layout=\"hug\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "SegmentedControlItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SegmentedControlItem} from '@pharos-ds/core/SegmentedControl';",
+        "controls": [
+          {
+            "name": "isLabelHidden",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {SegmentedControlItem} from '@pharos-ds/core/SegmentedControl';\n\n<SegmentedControlItem\n  isLabelHidden={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "SelectableCard": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SelectableCard} from '@pharos-ds/core/SelectableCard';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "default",
+              "muted"
+            ],
+            "defaultValue": "default"
+          },
+          {
+            "name": "elevation",
+            "kind": "select",
+            "options": [
+              "none",
+              "low",
+              "med",
+              "high"
+            ],
+            "defaultValue": "none"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {SelectableCard} from '@pharos-ds/core/SelectableCard';\n\n<SelectableCard\n  variant=\"default\"\n  elevation=\"none\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Selector": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Selector} from '@pharos-ds/core/Selector';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "hasSearch",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Selector} from '@pharos-ds/core/Selector';\n\n<Selector\n  size=\"md\"\n  hasSearch={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "SelectorOption": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Selector, SelectorOption} from '@pharos-ds/core/Selector';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "hasDescription",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {Selector, SelectorOption} from '@pharos-ds/core/Selector';\n\n<Selector\n  size=\"md\"\n  hasDescription\n />"
+      }
+    ],
+    "SideNav": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';",
+        "controls": [
+          {
+            "name": "collapsible",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';\n\n<SideNav\n  collapsible={false}\n />"
+      }
+    ],
+    "SideNavCollapseButton": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SideNav, SideNavCollapseButton} from '@pharos-ds/core/SideNav';",
+        "controls": [
+          {
+            "name": "hasLabel",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {SideNav, SideNavCollapseButton} from '@pharos-ds/core/SideNav';\n\n<SideNav\n  hasLabel\n />"
+      }
+    ],
+    "SideNavHeading": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SideNav, SideNavHeading} from '@pharos-ds/core/SideNav';",
+        "controls": [
+          {
+            "name": "hasSuperheading",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasSubheading",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {SideNav, SideNavHeading} from '@pharos-ds/core/SideNav';\n\n<SideNav\n  hasSuperheading={false}\n  hasSubheading\n />"
+      }
+    ],
+    "SideNavItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SideNav, SideNavItem} from '@pharos-ds/core/SideNav';",
+        "controls": [
+          {
+            "name": "isSelected",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasEndContent",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {SideNav, SideNavItem} from '@pharos-ds/core/SideNav';\n\n<SideNav\n  isSelected\n  isDisabled={false}\n  hasEndContent\n />"
+      }
+    ],
+    "SideNavSection": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';",
+        "controls": [
+          {
+            "name": "hasSubtitle",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "isHeaderHidden",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';\n\n<SideNav\n  hasSubtitle\n  isHeaderHidden={false}\n />"
+      }
+    ],
+    "Skeleton": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Skeleton} from '@pharos-ds/core/Skeleton';",
+        "controls": [
+          {
+            "name": "radius",
+            "kind": "select",
+            "options": [
+              "none",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "rounded"
+            ],
+            "defaultValue": "3"
+          }
+        ],
+        "code": "import {Skeleton} from '@pharos-ds/core/Skeleton';\n\n<Skeleton\n  width={240}\n  height={20}\n  radius=\"3\"\n />"
+      }
+    ],
+    "Slider": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Slider} from '@pharos-ds/core/Slider';",
+        "controls": [
+          {
+            "name": "orientation",
+            "kind": "select",
+            "options": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          },
+          {
+            "name": "valueDisplay",
+            "kind": "select",
+            "options": [
+              "tooltip",
+              "text",
+              "none"
+            ],
+            "defaultValue": "tooltip"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Slider} from '@pharos-ds/core/Slider';\n\n<Slider\n  orientation=\"horizontal\"\n  valueDisplay=\"tooltip\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Spinner": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Spinner} from '@pharos-ds/core/Spinner';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg",
+              "xl"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "shade",
+            "kind": "select",
+            "options": [
+              "default",
+              "onMedia",
+              "subtle",
+              "inherit"
+            ],
+            "defaultValue": "default"
+          }
+        ],
+        "code": "import {Spinner} from '@pharos-ds/core/Spinner';\n\n<Spinner\n  size=\"md\"\n  shade=\"default\"\n />"
+      }
+    ],
+    "Stack": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Stack} from '@pharos-ds/core/Stack';",
+        "controls": [
+          {
+            "name": "direction",
+            "kind": "select",
+            "options": [
+              "vertical",
+              "horizontal"
+            ],
+            "defaultValue": "vertical"
+          },
+          {
+            "name": "gap",
+            "kind": "select",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "defaultValue": "2"
+          },
+          {
+            "name": "wrap",
+            "kind": "select",
+            "options": [
+              "nowrap",
+              "wrap"
+            ],
+            "defaultValue": "nowrap"
+          },
+          {
+            "name": "align",
+            "kind": "select",
+            "options": [
+              "start",
+              "center",
+              "stretch"
+            ],
+            "defaultValue": "start"
+          }
+        ],
+        "code": "import {Stack} from '@pharos-ds/core/Stack';\n\n<Stack\n  direction=\"vertical\"\n  gap=\"2\"\n  wrap=\"nowrap\"\n  align=\"start\"\n />"
+      }
+    ],
+    "StatusDot": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {StatusDot} from '@pharos-ds/core/StatusDot';",
+        "controls": [
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "success",
+              "warning",
+              "error",
+              "accent",
+              "neutral"
+            ],
+            "defaultValue": "success"
+          },
+          {
+            "name": "isPulsing",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {StatusDot} from '@pharos-ds/core/StatusDot';\n\n<StatusDot\n  label=\"Online\"\n  variant=\"success\"\n  isPulsing={false}\n />"
+      }
+    ],
+    "Switch": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Switch} from '@pharos-ds/core/Switch';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isLoading",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Switch} from '@pharos-ds/core/Switch';\n\n<Switch\n  size=\"md\"\n  isDisabled={false}\n  isLoading={false}\n />"
+      }
+    ],
+    "Tab": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Tab} from '@pharos-ds/core/Tab';",
+        "controls": [
+          {
+            "name": "isLabelHidden",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Tab} from '@pharos-ds/core/Tab';\n\n<Tab\n  isLabelHidden={false}\n />"
+      }
+    ],
+    "TabList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TabList} from '@pharos-ds/core/TabList';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "layout",
+            "kind": "select",
+            "options": [
+              "hug",
+              "fill"
+            ],
+            "defaultValue": "hug"
+          },
+          {
+            "name": "hasDivider",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TabList} from '@pharos-ds/core/TabList';\n\n<TabList\n  size=\"md\"\n  layout=\"hug\"\n  hasDivider={false}\n />"
+      }
+    ],
+    "TabMenu": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TabMenu} from '@pharos-ds/core/TabMenu';",
+        "controls": [
+          {
+            "name": "label",
+            "kind": "select",
+            "options": [
+              "Mais",
+              "Excedente",
+              "Outros"
+            ],
+            "defaultValue": "Mais"
+          }
+        ],
+        "code": "import {TabMenu} from '@pharos-ds/core/TabMenu';\n\n<TabMenu\n  options=\"TAB_MENU_OPTIONS\"\n  label=\"Mais\"\n />"
+      }
+    ],
+    "Table": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Table} from '@pharos-ds/core/Table';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          },
+          {
+            "name": "isStriped",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasHover",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Table} from '@pharos-ds/core/Table';\n\n<Table\n  density=\"balanced\"\n  isStriped={false}\n  hasHover={false}\n />"
+      }
+    ],
+    "TableCell": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TableCell} from '@pharos-ds/core/TableCell';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          },
+          {
+            "name": "isStriped",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasHover",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TableCell} from '@pharos-ds/core/TableCell';\n\n<TableCell\n  density=\"balanced\"\n  isStriped={false}\n  hasHover={false}\n />"
+      }
+    ],
+    "TableHeaderCell": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TableHeaderCell} from '@pharos-ds/core/TableHeaderCell';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          }
+        ],
+        "code": "import {TableHeaderCell} from '@pharos-ds/core/TableHeaderCell';\n\n<TableHeaderCell\n  density=\"balanced\"\n />"
+      }
+    ],
+    "TableRow": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TableRow} from '@pharos-ds/core/TableRow';",
+        "controls": [
+          {
+            "name": "isStriped",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasHover",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TableRow} from '@pharos-ds/core/TableRow';\n\n<TableRow\n  isStriped={false}\n  hasHover={false}\n />"
+      }
+    ],
+    "Text": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Text} from '@pharos-ds/core/Text';",
+        "controls": [
+          {
+            "name": "type",
+            "kind": "select",
+            "options": [
+              "body",
+              "large",
+              "label",
+              "supporting",
+              "code",
+              "display-1",
+              "display-2",
+              "display-3",
+              "inherit"
+            ],
+            "defaultValue": "body"
+          },
+          {
+            "name": "color",
+            "kind": "select",
+            "options": [
+              "primary",
+              "secondary",
+              "disabled",
+              "placeholder",
+              "accent",
+              "inherit"
+            ],
+            "defaultValue": "primary"
+          },
+          {
+            "name": "weight",
+            "kind": "select",
+            "options": [
+              "normal",
+              "medium",
+              "semibold",
+              "bold"
+            ],
+            "defaultValue": "normal"
+          }
+        ],
+        "code": "import {Text} from '@pharos-ds/core/Text';\n\n<Text\n  type=\"body\"\n  color=\"primary\"\n  weight=\"normal\"\n />"
+      }
+    ],
+    "TextArea": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TextArea} from '@pharos-ds/core/TextArea';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TextArea} from '@pharos-ds/core/TextArea';\n\n<TextArea\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "TextInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TextInput} from '@pharos-ds/core/TextInput';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TextInput} from '@pharos-ds/core/TextInput';\n\n<TextInput\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Theme": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Theme} from '@pharos-ds/core/theme';",
+        "controls": [
+          {
+            "name": "mode",
+            "kind": "select",
+            "options": [
+              "light",
+              "dark",
+              "system"
+            ],
+            "defaultValue": "system"
+          }
+        ],
+        "code": "import {Theme} from '@pharos-ds/core/theme';\n\n<Theme\n  mode=\"system\"\n />"
+      }
+    ],
+    "Thumbnail": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Thumbnail} from '@pharos-ds/core/Thumbnail';",
+        "controls": [
+          {
+            "name": "isLoading",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "showRemoveOn",
+            "kind": "select",
+            "options": [
+              "always",
+              "hover"
+            ],
+            "defaultValue": "hover"
+          }
+        ],
+        "code": "import {Thumbnail} from '@pharos-ds/core/Thumbnail';\n\n<Thumbnail\n  isLoading={false}\n  isDisabled={false}\n  showRemoveOn=\"hover\"\n />"
+      }
+    ],
+    "TimeInput": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TimeInput} from '@pharos-ds/core/TimeInput';",
+        "controls": [
+          {
+            "name": "hourFormat",
+            "kind": "select",
+            "options": [
+              "12h",
+              "24h"
+            ],
+            "defaultValue": "12h"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TimeInput} from '@pharos-ds/core/TimeInput';\n\n<TimeInput\n  hourFormat=\"12h\"\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Timestamp": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Timestamp} from '@pharos-ds/core/Timestamp';",
+        "controls": [
+          {
+            "name": "format",
+            "kind": "select",
+            "options": [
+              "relative",
+              "auto",
+              "date",
+              "date_long",
+              "date_weekday",
+              "date_time",
+              "time",
+              "system_date",
+              "system_date_time",
+              "system_time"
+            ],
+            "defaultValue": "auto"
+          },
+          {
+            "name": "isLive",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isTimezoneShown",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Timestamp} from '@pharos-ds/core/Timestamp';\n\n<Timestamp\n  format=\"auto\"\n  isLive={false}\n  isTimezoneShown={false}\n />"
+      }
+    ],
+    "Toast": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Toast} from '@pharos-ds/core/Toast';",
+        "controls": [
+          {
+            "name": "type",
+            "kind": "select",
+            "options": [
+              "info",
+              "error"
+            ],
+            "defaultValue": "info"
+          },
+          {
+            "name": "isAutoHide",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {Toast} from '@pharos-ds/core/Toast';\n\n<Toast\n  type=\"info\"\n  isAutoHide\n />"
+      }
+    ],
+    "ToggleButton": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ToggleButton} from '@pharos-ds/core/ToggleButton';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {ToggleButton} from '@pharos-ds/core/ToggleButton';\n\n<ToggleButton\n  size=\"md\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "ToggleButtonGroup": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {ToggleButtonGroup} from '@pharos-ds/core/ToggleButton';",
+        "controls": [
+          {
+            "name": "type",
+            "kind": "select",
+            "options": [
+              "single",
+              "multiple"
+            ],
+            "defaultValue": "single"
+          },
+          {
+            "name": "orientation",
+            "kind": "select",
+            "options": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          },
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        ],
+        "code": "import {ToggleButtonGroup} from '@pharos-ds/core/ToggleButton';\n\n<ToggleButtonGroup\n  type=\"single\"\n  orientation=\"horizontal\"\n  size=\"md\"\n />"
+      }
+    ],
+    "Token": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Token} from '@pharos-ds/core/Token';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "color",
+            "kind": "select",
+            "options": [
+              "default",
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "teal",
+              "cyan",
+              "blue",
+              "purple",
+              "pink",
+              "gray"
+            ],
+            "defaultValue": "default"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Token} from '@pharos-ds/core/Token';\n\n<Token\n  size=\"md\"\n  color=\"default\"\n  isDisabled={false}\n />"
+      }
+    ],
+    "Tokenizer": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Tokenizer} from '@pharos-ds/core/Tokenizer';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "hasCreate",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Tokenizer} from '@pharos-ds/core/Tokenizer';\n\n<Tokenizer\n  size=\"md\"\n  hasCreate={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "Toolbar": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Toolbar} from '@pharos-ds/core/Toolbar';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "transparent",
+              "section",
+              "muted"
+            ],
+            "defaultValue": "transparent"
+          },
+          {
+            "name": "orientation",
+            "kind": "select",
+            "options": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          }
+        ],
+        "code": "import {Toolbar} from '@pharos-ds/core/Toolbar';\n\n<Toolbar\n  size=\"md\"\n  variant=\"transparent\"\n  orientation=\"horizontal\"\n />"
+      }
+    ],
+    "Tooltip": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Tooltip} from '@pharos-ds/core/Tooltip';",
+        "controls": [
+          {
+            "name": "placement",
+            "kind": "select",
+            "options": [
+              "above",
+              "below",
+              "start",
+              "end"
+            ],
+            "defaultValue": "above"
+          },
+          {
+            "name": "hasHoverIndication",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {Tooltip} from '@pharos-ds/core/Tooltip';\n\n<Tooltip\n  content=\"Salvar alterações\"\n  placement=\"above\"\n  hasHoverIndication\n />"
+      }
+    ],
+    "TopNav": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TopNav} from '@pharos-ds/core/TopNav';",
+        "controls": [],
+        "code": "import {TopNav} from '@pharos-ds/core/TopNav';\n\n<TopNav />"
+      }
+    ],
+    "TopNavHeading": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TopNavHeading} from '@pharos-ds/core/TopNavHeading';",
+        "controls": [
+          {
+            "name": "showSuperheading",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "showSubheading",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TopNavHeading} from '@pharos-ds/core/TopNavHeading';\n\n<TopNavHeading\n  showSuperheading\n  showSubheading={false}\n />"
+      }
+    ],
+    "TopNavItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TopNavItem} from '@pharos-ds/core/TopNavItem';",
+        "controls": [
+          {
+            "name": "isSelected",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TopNavItem} from '@pharos-ds/core/TopNavItem';\n\n<TopNavItem\n  isSelected={false}\n  isDisabled={false}\n />"
+      }
+    ],
+    "TopNavMegaMenu": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TopNavMegaMenu} from '@pharos-ds/core/TopNavMegaMenu';",
+        "controls": [
+          {
+            "name": "label",
+            "kind": "select",
+            "options": [
+              "Plataforma",
+              "Soluções",
+              "Recursos"
+            ],
+            "defaultValue": "Plataforma"
+          }
+        ],
+        "code": "import {TopNavMegaMenu} from '@pharos-ds/core/TopNavMegaMenu';\n\n<TopNavMegaMenu\n  label=\"Plataforma\"\n />"
+      }
+    ],
+    "TopNavMegaMenuFeaturedCard": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TopNavMegaMenuFeaturedCard} from '@pharos-ds/core/TopNavMegaMenuFeaturedCard';",
+        "controls": [
+          {
+            "name": "title",
+            "kind": "select",
+            "options": [
+              "Primeiros passos",
+              "Novo lançamento",
+              "Estudo de caso"
+            ],
+            "defaultValue": "Primeiros passos"
+          },
+          {
+            "name": "hasDescription",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {TopNavMegaMenuFeaturedCard} from '@pharos-ds/core/TopNavMegaMenuFeaturedCard';\n\n<TopNavMegaMenuFeaturedCard\n  title=\"Primeiros passos\"\n  hasDescription\n />"
+      }
+    ],
+    "TopNavMegaMenuItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TopNavMegaMenuItem} from '@pharos-ds/core/TopNavMegaMenuItem';",
+        "controls": [
+          {
+            "name": "hasDescription",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "isLink",
+            "kind": "boolean",
+            "defaultValue": true
+          }
+        ],
+        "code": "import {TopNavMegaMenuItem} from '@pharos-ds/core/TopNavMegaMenuItem';\n\n<TopNavMegaMenuItem\n  hasDescription\n  isLink\n />"
+      }
+    ],
+    "TopNavMenu": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TopNavMenu} from '@pharos-ds/core/TopNavMenu';",
+        "controls": [
+          {
+            "name": "label",
+            "kind": "select",
+            "options": [
+              "Produtos",
+              "Ferramentas",
+              "Mais"
+            ],
+            "defaultValue": "Produtos"
+          }
+        ],
+        "code": "import {TopNavMenu} from '@pharos-ds/core/TopNavMenu';\n\n<TopNavMenu\n  label=\"Produtos\"\n />"
+      }
+    ],
+    "TreeList": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TreeList} from '@pharos-ds/core/TreeList';",
+        "controls": [
+          {
+            "name": "density",
+            "kind": "select",
+            "options": [
+              "compact",
+              "balanced",
+              "spacious"
+            ],
+            "defaultValue": "balanced"
+          },
+          {
+            "name": "variant",
+            "kind": "select",
+            "options": [
+              "lineGuides",
+              "noGuides"
+            ],
+            "defaultValue": "lineGuides"
+          }
+        ],
+        "code": "import {TreeList} from '@pharos-ds/core/TreeList';\n\n<TreeList\n  density=\"balanced\"\n  variant=\"lineGuides\"\n />"
+      }
+    ],
+    "Typeahead": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {Typeahead} from '@pharos-ds/core/Typeahead';",
+        "controls": [
+          {
+            "name": "size",
+            "kind": "select",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "hasEntriesOnFocus",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {Typeahead} from '@pharos-ds/core/Typeahead';\n\n<Typeahead\n  size=\"md\"\n  isDisabled={false}\n  hasEntriesOnFocus={false}\n />"
+      }
+    ],
+    "TypeaheadItem": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {TypeaheadItem} from '@pharos-ds/core/TypeaheadItem';",
+        "controls": [
+          {
+            "name": "hasDescription",
+            "kind": "boolean",
+            "defaultValue": true
+          },
+          {
+            "name": "isDisabled",
+            "kind": "boolean",
+            "defaultValue": false
+          }
+        ],
+        "code": "import {TypeaheadItem} from '@pharos-ds/core/TypeaheadItem';\n\n<TypeaheadItem\n  hasDescription\n  isDisabled={false}\n />"
+      }
+    ],
+    "VisuallyHidden": [
+      {
+        "title": "Área interativa",
+        "importLine": "import {VisuallyHidden} from '@pharos-ds/core/VisuallyHidden';",
+        "controls": [],
+        "code": "import {VisuallyHidden} from '@pharos-ds/core/VisuallyHidden';\n\n<VisuallyHidden />"
+      }
+    ]
+  }
+}

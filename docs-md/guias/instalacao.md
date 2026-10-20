@@ -1,0 +1,84 @@
+---
+title: "Instalação"
+description: "Como instalar e configurar o Pharos no seu projeto."
+source: /docs/instalacao
+---
+
+# Instalação
+
+Pharos é o design system da **Alexandria**. Você importa CSS pré-compilado e componentes React tipados — sem plugin de build obrigatório.
+
+## Pacotes
+
+```bash
+# npm
+npm install @pharos-ds/core @pharos-ds/theme-pharos
+npm install -D @pharos-ds/cli
+
+# pnpm
+pnpm add @pharos-ds/core @pharos-ds/theme-pharos
+pnpm add -D @pharos-ds/cli
+
+# yarn
+yarn add @pharos-ds/core @pharos-ds/theme-pharos
+yarn add -D @pharos-ds/cli
+```
+
+## CSS
+
+Importe na ordem abaixo (reset → base → tema):
+
+```css
+@import "@pharos-ds/core/reset.css";
+@import "@pharos-ds/core/pharos.css";
+@import "@pharos-ds/theme-pharos/theme.css";
+```
+
+## Theme provider
+
+Envolva a aplicação com `<Theme>` e o tema built do Pharos. `@pharos-ds/theme-pharos` (marca Alexandria) é o tema padrão; não troque por `@pharos-ds/theme-neutral` ou outro tema de exemplo da CLI.
+
+```tsx
+'use client';
+
+import Link from 'next/link';
+import {Theme} from '@pharos-ds/core/theme';
+import {LinkProvider} from '@pharos-ds/core/Link';
+import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+
+export function Providers({children}: {children: React.ReactNode}) {
+  return (
+    <Theme theme={pharosTheme} mode="system">
+      <LinkProvider component={Link}>{children}</LinkProvider>
+    </Theme>
+  );
+}
+```
+
+## Primeiro componente
+
+```tsx
+import {Button} from '@pharos-ds/core/Button';
+
+export function Exemplo() {
+  return <Button label="Salvar" variant="primary" />;
+}
+```
+
+## CLI (recomendado)
+
+Para documentação sempre atualizada e scaffolding:
+
+```bash
+npx @pharos-ds/cli init
+npx @pharos-ds/cli component --list
+npx @pharos-ds/cli component Button
+```
+
+Use o nome com escopo `@pharos-ds/cli` — o pacote bare `pharos` no npm é outro projeto.
+
+## Próximos passos
+
+- [Integração com Next.js](./nextjs.md)
+- [CLI](./cli.md)
+- [Temas e dark mode](./temas.md)

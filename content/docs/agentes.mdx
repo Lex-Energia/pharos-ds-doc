@@ -16,6 +16,20 @@ npx @pharos-ds/cli init
 
 Isso escreve guias em `AGENTS.md` / `CLAUDE.md` com componentes, templates, tokens e regras de layout.
 
+## Tema padrão: Alexandria
+
+O tema padrão do Pharos é **sempre** `@pharos-ds/theme-pharos` (marca Alexandria). A CLI 1.0.0 ainda sugere `@pharos-ds/theme-neutral` na saída de `pharos init` (as versões seguintes instalam o tema Alexandria por padrão) — ignore. Não instale `theme-neutral` nem outro `@pharos-ds/theme-*`.
+
+```tsx
+import {Theme} from '@pharos-ds/core/theme';
+import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+import '@pharos-ds/theme-pharos/theme.css';
+
+<Theme theme={pharosTheme} mode="system">{children}</Theme>
+```
+
+Valores do tema (paleta, tokens, tipografia, ícones) em [Temas](/docs/temas) e na página [/temas](/temas).
+
 ## Não invente APIs
 
 Em vez de adivinhar props:
