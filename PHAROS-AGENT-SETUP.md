@@ -13,8 +13,8 @@ Regra número um: **o tema é sempre `@pharos-ds/theme-pharos`**. Nunca instale 
 ## 2. Instalação
 
 ```bash
-pnpm add @pharos-ds/core@^1.0.3 @pharos-ds/theme-pharos@^1.0.3
-pnpm add -D @pharos-ds/cli@^1.0.3
+pnpm add @pharos-ds/core@^1.0.4 @pharos-ds/theme-pharos@^1.0.4
+pnpm add -D @pharos-ds/cli@^1.0.4
 ```
 
 Use sempre o pacote com escopo `@pharos-ds/cli`. O pacote bare `pharos` no npm é outro projeto.
@@ -198,7 +198,7 @@ Antes de usar `AppShell`, `TextInput` ou qualquer outro, rode `pnpm pharos -- co
 
 ## 9. Checklist de entrega
 
-- [ ] `@pharos-ds/core`, `@pharos-ds/theme-pharos` (>= 1.0.3) e `@pharos-ds/cli` instalados.
+- [ ] `@pharos-ds/core`, `@pharos-ds/theme-pharos` (>= 1.0.4) e `@pharos-ds/cli` instalados.
 - [ ] CSS global com reset → pharos → theme-pharos, nessa ordem.
 - [ ] `<Theme theme={pharosTheme}>` (import `/built`) envolvendo o app.
 - [ ] `pnpm pharos -- init` rodado e `AGENTS.md`/`CLAUDE.md` lidos.

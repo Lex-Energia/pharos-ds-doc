@@ -73,6 +73,7 @@ Valores explorados na demo interativa:
 | `hasClear` | `boolean` | não | `false` | Exibe um botão de limpar (×) quando o input tem um valor. Clicar nele limpa o value e devolve o foco ao input. |
 | `hasAutoFocus` | `boolean` | não | `false` | Foca automaticamente o input ao montar. |
 | `htmlName` | `string` | não | — | Atributo HTML name do input, útil para submissões de formulário. |
+| `autoComplete` | `HTMLInputAutoCompleteAttribute` | não | — | The HTML autocomplete attribute (e.g. 'email', 'current-password', 'one-time-code'), so browsers and password managers can fill the field. |
 | `width` | `SizeValue` | não | — | Largura do campo (número = pixels, string usada como está, ex.: "100%"). Dimensiona o campo inteiro (label, controle e status) para que permaneçam alinhados. |
 
 > Pacote: `@pharos-ds/core` · Import: `@pharos-ds/core/TextInput` · Docs atualizadas: `npx @pharos-ds/cli component TextInput`

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T17:38:55.403Z",
+  "generatedAt": "2026-10-20T20:26:49.143Z",
   "groups": {
     "AppShell": [
       "AppShell"
@@ -10730,6 +10730,12 @@
           "name": "htmlName",
           "type": "string",
           "description": "Atributo HTML name do input, útil para submissões de formulário.",
+          "required": false
+        },
+        {
+          "name": "autoComplete",
+          "type": "HTMLInputAutoCompleteAttribute",
+          "description": "The HTML autocomplete attribute (e.g. 'email', 'current-password', 'one-time-code'), so browsers and password managers can fill the field.",
           "required": false
         },
         {

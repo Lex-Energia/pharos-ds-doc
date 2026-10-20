@@ -1,12 +1,12 @@
 ---
 title: "Tema Pharos (marca Alexandria)"
 description: "Referência completa do tema oficial: paleta da marca, tokens claro/escuro, tipografia, motion, overrides de componentes e ícones."
-package: "@pharos-ds/theme-pharos@1.0.3"
+package: "@pharos-ds/theme-pharos@1.0.4"
 ---
 
 # Tema Pharos (marca Alexandria)
 
-Tema oficial do design system, pacote `@pharos-ds/theme-pharos` v1.0.3. Este arquivo é gerado a partir do `theme.css` compilado do pacote e lista todos os valores que o tema aplica sobre o `@pharos-ds/core`. Para instalação e uso, veja [Temas](./temas.md) e [Guias → Temas](./guias/temas.md).
+Tema oficial do design system, pacote `@pharos-ds/theme-pharos` v1.0.4. Este arquivo é gerado a partir do `theme.css` compilado do pacote e lista todos os valores que o tema aplica sobre o `@pharos-ds/core`. Para instalação e uso, veja [Temas](./temas.md) e [Guias → Temas](./guias/temas.md).
 
 > **Tema padrão.** Todo projeto Pharos usa este tema por padrão. Não use `@pharos-ds/theme-neutral` nem outro `@pharos-ds/theme-*` (são temas de exemplo da CLI), mesmo que uma CLI anterior à 1.0.3 os sugira em `pharos init`.
 
@@ -126,7 +126,7 @@ Texto primário usa o chumbo do brandbook (`#383838`); o tema evita preto absolu
 | `--color-text-primary` | `#383838` | `#fafafa` |
 | `--color-text-secondary` | `#737373` | `#a3a3a3` |
 | `--color-text-disabled` | `#a3a3a3` | `#525252` |
-| `--color-text-accent` | `#F26641` | `#FF8A5C` |
+| `--color-text-accent` | `#B84626` | `#FF8A5C` |
 
 ### Cor "on" (texto sobre superfícies coloridas)
 
@@ -136,7 +136,7 @@ Use sobre accent, success, error e warning para garantir contraste.
 | --- | --- | --- |
 | `--color-on-dark` | `#ffffff` | *(igual)* |
 | `--color-on-light` | `#383838` | *(igual)* |
-| `--color-on-accent` | `#ffffff` | `#171717` |
+| `--color-on-accent` | `#171717` | *(igual)* |
 | `--color-on-success` | `#ffffff` | `#171717` |
 | `--color-on-error` | `#ffffff` | `#171717` |
 | `--color-on-warning` | `#383838` | *(igual)* |
@@ -145,7 +145,7 @@ Use sobre accent, success, error e warning para garantir contraste.
 
 | Token | Claro | Escuro |
 | --- | --- | --- |
-| `--color-icon-accent` | `#F26641` | `#FF8A5C` |
+| `--color-icon-accent` | `#B84626` | `#FF8A5C` |
 | `--color-icon-primary` | `#383838` | `#fafafa` |
 | `--color-icon-secondary` | `#737373` | `#a3a3a3` |
 | `--color-icon-disabled` | `#a3a3a3` | `#525252` |
@@ -239,8 +239,8 @@ Dez matizes, cada um com fundo, borda, ícone e texto. Claro: fundo pastel + tex
 | --- | --- | --- |
 | `--color-background-orange` | `#FDE0D6` | `#F266413D` |
 | `--color-border-orange` | `#F5C4B3` | `#F26641` |
-| `--color-icon-orange` | `#C44A28` | `#FFA07A` |
-| `--color-text-orange` | `#C44A28` | `#FFC4A8` |
+| `--color-icon-orange` | `#B04324` | `#FFA07A` |
+| `--color-text-orange` | `#B04324` | `#FFC4A8` |
 
 #### yellow — amarelos da marca `#FAA61A` / `#FFF200`
 

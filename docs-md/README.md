@@ -3,7 +3,7 @@
 > Design system da Alexandria — componentes React acessíveis, temas e templates.
 > Pacotes npm: `@pharos-ds/core`, `@pharos-ds/theme-pharos`, `@pharos-ds/cli`.
 
-Esta pasta é a versão Markdown completa do site de documentação, gerada por `pnpm export:md` para uso por agentes de IA. Catálogo gerado em 2026-10-20T17:38:55.403Z.
+Esta pasta é a versão Markdown completa do site de documentação, gerada por `pnpm export:md` para uso por agentes de IA. Catálogo gerado em 2026-10-20T20:26:49.143Z.
 
 ## Instruções para agentes
 
