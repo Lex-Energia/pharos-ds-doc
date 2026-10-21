@@ -5,7 +5,7 @@ Você vai configurar e usar o **Pharos**, o design system da Alexandria, neste p
 ## 1. O que é
 
 - **`@pharos-ds/core`**: 154 componentes React acessíveis + CSS pré-compilado. Não exige plugin de build.
-- **`@pharos-ds/theme-pharos`**: o **tema oficial e padrão**, com a identidade Alexandria (Figtree, laranja `#F26641`, azul `#034694`, roxo `#7C51A1`, chumbo `#383838`, dark mode, ícones Lucide).
+- **`@pharos-ds/theme-pharos`**: o **tema oficial e padrão**, com a identidade Alexandria (Figtree, azul `#034694` como cor primária, roxo `#7C51A1`, laranja `#F26641` e amarelos como destaque, chumbo `#383838`, dark mode, ícones Lucide, logo e símbolo da marca).
 - **`@pharos-ds/cli`**: fonte de verdade para props, exemplos, templates e docs. Use-a em vez de adivinhar APIs.
 
 Regra número um: **o tema é sempre `@pharos-ds/theme-pharos`**. Nunca instale nem use `@pharos-ds/theme-neutral`, `theme-butter`, `theme-chocolate`, `theme-gothic`, `theme-matcha`, `theme-stone` ou `theme-y2k`. São temas de exemplo da CLI. Versões da CLI anteriores à 1.0.3 sugeriam `theme-neutral` no `init`; se vir isso, ignore e atualize a CLI.
@@ -13,8 +13,8 @@ Regra número um: **o tema é sempre `@pharos-ds/theme-pharos`**. Nunca instale 
 ## 2. Instalação
 
 ```bash
-pnpm add @pharos-ds/core@^1.0.4 @pharos-ds/theme-pharos@^1.0.4
-pnpm add -D @pharos-ds/cli@^1.0.4
+pnpm add @pharos-ds/core@^1.0.9 @pharos-ds/theme-pharos@^1.0.9
+pnpm add -D @pharos-ds/cli@^1.0.9
 ```
 
 Use sempre o pacote com escopo `@pharos-ds/cli`. O pacote bare `pharos` no npm é outro projeto.
@@ -36,10 +36,11 @@ No CSS global do app (`src/app/globals.css` no Next.js, `src/index.css` no Vite)
 ```css
 @import "@pharos-ds/core/reset.css";
 @import "@pharos-ds/core/pharos.css";
+@import "@pharos-ds/theme-pharos/fonts.css";
 @import "@pharos-ds/theme-pharos/theme.css";
 ```
 
-A ordem é reset → base → tema. Sem esses três imports os componentes renderizam sem estilo.
+A ordem é reset → base → fonte → tema. Sem os imports de reset, base e tema os componentes renderizam sem estilo. O `fonts.css` carrega a Figtree (400, 500, 600 e 700); sem ele a página cai na fonte do sistema. Em Next.js você pode usar o `next/font` no lugar do `fonts.css`: carregue a Figtree e aponte `--font-family-body` e `--font-family-heading` para ela.
 
 ## 4. Provider do tema
 
@@ -158,6 +159,7 @@ import {Badge} from '@pharos-ds/core/Badge';
 - **Texto e títulos** via `Text` e `Heading`, nunca `<p>`/`<h1>` soltos com CSS próprio.
 - **Sem hex, px ou cores soltas.** Customização: primeiro props do componente; depois `className`/`style` só com tokens: `var(--color-text-primary)`, `var(--spacing-4)`, `var(--radius-element)`. Nunca sobrescreva `--color-*` no `:root`.
 - **Cores semânticas** (`success`, `warning`, `error`) para feedback; cores categóricas (`blue`, `purple`, `teal`...) para categorias, não para estado.
+- **Marca.** Logo e símbolo vêm de `AlexandriaLogo` (`@pharos-ds/theme-pharos/logo`, módulo cliente); use `kind="symbol"` onde o logotipo não cabe, como na sidebar recolhida. Não redesenhe nem recolora a logo. O degradê (`brandGradient`, de `@pharos-ds/theme-pharos/brand`) é só decorativo, como em login e estados vazios, nunca um filtro de cor.
 - **Links** com `Link` de `@pharos-ds/core/Link`, que usa o `LinkProvider` do framework.
 - **Tailwind é opcional.** Se o projeto usa, importe `@pharos-ds/core/tailwind-theme.css` depois do tema e use utilitários ligados aos tokens (`bg-surface`, `text-primary`). Nada de valores arbitrários como `bg-[#fff]`.
 - Não misture outra biblioteca de componentes (MUI, Chakra, shadcn) com o Pharos.
@@ -198,8 +200,8 @@ Antes de usar `AppShell`, `TextInput` ou qualquer outro, rode `pnpm pharos -- co
 
 ## 9. Checklist de entrega
 
-- [ ] `@pharos-ds/core`, `@pharos-ds/theme-pharos` (>= 1.0.4) e `@pharos-ds/cli` instalados.
-- [ ] CSS global com reset → pharos → theme-pharos, nessa ordem.
+- [ ] `@pharos-ds/core`, `@pharos-ds/theme-pharos` (>= 1.0.9) e `@pharos-ds/cli` instalados.
+- [ ] CSS global com reset → pharos → fonts → theme-pharos, nessa ordem (ou `next/font` no lugar do `fonts.css`).
 - [ ] `<Theme theme={pharosTheme}>` (import `/built`) envolvendo o app.
 - [ ] `pnpm pharos -- init` rodado e `AGENTS.md`/`CLAUDE.md` lidos.
 - [ ] `pnpm pharos -- doctor` sem falhas.

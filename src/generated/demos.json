@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T20:26:50.675Z",
+  "generatedAt": "2026-10-21T20:24:32.242Z",
   "demos": {
     "AlertDialog": [
       {
@@ -2783,9 +2783,14 @@
             "name": "isHeaderHidden",
             "kind": "boolean",
             "defaultValue": false
+          },
+          {
+            "name": "collapsible",
+            "kind": "boolean",
+            "defaultValue": false
           }
         ],
-        "code": "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';\n\n<SideNav\n  hasSubtitle\n  isHeaderHidden={false}\n />"
+        "code": "import {SideNav, SideNavSection, SideNavItem} from '@pharos-ds/core/SideNav';\n\n<SideNav\n  hasSubtitle\n  isHeaderHidden={false}\n  collapsible={false}\n />"
       }
     ],
     "Skeleton": [

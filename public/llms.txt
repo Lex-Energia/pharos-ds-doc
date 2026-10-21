@@ -23,7 +23,7 @@
 2. Never guess component APIs — run `npx @pharos-ds/cli component <Name>`
 3. Prefer composed Pharos components over hand-rolled CSS
 4. Install: `@pharos-ds/core` + `@pharos-ds/theme-pharos`
-5. CSS order: reset.css → pharos.css → theme.css
+5. CSS order: reset.css → pharos.css → fonts.css → theme.css (fonts.css loads Figtree; Next.js can use next/font instead)
 6. Wrap app with `<Theme theme={pharosTheme}>` from `@pharos-ds/theme-pharos/built`
 7. DEFAULT THEME IS ALWAYS `@pharos-ds/theme-pharos` (Alexandria brand). Since `@pharos-ds/cli` 1.0.3, `pharos init` installs and wires it by default; older CLI versions suggested `@pharos-ds/theme-neutral` — ignore that and upgrade. Never install `theme-neutral` or other `@pharos-ds/theme-*` packages.
 

@@ -1,5 +1,6 @@
 @import "@pharos-ds/core/reset.css";
 @import "@pharos-ds/core/pharos.css";
+@import "@pharos-ds/theme-pharos/fonts.css";
 @import "@pharos-ds/theme-pharos/theme.css";
 
 :root {

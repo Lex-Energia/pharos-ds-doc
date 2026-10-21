@@ -23,6 +23,7 @@ O tema padrão do Pharos é **sempre** `@pharos-ds/theme-pharos` (marca Alexandr
 ```tsx
 import {Theme} from '@pharos-ds/core/theme';
 import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+import '@pharos-ds/theme-pharos/fonts.css';
 import '@pharos-ds/theme-pharos/theme.css';
 
 <Theme theme={pharosTheme} mode="system">{children}</Theme>

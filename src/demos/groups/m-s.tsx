@@ -422,7 +422,8 @@ function SideNavSectionDemo(props: Record<string, ControlValue>) {
         <SideNavSection
           title="Área de trabalho"
           subtitle={Boolean(props.hasSubtitle) ? 'Equipe principal' : undefined}
-          isHeaderHidden={Boolean(props.isHeaderHidden)}>
+          isHeaderHidden={Boolean(props.isHeaderHidden)}
+          collapsible={Boolean(props.collapsible)}>
           <SideNavItem label="Visão geral" href="#" icon={<Home size={16} />} isSelected />
           <SideNavItem label="Arquivos" href="#" icon={<Folder size={16} />} />
         </SideNavSection>
@@ -954,6 +955,7 @@ export const demosMS: Record<string, InteractiveDemoConfig[]> = {
       controls: [
         booleanControl('hasSubtitle', true),
         booleanControl('isHeaderHidden', false),
+        booleanControl('collapsible', false),
       ],
       render: props => SideNavSectionDemo(props),
     }),

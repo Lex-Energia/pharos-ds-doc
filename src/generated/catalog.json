@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T20:26:49.143Z",
+  "generatedAt": "2026-10-21T20:24:35.922Z",
   "groups": {
     "AppShell": [
       "AppShell"
@@ -9255,6 +9255,13 @@
           "name": "isHeaderHidden",
           "type": "boolean",
           "description": "Oculta visualmente o header da section mantendo-o acessível a leitores de tela.",
+          "required": false,
+          "default": "false"
+        },
+        {
+          "name": "collapsible",
+          "type": "boolean | { defaultIsCollapsed?: boolean; isCollapsed?: boolean; onCollapsedChange?: (isCollapsed: boolean) => void }",
+          "description": "Permite recolher os itens da section ao clicar no título. A área do título vira um botão (`aria-expanded`) com um chevron; `endContent` fica fora do botão. `true` ativa com os padrões (começa expandida); um objeto configura: `defaultIsCollapsed` (começa recolhida) ou `isCollapsed` com `onCollapsedChange` (modo controlado). Ignorada quando `isHeaderHidden` está ativo ou quando o SideNav está recolhido ao trilho de ícones (os itens continuam visíveis para os ícones seguirem acessíveis).",
           "required": false,
           "default": "false"
         },

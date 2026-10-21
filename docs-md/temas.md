@@ -18,6 +18,7 @@ pnpm add @pharos-ds/theme-pharos
 
 import {Theme} from '@pharos-ds/core/theme';
 import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+import '@pharos-ds/theme-pharos/fonts.css';
 import '@pharos-ds/theme-pharos/theme.css';
 
 <Theme theme={pharosTheme} mode="system">
