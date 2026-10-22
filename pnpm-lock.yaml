@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@pharos-ds/cli':
-        specifier: 1.0.4
-        version: 1.0.4(@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@pharos-ds/theme-pharos@1.0.4(@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(gpt-tokenizer@3.4.0)
+        specifier: 1.0.9
+        version: 1.0.9(@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@pharos-ds/theme-pharos@1.0.9(@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(gpt-tokenizer@3.4.0)
       '@pharos-ds/core':
-        specifier: 1.0.4
-        version: 1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 1.0.9
+        version: 1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@pharos-ds/theme-pharos':
-        specifier: 1.0.4
-        version: 1.0.4(@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+        specifier: 1.0.9
+        version: 1.0.9(@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -243,6 +243,9 @@ packages:
   '@emnapi/runtime@1.11.3':
     resolution: {integrity: sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==}
 
+  '@fontsource/figtree@5.3.0':
+    resolution: {integrity: sha512-/iTcTXL1eRBGhvD7NN9dnKzXzWqDLVZVEUFI9xIxAC1G/hXU8tCyYeXCAuPOuvSYPInFUP7H6KLGgygmDfy1SA==}
+
   '@formatjs/fast-memoize@3.1.7':
     resolution: {integrity: sha512-zXfhLpvA6T7+efdt9JLbBwZ00tT7NsBMDVnDu8rpHeNNv8KfRZAMo2gkG0k9lK/Nzc//3kJ9pImsfuJxk3KhUA==}
 
@@ -465,8 +468,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@pharos-ds/cli@1.0.4':
-    resolution: {integrity: sha512-fekLPVSsM/PGk2K8L4gfmz3qftTC06AXXM/A6jSDNPh8XGYX6zVtNaJ9sLqOdjDPwOZfQr9rJb2sPY04fQmtTA==}
+  '@pharos-ds/cli@1.0.9':
+    resolution: {integrity: sha512-GVbjvkeI0E5IWpMg9L4gb1ylx0fhEFyo9x6RSwHvSnqKtukFaHLIeb1y9M6rvWzv/sA3ssc+D8JJsH5iojN+dA==}
     hasBin: true
     peerDependencies:
       '@pharos-ds/charts': '*'
@@ -484,17 +487,17 @@ packages:
       '@pharos-ds/theme-pharos':
         optional: true
 
-  '@pharos-ds/core@1.0.4':
-    resolution: {integrity: sha512-DtZ2us7AOy+7TtzCBNZ7/LLkq6UpZ2BU+nY0ntijOj/UxjrEspTI4gTaeOoYiyQhB6+EM+A1xAU72QTNIs3ENQ==}
+  '@pharos-ds/core@1.0.9':
+    resolution: {integrity: sha512-w1H+ueLhlLlIPFIV6yfs8t/xvrRXLf+i5JQe7g//KF1XES1MQgwSUKxWRsCe7Wjj5BKMn/R+u3bT6JKfA3dd+A==}
     peerDependencies:
       '@stylexjs/stylex': ^0.19.0
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  '@pharos-ds/theme-pharos@1.0.4':
-    resolution: {integrity: sha512-xG8TqAK8y9XJZCWdESKQlqPMe1gdQZeFPQlf47fBOP4g/AbsNGyBDhBqlRHCxzCm5lUdwE21phk3GuUm3/u+wg==}
+  '@pharos-ds/theme-pharos@1.0.9':
+    resolution: {integrity: sha512-ROIZLzWhLZEb7iSFmHoqmD3Q2OBUmLvx1c8/gfGNnVkSsILQE/XNWtbY5rlhlU2bzZjako75P4y0u7rrEx/yzQ==}
     peerDependencies:
-      '@pharos-ds/core': 1.0.4
+      '@pharos-ds/core': 1.0.9
       react: '>=19'
 
   '@shikijs/core@3.23.0':
@@ -1642,6 +1645,8 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+  '@fontsource/figtree@5.3.0': {}
+
   '@formatjs/fast-memoize@3.1.7': {}
 
   '@formatjs/icu-messageformat-parser@3.5.15':
@@ -1828,7 +1833,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@15.5.22':
     optional: true
 
-  '@pharos-ds/cli@1.0.4(@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@pharos-ds/theme-pharos@1.0.4(@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(gpt-tokenizer@3.4.0)':
+  '@pharos-ds/cli@1.0.9(@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@pharos-ds/theme-pharos@1.0.9(@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8))(gpt-tokenizer@3.4.0)':
     dependencies:
       commander: 15.0.0
       gpt-tokenizer: 3.4.0
@@ -1836,22 +1841,23 @@ snapshots:
       jscodeshift: 17.4.0
       zod: 4.4.3
     optionalDependencies:
-      '@pharos-ds/core': 1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@pharos-ds/theme-pharos': 1.0.4(@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+      '@pharos-ds/core': 1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@pharos-ds/theme-pharos': 1.0.9(@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
     transitivePeerDependencies:
       - '@babel/preset-env'
       - supports-color
 
-  '@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@stylexjs/stylex': 0.19.0
       intl-messageformat: 11.2.12
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
 
-  '@pharos-ds/theme-pharos@1.0.4(@pharos-ds/core@1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)':
+  '@pharos-ds/theme-pharos@1.0.9(@pharos-ds/core@1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)':
     dependencies:
-      '@pharos-ds/core': 1.0.4(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@fontsource/figtree': 5.3.0
+      '@pharos-ds/core': 1.0.9(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       lucide-react: 1.28.0(react@19.2.8)
       react: 19.2.8
 

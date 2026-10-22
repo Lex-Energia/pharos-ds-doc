@@ -26,13 +26,16 @@ yarn add -D @pharos-ds/cli
 
 ## CSS
 
-Importe na ordem abaixo (reset → base → tema):
+Importe na ordem abaixo (reset → base → fonte → tema):
 
 ```css
 @import "@pharos-ds/core/reset.css";
 @import "@pharos-ds/core/pharos.css";
+@import "@pharos-ds/theme-pharos/fonts.css";
 @import "@pharos-ds/theme-pharos/theme.css";
 ```
+
+O `fonts.css` carrega a Figtree (400, 500, 600 e 700). Em Next.js você pode usar o `next/font` no lugar do `fonts.css`: carregue a Figtree e aponte `--font-family-body` e `--font-family-heading` para ela.
 
 ## Theme provider
 

@@ -60,7 +60,7 @@ function parseThemeCss(css) {
 
   const overrides = [];
   const rest = body.slice(scopeEnd);
-  const re = /\.pharos-([a-z]+)((?:\.[a-z0-9-]+)*)\s*\{([^}]*)\}/g;
+  const re = /\.pharos-([a-z][a-z-]*)((?:\.[a-z0-9-]+)*)\s*\{([^}]*)\}/g;
   let m;
   while ((m = re.exec(rest))) {
     const component = m[1];
@@ -100,18 +100,18 @@ const SECTIONS = [
     title: 'Superfícies (backgrounds)',
     match: n => n.startsWith('--color-background-') && !isHue(n),
     intro:
-      'Modo claro: superfícies brancas flutuando sobre um body levemente cinza; sombras fazem a elevação. Modo escuro: card, popover e muted colapsam no tom do body e se elevam só por sombra; `surface` é mais clara que o body para componentes interativos (switch, radio, checkbox, dialog, app shell).',
+      'Modo claro: página, cards e popovers em branco absoluto; os cards se separam da página por uma borda fina (`--color-border`), não por tinta. O cinza claro fica só em `muted` (sidebar, cabeçalhos, zebra). Modo escuro: derivado do chumbo da marca e mais fundo; `body` é o fundo, `surface` fica um degrau acima (switch, radio, checkbox, dialog, app shell) e `card`, `popover` e `muted` ficam no degrau seguinte; os valores estão na tabela.',
   },
   {
     title: 'Accent, neutro e overlays',
     match: n =>
       n.startsWith('--color-accent') || n.startsWith('--color-neutral') || n.startsWith('--color-overlay'),
-    intro: 'O accent é o laranja Alexandria (`#F26641`), usado em Button primary, links e foco. No escuro ele clareia para manter contraste.',
+    intro: 'O accent é o azul Alexandria (`#034694`), usado em Button primary, links, foco e informação. No escuro ele clareia (o preenchimento e o texto ou ícone usam tons diferentes) para manter contraste; os valores estão na tabela. O laranja, o roxo e os amarelos são destaque pontual.',
   },
   {
     title: 'Texto',
     match: n => n.startsWith('--color-text-') && !isHue(n),
-    intro: 'Texto primário usa o chumbo do brandbook (`#383838`); o tema evita preto absoluto.',
+    intro: 'Texto primário usa o chumbo do brandbook (`#383838`); o tema evita preto absoluto. O texto secundário foi escolhido para passar AA sobre o cinza claro, o `neutral` e as superfícies do escuro.',
   },
   {
     title: 'Cor "on" (texto sobre superfícies coloridas)',
@@ -126,11 +126,13 @@ const SECTIONS = [
     title: 'Status (success, error, warning)',
     match: n => /^--color-(success|error|warning)/.test(n),
     intro:
-      'Modo claro: fundo pastel (`-muted`) + texto/ícone escuro saturado. Modo escuro: inverte para overlay translúcido do matiz + texto pastel claro. Usados por Banner, inputs com status e Button destructive.',
+      'Modo claro: fundo pastel (`-muted`) + texto/ícone escuro saturado. Modo escuro: inverte para overlay translúcido do matiz + texto pastel claro, calibrado para passar AA sobre `body` e `surface`. Usados por Banner, inputs com status e Button destructive.',
   },
   {
     title: 'Bordas e efeitos',
     match: n => (n.startsWith('--color-border') && !isHue(n)) || /^--color-(skeleton|shadow|tint)/.test(n),
+    intro:
+      '`--color-border` é a linha fina de cartões e divisórias. `--color-border-emphasized` é a borda forte e fica leve de propósito, porque também desenha Divider, Tooltip, Blockquote, grades de gráfico e a trilha do ProgressBar. Campos e controles têm borda própria de 3:1 (WCAG 1.4.11), definida por componente (veja Overrides de componentes).',
   },
   {
     title: 'Radius',
@@ -150,9 +152,9 @@ const SECTIONS = [
 
 const HUES = ['red', 'orange', 'yellow', 'green', 'teal', 'cyan', 'blue', 'purple', 'pink', 'gray'];
 const HUE_NOTE = {
-  orange: 'laranja da marca `#F26641` (Pantone 7579 C)',
+  orange: 'laranja da marca `#F26641` (Pantone 7579 C), destaque pontual: ícones e séries de gráfico',
   yellow: 'amarelos da marca `#FAA61A` / `#FFF200`',
-  blue: 'azul da marca `#034694` (Pantone 286 C), também usado como info',
+  blue: 'azul da marca `#034694` (Pantone 286 C): é o accent da UI e também o info',
   purple: 'roxo destaque da marca `#7C51A1` (Pantone 7441 C)',
   gray: 'neutro categórico, sem croma',
 };
@@ -201,26 +203,28 @@ export function buildThemeMd(root) {
   L.push('');
   L.push('| Papel | Cor | Uso no tema |');
   L.push('| --- | --- | --- |');
-  L.push('| Laranja primário | `#F26641` (Pantone 7579 C) | accent da UI, Button primary, StatusDot accent, ProgressBar accent |');
-  L.push('| Azul | `#034694` (Pantone 286 C) | categórico blue, Badge info |');
-  L.push('| Roxo destaque | `#7C51A1` (Pantone 7441 C) | categórico purple, keywords/types no syntax |');
+  L.push('| Azul (primário) | `#034694` (Pantone 286 C) | accent da UI, Button primary, links, foco, StatusDot accent, ProgressBar accent, Badge info |');
+  L.push('| Roxo destaque | `#7C51A1` (Pantone 7441 C) | destaque secundário, categórico purple, keywords/types no syntax |');
+  L.push('| Laranja | `#F26641` (Pantone 7579 C) | destaque pontual (ícones, séries de gráfico), categórico orange |');
   L.push('| Amarelo 1 / 2 | `#FAA61A` / `#FFF200` | categórico yellow |');
-  L.push('| Chumbo (texto) | `#383838` | texto e ícones primários no modo claro |');
+  L.push('| Chumbo | `#383838` | texto e ícones primários no claro; base do tema escuro |');
   L.push('');
-  L.push('Princípios: superfícies quase brancas ou cinza suave (evitar preto absoluto); tipografia Figtree; ícones Lucide; os tons categóricos mantêm a estrutura OKLCH do core, trocando os âncoras de laranja, azul, roxo e amarelo pelos da marca onde o contraste permite.');
+  L.push('Princípios: página em branco absoluto, com cinza claro só em sidebar, cabeçalhos e zebra; escuro derivado do chumbo; preto absoluto só na cor da sombra; tipografia Figtree; ícones Lucide, todos outline; os tons categóricos mantêm a estrutura OKLCH do core, trocando os âncoras de laranja, azul, roxo e amarelo pelos da marca onde o contraste permite. Os tons de acessibilidade (a mesma cor da marca mais clara no escuro ou mais escura no claro) são derivados aprovados e nunca alteram os valores do brandbook.');
   L.push('');
   L.push('Regras rápidas para gerar UI com o tema:');
   L.push('');
   L.push('- Use tokens (`var(--color-...)`, `var(--spacing-...)`) em vez de hex soltos; os valores abaixo são o que os tokens resolvem.');
-  L.push('- Um único Button `primary` (laranja) por view; `secondary`/`ghost` para o resto.');
+  L.push('- Um único Button `primary` (azul) por view; `secondary`/`ghost` para o resto.');
   L.push('- Todo token de cor tem par claro/escuro resolvido via `light-dark()`; não force cores por modo manualmente.');
   L.push('- Status: `success`/`warning`/`error` para feedback; cores categóricas (blue, purple, teal...) para categorias, não para estado.');
+  L.push('- Séries de gráfico: os slots `--color-data-categorical-*` seguem a marca, na ordem azul (`blue`), roxo (`purple`), laranja (`orange`), amarelo (`yellow`) e chumbo (`gray`); depois vêm as cores extras.');
+  L.push('- Campos e controles já trazem a borda de 3:1 do tema; não sobrescreva `--color-border-emphasized` no app para ajustá-la.');
   L.push('');
 
   // ---- Tipografia
   L.push('## Tipografia');
   L.push('');
-  L.push('Família **Figtree** para corpo e títulos (fallback para a pilha do sistema); código usa a monoespaçada da plataforma. Escala modular com base 14px e razão 1.2. Títulos h3/h4 em bold para hierarquia de subseção.');
+  L.push('Família **Figtree** para corpo e títulos, carregada pelo pacote com `@pharos-ds/theme-pharos/fonts.css` (pesos 400, 500, 600 e 700; fallback para a pilha do sistema). Em Next.js também serve o `next/font`, desde que o app aponte `--font-family-body` e `--font-family-heading` para a fonte carregada. O código usa a monoespaçada da plataforma. Escala modular com base 14px e razão 1.2. Títulos h3/h4 em bold para hierarquia de subseção.');
   L.push('');
   L.push('| Token | Valor |');
   L.push('| --- | --- |');
@@ -285,7 +289,7 @@ export function buildThemeMd(root) {
 
   L.push('### Paleta categórica');
   L.push('');
-  L.push('Dez matizes, cada um com fundo, borda, ícone e texto. Claro: fundo pastel + texto escuro saturado. Escuro: inverte para overlay translúcido do matiz (24% alpha) + texto pastel claro. São a base das variantes categóricas de `Badge`, `Token`, `Banner` e similares.');
+  L.push('Dez matizes, cada um com fundo, borda, ícone e texto. Claro: fundo pastel + texto escuro saturado. Escuro: inverte para overlay translúcido do matiz + texto pastel claro. São a base das variantes categóricas de `Badge`, `Token`, `Banner` e similares.');
   L.push('');
   for (const hue of HUES) {
     const list = take(n => n.endsWith(`-${hue}`));
@@ -336,11 +340,12 @@ export function buildThemeMd(root) {
   L.push('Ajustes que o tema aplica por cima do estilo padrão dos componentes (classes `.pharos-<componente>.<variante>`). Resumo:');
   L.push('');
   L.push('- **Button destructive**: fundo pastel vermelho (`--color-error-muted`) + texto vermelho (`--color-error`), em vez de preenchido.');
-  L.push('- **Badge semânticos** (info/success/warning/error): preenchidos com cor saturada e texto contrastante (branco no claro, escuro no escuro); `info` usa o azul da marca.');
+  L.push('- **Badge semânticos** (info/success/warning/error): preenchidos com cor saturada e texto contrastante (branco no claro, escuro no escuro); `info` usa o azul da marca e `error` usa um vermelho próprio no claro para o texto branco passar AA.');
   L.push('- **Badge categóricos**: fundo + texto dos tokens do matiz (`--color-background-X` / `--color-text-X`).');
-  L.push('- **StatusDot**: mesmas cores vivas dos badges preenchidos; `accent` segue o laranja da marca.');
+  L.push('- **StatusDot**: mesmas cores vivas dos badges preenchidos; `accent` segue o azul da marca.');
   L.push('- **Banner**: texto e ícone na cor do matiz do status; `info` em azul.');
-  L.push('- **Switch / ProgressBar**: trilho desligado usa `--color-border-emphasized` para se destacar do body.');
+  L.push('- **Campos e controles** (text-input, number-input, date-input, date-time-input, date-range-input, time-input, textarea, selector, multi-selector, typeahead, tokenizer, file-input, checkbox, radio-list): `--color-border-emphasized` é sobrescrito no componente para a borda de 3:1 (WCAG 1.4.11). Essa mesma borda é a trilha desligada do **Switch**.');
+  L.push('- **ProgressBar**: a trilha usa o `--color-border-emphasized` global, que continua leve.');
   L.push('- **Card / Section**: padding mais compacto (`--spacing-3`).');
   L.push('');
   L.push('| Componente | Variante | Propriedade | Valor |');
@@ -361,6 +366,30 @@ export function buildThemeMd(root) {
   for (const i of icons) L.push(`| ${code(i.name)} | ${code(i.lucide)} |`);
   L.push('');
 
+  // ---- Logo e símbolo
+  L.push('## Logo e símbolo');
+  L.push('');
+  L.push('`AlexandriaLogo` (de `@pharos-ds/theme-pharos/logo`, módulo cliente) mostra a marca e segue o tema. As imagens vêm embutidas no pacote, sem loader de imagem.');
+  L.push('');
+  L.push(fence('tsx', `import {AlexandriaLogo} from '@pharos-ds/theme-pharos/logo';
+
+<AlexandriaLogo height={32} />                  {/* logotipo: degradê no claro, branco no escuro */}
+<AlexandriaLogo kind="slogan" tone="azul" />    {/* com slogan; azul ou chumbo só caso a caso */}
+<AlexandriaLogo kind="symbol" height={24} />    {/* símbolo "A": sidebar recolhida, avatar, favicon */}`));
+  L.push('');
+  L.push('| Prop | Valores | Padrão |');
+  L.push('| --- | --- | --- |');
+  L.push('| `kind` | `logo`, `slogan`, `symbol` | `logo` |');
+  L.push('| `tone` (logo e slogan) | `auto`, `colorido`, `white`, `azul`, `chumbo` | `auto` |');
+  L.push('| `tone` (symbol) | `auto`, `gradiente`, `transparente`, `branco` | `auto` |');
+  L.push('| `height` | número (px) ou string CSS; a largura acompanha | `32` |');
+  L.push('| `alt` | texto acessível; use `""` se for decorativo | `"Alexandria"` |');
+  L.push('');
+  L.push('Regras do brandbook: primeiro o degradê, depois o branco; azul ou chumbo só caso a caso; tamanho mínimo de 16 px. O símbolo "A" entra quando o logotipo não cabe. No `auto` do símbolo, o claro usa o A em degradê sem fundo e o escuro usa o quadrado em degradê com o A branco, porque o azul do degradê some sobre o escuro; `branco` é o A em degradê sobre um quadrado branco. Precisa de um `<Theme>` acima para ler o modo.');
+  L.push('');
+  L.push('O slogan oficial é "tecnologia que move o futuro", sem ponto final (`brandSlogan`). O degradê da marca (`brandGradient`, 5 paradas: azul, roxo, laranja, amarelo 1 e amarelo 2) é só decorativo, como em login e estados vazios, nunca um filtro de cor.');
+  L.push('');
+
   // ---- Uso
   L.push('## Uso');
   L.push('');
@@ -368,6 +397,7 @@ export function buildThemeMd(root) {
 import {pharosTheme} from '@pharos-ds/theme-pharos/built';
 import '@pharos-ds/core/reset.css';
 import '@pharos-ds/core/pharos.css';
+import '@pharos-ds/theme-pharos/fonts.css';
 import '@pharos-ds/theme-pharos/theme.css';
 
 <Theme theme={pharosTheme} mode="system">
@@ -381,6 +411,9 @@ import '@pharos-ds/theme-pharos/theme.css';
   L.push('| `@pharos-ds/theme-pharos` | fonte (StyleX via `@pharos-ds/build`) |');
   L.push('| `@pharos-ds/theme-pharos/built` | tema pré-compilado (`pharosTheme`) |');
   L.push('| `@pharos-ds/theme-pharos/theme.css` | CSS pré-compilado com os tokens acima |');
+  L.push('| `@pharos-ds/theme-pharos/fonts.css` | Figtree (400, 500, 600, 700), via `@fontsource/figtree` |');
+  L.push('| `@pharos-ds/theme-pharos/logo` | `AlexandriaLogo` (módulo cliente) |');
+  L.push('| `@pharos-ds/theme-pharos/brand` | `brandGradient`, `brandGradientStops`, `brandSlogan` |');
   L.push('');
   L.push('Para derivar um tema próprio a partir deste, defina um tema TypeScript com `defineTheme` e gere o CSS: `npx @pharos-ds/cli theme build src/meuTema.ts --out src/meuTema.css`.');
 

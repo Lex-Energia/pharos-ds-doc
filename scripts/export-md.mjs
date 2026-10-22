@@ -343,6 +343,7 @@ ${fence('tsx', `pnpm add @pharos-ds/theme-pharos
 
 import {Theme} from '@pharos-ds/core/theme';
 import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+import '@pharos-ds/theme-pharos/fonts.css';
 import '@pharos-ds/theme-pharos/theme.css';
 
 <Theme theme={pharosTheme} mode="system">
@@ -388,7 +389,7 @@ readme.push('1. Use `npx @pharos-ds/cli init` uma vez por projeto (escreve `AGEN
 readme.push('2. Nunca invente APIs de componente — consulte `componentes/<Nome>.md` ou rode `npx @pharos-ds/cli component <Nome>`.');
 readme.push('3. Prefira compor componentes Pharos a escrever CSS manual.');
 readme.push('4. Instale `@pharos-ds/core` + `@pharos-ds/theme-pharos` (e `@pharos-ds/cli` como dev).');
-readme.push('5. Ordem do CSS: `reset.css` → `pharos.css` → `theme.css`.');
+readme.push('5. Ordem do CSS: `reset.css` → `pharos.css` → `fonts.css` → `theme.css`. O `fonts.css` carrega a Figtree; em Next.js, o `next/font` pode substituí-lo.');
 readme.push('6. Envolva o app com `<Theme theme={pharosTheme}>` de `@pharos-ds/theme-pharos/built`.');
 readme.push('7. Use sempre o pacote com escopo `@pharos-ds/cli`; o pacote bare `pharos` no npm é outro projeto.');
 readme.push('8. **O tema padrão é sempre `@pharos-ds/theme-pharos` (marca Alexandria).** A partir da CLI 1.0.3, `pharos init` instala e configura o tema Alexandria por padrão; versões anteriores sugeriam `@pharos-ds/theme-neutral`: ignore e atualize a CLI. Não instale `theme-neutral` nem outro `@pharos-ds/theme-*`. Valores do tema em [tema-pharos.md](./tema-pharos.md).');

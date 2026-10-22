@@ -3,7 +3,7 @@
 > Design system da Alexandria — componentes React acessíveis, temas e templates.
 > Pacotes npm: `@pharos-ds/core`, `@pharos-ds/theme-pharos`, `@pharos-ds/cli`.
 
-Esta pasta é a versão Markdown completa do site de documentação, gerada por `pnpm export:md` para uso por agentes de IA. Catálogo gerado em 2026-10-20T20:26:49.143Z.
+Esta pasta é a versão Markdown completa do site de documentação, gerada por `pnpm export:md` para uso por agentes de IA. Catálogo gerado em 2026-10-21T20:23:08.087Z.
 
 ## Instruções para agentes
 
@@ -11,7 +11,7 @@ Esta pasta é a versão Markdown completa do site de documentação, gerada por 
 2. Nunca invente APIs de componente — consulte `componentes/<Nome>.md` ou rode `npx @pharos-ds/cli component <Nome>`.
 3. Prefira compor componentes Pharos a escrever CSS manual.
 4. Instale `@pharos-ds/core` + `@pharos-ds/theme-pharos` (e `@pharos-ds/cli` como dev).
-5. Ordem do CSS: `reset.css` → `pharos.css` → `theme.css`.
+5. Ordem do CSS: `reset.css` → `pharos.css` → `fonts.css` → `theme.css`. O `fonts.css` carrega a Figtree; em Next.js, o `next/font` pode substituí-lo.
 6. Envolva o app com `<Theme theme={pharosTheme}>` de `@pharos-ds/theme-pharos/built`.
 7. Use sempre o pacote com escopo `@pharos-ds/cli`; o pacote bare `pharos` no npm é outro projeto.
 8. **O tema padrão é sempre `@pharos-ds/theme-pharos` (marca Alexandria).** A partir da CLI 1.0.3, `pharos init` instala e configura o tema Alexandria por padrão; versões anteriores sugeriam `@pharos-ds/theme-neutral`: ignore e atualize a CLI. Não instale `theme-neutral` nem outro `@pharos-ds/theme-*`. Valores do tema em [tema-pharos.md](./tema-pharos.md).
@@ -31,7 +31,7 @@ Esta pasta é a versão Markdown completa do site de documentação, gerada por 
 - [Componentes](./componentes/README.md) — 154 componentes com props, exemplos e boas práticas (um arquivo por componente)
 - [Templates](./templates/README.md) — 43 templates de página via CLI
 - [Temas](./temas.md) — tema oficial Pharos, dark mode e customização
-- [Tema Pharos (Alexandria)](./tema-pharos.md) — referência completa do tema: paleta da marca, 170 tokens claro/escuro, tipografia, motion, overrides e 26 ícones
+- [Tema Pharos (Alexandria)](./tema-pharos.md) — referência completa do tema: paleta da marca, 175 tokens claro/escuro, tipografia, motion, overrides e 26 ícones
 
 ## Estrutura
 

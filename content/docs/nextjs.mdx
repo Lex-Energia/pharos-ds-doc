@@ -24,7 +24,26 @@ Em `src/app/globals.css` (ou `app/globals.css`):
 ```css
 @import "@pharos-ds/core/reset.css";
 @import "@pharos-ds/core/pharos.css";
+@import "@pharos-ds/theme-pharos/fonts.css";
 @import "@pharos-ds/theme-pharos/theme.css";
+```
+
+O `fonts.css` carrega a Figtree. Se preferir o `next/font`, tire essa linha e aponte as famílias do tema para a fonte carregada:
+
+```tsx
+// src/app/layout.tsx
+import {Figtree} from 'next/font/google';
+
+const figtree = Figtree({variable: '--font-figtree', subsets: ['latin']});
+// <html className={figtree.variable}>
+```
+
+```css
+/* src/app/globals.css, depois do import do tema */
+[data-pharos-theme] {
+  --font-family-body: var(--font-figtree), sans-serif;
+  --font-family-heading: var(--font-figtree), sans-serif;
+}
 ```
 
 ## 3. Providers

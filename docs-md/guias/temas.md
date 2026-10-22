@@ -21,6 +21,7 @@ pnpm add @pharos-ds/theme-pharos
 ```tsx
 import {Theme} from '@pharos-ds/core/theme';
 import {pharosTheme} from '@pharos-ds/theme-pharos/built';
+import '@pharos-ds/theme-pharos/fonts.css';
 import '@pharos-ds/theme-pharos/theme.css';
 
 <Theme theme={pharosTheme} mode="dark">
@@ -32,7 +33,8 @@ import '@pharos-ds/theme-pharos/theme.css';
 
 1. `reset.css` — normalização
 2. `pharos.css` — estilos dos componentes
-3. `theme.css` — tokens da marca
+3. `fonts.css` — Figtree (opcional no Next.js, que pode usar `next/font`)
+4. `theme.css` — tokens da marca
 
 ## Dark mode
 
